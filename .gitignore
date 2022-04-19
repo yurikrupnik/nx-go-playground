@@ -37,3 +37,21 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Yarn 3 not self
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Yarn 3 self
+#.yarn/*
+#!.yarn/cache
+#!.yarn/patches
+#!.yarn/plugins
+#!.yarn/releases
+#!.yarn/sdks
+#!.yarn/versions
