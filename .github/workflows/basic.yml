@@ -39,3 +39,4 @@ jobs:
       - run: yarn nx run-many --parallel --all --target=test
       - run: yarn nx run-many --parallel --all --target=build
       - run: yarn nx run-many --parallel --all --target=lint
+      - run: yarn nx run-many --parallel --all --target=e2e
