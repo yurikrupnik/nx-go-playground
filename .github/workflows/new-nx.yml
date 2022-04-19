@@ -12,6 +12,7 @@ jobs:
       - name: Nx Cloud - Main Job
         uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.2
         with:
+          node-version: "17"
           parallel-commands: |
             yarn nx workspace-lint
             yarn nx format:check
@@ -28,3 +29,4 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.2
     with:
       number-of-agents: 3
+      node-version: "17"
