@@ -14,9 +14,12 @@ jobs:
         yarn nx workspace-lint
         yarn nx format:check
       parallel-commands-on-agents: |
-        yarn nx affected --target=lint --parallel=3
-        yarn nx affected --target=test --parallel=3 --ci --code-coverage
-        yarn nx affected --target=build --parallel=3
+        yarn build
+        yarn lint
+        yarn test
+#        yarn nx affected --target=lint --parallel=3
+#        yarn nx affected --target=test --parallel=3 --ci --code-coverage
+#        yarn nx affected --target=build --parallel=3
 
   agents:
     name: Nx Cloud - Agents
