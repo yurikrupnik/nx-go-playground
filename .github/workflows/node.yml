@@ -90,6 +90,7 @@ jobs:
       - run: yarn build --skip-nx-cache --verbose
       - run: yarn test --skip-nx-cache --verbose
       - run: yarn lint
+      - run: yarn e2e --verbose
   build:
     runs-on: ubuntu-latest
 #    needs: [ 'setup' ]
@@ -193,4 +194,4 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
-#      - run: yarn e2e
+      - run: yarn e2e
