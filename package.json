@@ -9,7 +9,8 @@
     "lint": "yarn nx run-many --target=lint --parallel --max-parallel=4 --all",
     "serve": "yarn nx run-many --target=serve --parallel --max-parallel=4 --all",
     "test": "yarn nx run-many --target=test --parallel --max-parallel=4 --all",
-    "e2e": "yarn nx run-many --target=e2e --parallel --max-parallel=4 --all --headless"
+    "e2e": "yarn nx run-many --target=e2e --parallel --max-parallel=4 --all --headless",
+    "affected": "yarn nx affected --parallel=5"
   },
   "private": true,
   "dependencies": {
