@@ -90,5 +90,6 @@ jobs:
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
       - name: Start Nx Agent ${{ matrix.agent }}
         run: yarn nx-cloud start-agent

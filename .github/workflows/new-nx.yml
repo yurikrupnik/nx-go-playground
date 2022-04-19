@@ -1,4 +1,4 @@
-name: CI
+name: CI new nx
 on:
   push:
     branches:
