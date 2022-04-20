@@ -1,0 +1,73 @@
+{
+  "root": "apps/profile/client",
+  "sourceRoot": "apps/profile/client/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "swc",
+        "outputPath": "dist/apps/profile/client",
+        "index": "apps/profile/client/src/index.html",
+        "baseHref": "/",
+        "main": "apps/profile/client/src/main.tsx",
+        "polyfills": "apps/profile/client/src/polyfills.ts",
+        "tsConfig": "apps/profile/client/tsconfig.app.json",
+        "assets": [
+          "apps/profile/client/src/favicon.ico",
+          "apps/profile/client/src/assets"
+        ],
+        "styles": ["apps/profile/client/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/profile/client/src/environments/environment.ts",
+              "with": "apps/profile/client/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "profile-client:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "profile-client:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/profile/client/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/profile/client"],
+      "options": {
+        "jestConfig": "apps/profile/client/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

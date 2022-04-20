@@ -1,7 +1,15 @@
 {
   "version": 2,
   "projects": {
+    "go-myutils": "libs/go/myutils",
+    "nest-modules": "libs/nest/modules",
     "next-app": "apps/next-app",
-    "next-app-e2e": "apps/next-app-e2e"
+    "next-app-e2e": "apps/next-app-e2e",
+    "profile-api": "apps/profile/api",
+    "profile-client": "apps/profile/client",
+    "profile-client-e2e": "apps/profile/client-e2e",
+    "users-api": "apps/users/api",
+    "users-client": "apps/users/client",
+    "users-users-client-e2e": "apps/users/users-client-e2e"
   }
 }
