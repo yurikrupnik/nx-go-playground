@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-go-playground/nest/modules": ["libs/nest/modules/src/index.ts"]
+      "@nx-go-playground/nest/modules": ["libs/nest/modules/src/index.ts"],
+      "@nx-go-playground/react/components": [
+        "libs/react/components/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

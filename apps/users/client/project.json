@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/users/client",
-        "frameworkConfigFile": "@nxext/solid/plugins/vite"
+        "configFile": "apps/users/client/vite.config.js"
       },
       "configurations": {
         "production": {}
@@ -19,7 +19,7 @@
       "executor": "@nxext/vite:dev",
       "options": {
         "outputPath": "dist/apps/users/client",
-        "frameworkConfigFile": "@nxext/solid/plugins/vite"
+        "configFile": "apps/users/client/vite.config.js"
       }
     },
     "lint": {
@@ -35,6 +35,13 @@
       "options": {
         "jestConfig": "apps/users/client/jest.config.js",
         "passWithNoTests": true
+      }
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --target web-builder --build-arg DIST_PATH=dist/apps/users/client --platform linux/amd64,linux/arm64 . -t yurikrupnik/users-client --push"
       }
     }
   }

@@ -67,6 +67,13 @@
         "jestConfig": "apps/profile/client/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --target web-builder --build-arg DIST_PATH=dist/apps/profile/client --platform linux/amd64,linux/arm64 . -t yurikrupnik/profile-client --push"
+      }
     }
   },
   "tags": []

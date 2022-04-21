@@ -22,6 +22,6 @@ describe('App', () => {
       </BrowserRouter>
     );
 
-    expect(getByText(/Welcome profile-client/gi)).toBeTruthy();
+    expect(getByText(/React and Tailwind with webpack!/gi)).toBeTruthy();
   });
 });

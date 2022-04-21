@@ -8,6 +8,7 @@
     "profile-api": "apps/profile/api",
     "profile-client": "apps/profile/client",
     "profile-client-e2e": "apps/profile/client-e2e",
+    "react-components": "libs/react/components",
     "users-api": "apps/users/api",
     "users-client": "apps/users/client",
     "users-users-client-e2e": "apps/users/users-client-e2e"

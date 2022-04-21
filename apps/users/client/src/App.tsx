@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import styles from './App.module.css';
+import { Router, Route, Routes, Link } from 'solid-app-router';
+
+const Predictions = () => {
+  return <div>
+    Predictions
+  </div>
+}
+
+const About = () => {
+  return <div>
+    About
+  </div>
+}
 
 function App() {
   return (
     <div class={styles.App}>
+      <h1 class="underline font-bold">Welcome users-client</h1>
+      <nav>
+        <Link href="/about">About</Link>
+        <Link href="/">Home</Link>
+      </nav>
+        <Routes>
+          <Route path="/" element={<Predictions />} />
+          <Route path="/about" element={<About />} />
+          {/*<Route path="/*all" element={<NotFound />} />*/}
+        </Routes>
       <header class={styles.header}>
-      <h1>Welcome users-client</h1>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
+        {/*<img src={logo} class={styles.logo} alt="logo" />*/}
+        <div>
+          hello here
+        </div>
       </header>
     </div>
   );

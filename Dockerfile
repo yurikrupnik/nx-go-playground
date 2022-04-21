@@ -32,6 +32,32 @@ WORKDIR /app
 #
 ENV NODE_ENV production
 COPY --from=builder /app/dist ./dist
+
+
+# Done!
+FROM node:16-alpine AS nest-builder
+WORKDIR /app
+
+ARG DIST_PATH
+RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
+
+ENV NODE_ENV=$NODE_ENV
+COPY ./$DIST_PATH .
+RUN npm install --production
+ENV PORT=3333
+EXPOSE ${PORT}
+
+CMD ["node", "main.js"]
+
+# Done
+FROM nginx:alpine AS web-builder
+WORKDIR /app
+ARG DIST_PATH
+RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
+COPY ./$DIST_PATH /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+
 #
 #RUN addgroup -g 1001 -S nodejs
 #RUN adduser -S nextjs -u 1001
