@@ -1,0 +1,48 @@
+{
+  "root": "apps/users/client",
+  "sourceRoot": "apps/users/client/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nxext/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/users/client",
+        "configFile": "apps/users/client/vite.config.js"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nxext/vite:dev",
+      "options": {
+        "outputPath": "dist/apps/users/client",
+        "configFile": "apps/users/client/vite.config.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/users/client/**/*.{ts,spec.ts,tsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/users/client"],
+      "options": {
+        "jestConfig": "apps/users/client/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --target web-builder --build-arg DIST_PATH=dist/apps/users/client --platform linux/amd64,linux/arm64 . -t yurikrupnik/users-client --push"
+      }
+    }
+  }
+}
