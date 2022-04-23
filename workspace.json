@@ -1,6 +1,9 @@
 {
   "version": 2,
   "projects": {
+    "api-helpers": "libs/api/helpers",
+    "api-products": "libs/api/products",
+    "api-users": "libs/api/users",
     "go-myutils": "libs/go/myutils",
     "nest-modules": "libs/nest/modules",
     "next-app": "apps/next-app",

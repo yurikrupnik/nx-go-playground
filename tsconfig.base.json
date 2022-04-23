@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "esModuleInterop": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "strictPropertyInitialization": false,
     "paths": {
+      "@nx-go-playground/api/helpers": ["libs/api/helpers/src/index.ts"],
+      "@nx-go-playground/api/products": ["libs/api/products/src/index.ts"],
+      "@nx-go-playground/api/users": ["libs/api/users/src/index.ts"],
       "@nx-go-playground/nest/modules": ["libs/nest/modules/src/index.ts"],
       "@nx-go-playground/react/components": [
         "libs/react/components/src/index.ts"

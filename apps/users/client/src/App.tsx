@@ -1,18 +1,25 @@
 // import logo from './logo.svg';
 import styles from './App.module.css';
-import { Router, Route, Routes, Link } from 'solid-app-router';
+import axios from 'axios';
+import { Route, Routes, Link } from 'solid-app-router';
+import { createEffect } from 'solid-js';
+
+function getUsers() {
+  return axios.get('http://localhost:3333/api/users').then((r) => r.data);
+}
 
 const Predictions = () => {
-  return <div>
-    Predictions
-  </div>
-}
+  createEffect(() => {
+    getUsers().then((res) => {
+      console.log('res', res);
+    });
+  });
+  return <div>Predictions</div>;
+};
 
 const About = () => {
-  return <div>
-    About
-  </div>
-}
+  return <div>About</div>;
+};
 
 function App() {
   return (
@@ -22,17 +29,11 @@ function App() {
         <Link href="/about">About</Link>
         <Link href="/">Home</Link>
       </nav>
-        <Routes>
-          <Route path="/" element={<Predictions />} />
-          <Route path="/about" element={<About />} />
-          {/*<Route path="/*all" element={<NotFound />} />*/}
-        </Routes>
-      <header class={styles.header}>
-        {/*<img src={logo} class={styles.logo} alt="logo" />*/}
-        <div>
-          hello here
-        </div>
-      </header>
+      <Routes>
+        <Route path="/" element={<Predictions />} />
+        <Route path="/about" element={<About />} />
+        {/*<Route path="/*all" element={<NotFound />} />*/}
+      </Routes>
     </div>
   );
 }

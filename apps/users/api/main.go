@@ -13,9 +13,19 @@ func Hello(name string) string {
 //
 //}
 
+type Person struct {
+	Firstname string `json:"firstname"`
+	Lastname  string `json:"lastname"`
+}
+
 func main() {
 	fmt.Println(Hello("users-api"))
-
+	//converter := typescriptify.New().
+	//	Add(Person{})
+	//err := converter.ConvertToFile("ts/models.ts")
+	//if err != nil {
+	//	panic(err.Error())
+	//}
 	//router := gin.Default()
 	//router.GET("/users", getUsers)
 	//// router.POST("/somePost", posting)
