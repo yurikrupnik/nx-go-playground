@@ -15,7 +15,6 @@
     "profile-client-e2e": "apps/profile/client-e2e",
     "react-components": "libs/react/components",
     "test-be-test-app": "apps/test/be-test-app",
-    "users-api": "apps/users/api",
     "users-client": "apps/users/client",
     "users-users-client-e2e": "apps/users/users-client-e2e"
   }
