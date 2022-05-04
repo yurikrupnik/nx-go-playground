@@ -96,7 +96,7 @@ jobs:
     #    needs: [ 'setup' ]
     strategy:
       matrix:
-        node-version: [ 14.x, 16.x, 18.x ]
+        node-version: [ 14.x, 16.x, 17.x ]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -123,7 +123,7 @@ jobs:
     #    needs: ['setup']
     strategy:
       matrix:
-        node-version: [ 14.x, 16.x, 18x ]
+        node-version: [ 14.x, 16.x, 17x ]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -148,7 +148,7 @@ jobs:
     #    needs: [ 'setup' ]
     strategy:
       matrix:
-        node-version: [ 14.x, 16.x, 18.x ]
+        node-version: [ 14.x, 16.x, 17.x ]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -175,7 +175,7 @@ jobs:
     #    needs: [ 'setup' ]
     strategy:
       matrix:
-        node-version: [ 14.x, 16.x, 18.x ]
+        node-version: [ 14.x, 16.x, 17.x ]
     steps:
       - uses: actions/checkout@v2
         with:
