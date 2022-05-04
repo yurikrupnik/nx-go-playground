@@ -1,0 +1,43 @@
+{
+  "root": "apps/functions/my-message",
+  "projectType": "application",
+  "sourceRoot": "apps/functions/my-message/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {}
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/functions/my-message/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nx-extend/gcp-functions:build",
+      "options": {
+        "generateLockFile": true,
+        "outputPath": "dist/apps/functions/my-message",
+        "main": "apps/functions/my-message/src/main.ts",
+        "tsConfig": "apps/functions/my-message/tsconfig.app.json",
+        "assets": []
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": false,
+          "inspect": false
+        }
+      }
+    },
+    "deploy": {
+      "executor": "@nx-extend/gcp-functions:deploy",
+      "options": {
+        "functionName": "functions-my-message",
+        "envVarsFile": "apps/functions/my-message/src/environments/production.yaml"
+      }
+    }
+  },
+  "tags": []
+}

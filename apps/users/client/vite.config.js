@@ -34,26 +34,48 @@ export default defineConfig((c, o) => {
   console.log('open', process.cwd());
   console.log('open', __filename);
   return {
-    output: {
-      format: 'esm',
-      // dir: 'dist',
-    },
+    // output: {
+    //   // format: 'esm',
+    //   dir: 'dist',
+    // },
+    // build: {
+    //   lib: {
+    //     entry: 'src/index.tsx',
+    //     // name: 'MyLib',
+    //     formats: ['system'],
+    //     // fileName: (format) => `my-lib.${format}.js`
+    //   },
+    //   rollupOptions: {
+    //     // make sure to externalize deps that shouldn't be bundled
+    //     // into your library
+    //     external: ['solid-js'],
+    //     // output: {
+    //     //   dir: 'dist',
+    //     //   // Provide global variables to use in the UMD build
+    //     //   // for externalized deps
+    //     //   globals: {
+    //     //     vue: 'react'
+    //     //   }
+    //     // },
+    //   },
+    // },
+
     plugins: [
       solidPlugin(),
-      federation({
-        // remoteType: 'var',
-        filename: 'remoteEntry.js',
-        name: 'aris',
-        exposes: {
-          './Button': path.join(__dirname, 'src/button.tsx'),
-          // './Button': './src/button.tsx',
-        },
-        remotes: {
-          // home: 'home@http://localhost:3001/remoteEntry.js',
-        },
-        shared: ['solid-js'],
-      }),
-      // react(),
+      //   federation({
+      //     // remoteType: 'var',
+      //     filename: 'remoteEntry.js',
+      //     name: 'aris',
+      //     exposes: {
+      //       './Button': path.join(__dirname, 'src/button.tsx'),
+      //       // './Button': './src/button.tsx',
+      //     },
+      //     remotes: {
+      //       // home: 'home@http://localhost:3001/remoteEntry.js',
+      //     },
+      //     shared: ['solid-js'],
+      //   }),
+      //   // react(),
     ],
     server: {
       // port: 9999,

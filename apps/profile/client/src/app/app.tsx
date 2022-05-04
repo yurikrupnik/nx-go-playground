@@ -84,7 +84,6 @@ const Com = () => {
       {/*{Array.isArray(query.data) &&*/}
       {/*  query.data.map((v) => {*/}
       {/*    // eslint-disable-next-line @typescript-eslint/ban-ts-comment*/}
-      {/*    // @ts-ignore*/}
       {/*    return (*/}
       {/*      <div key={v._id}>*/}
       {/*        <div>{v.name}</div>*/}

@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "esModuleInterop": true,
-    "noPropertyAccessFromIndexSignature": false,
     "strictPropertyInitialization": false,
     "paths": {
       "@nx-go-playground/api/helpers": ["libs/api/helpers/src/index.ts"],

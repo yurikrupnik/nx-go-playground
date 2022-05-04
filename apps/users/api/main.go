@@ -5,8 +5,8 @@ import (
 )
 
 func Hello(name string) string {
-	result := "Hello " + name
-	return result
+	return "Hello " + name
+	//return result
 }
 
 //func getUsers() {

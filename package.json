@@ -10,7 +10,11 @@
     "serve": "yarn nx run-many --target=serve --parallel --max-parallel=4 --all",
     "test": "yarn nx run-many --target=test --parallel --max-parallel=4 --all",
     "e2e": "yarn nx run-many --target=e2e --parallel --max-parallel=4 --all",
+    "ups": "yarn nx run-many --target=up --parallel --max-parallel=4 --all",
     "docker": "yarn nx run-many --target=docker --parallel --max-parallel=4 --all",
+    "buildpack": "yarn nx run-many --target=pack --parallel --max-parallel=4 --all",
+    "skaffold": "yarn nx run-many --target=skaffold --parallel --max-parallel=4 --all",
+    "deploy": "yarn nx run-many --target=deploy --parallel --max-parallel=4 --all",
     "affected": "yarn nx affected --parallel=5"
   },
   "private": true,
@@ -24,6 +28,8 @@
     "@nestjs/swagger": "^5.2.1",
     "@nestjs/terminus": "^8.0.6",
     "@nrwl/next": "13.10.2",
+    "@suid/icons-material": "^0.1.0",
+    "@suid/material": "^0.1.0",
     "axios": "^0.26.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
@@ -45,11 +51,14 @@
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.0.0",
+    "single-spa": "^5.9.3",
+    "single-spa-react": "^4.6.1",
     "solid-app-router": "^0.3.2",
     "swagger-ui-express": "^4.3.0",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@google-cloud/functions-framework": "^3.1.1",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/testing": "^8.0.0",
     "@nrwl/cli": "13.10.2",
@@ -63,6 +72,7 @@
     "@nrwl/react": "13.10.2",
     "@nrwl/web": "13.10.2",
     "@nrwl/workspace": "13.10.2",
+    "@nx-extend/gcp-functions": "^6.2.0",
     "@nx-go/nx-go": "^2.5.0",
     "@nx-tools/nx-docker": "^2.3.0",
     "@nxext/solid": "^13.1.1",
@@ -108,9 +118,12 @@
     "swc-loader": "0.1.15",
     "tailwindcss": "^3.0.24",
     "ts-jest": "27.0.5",
-    "typescript": "~4.6.2",
+    "typescript": "^4.6.3",
     "vite": "^2.8.0",
-    "vite-plugin-solid": "2.2.3"
+    "vite-plugin-solid": "2.2.3",
+    "webpack-config-single-spa-react": "^4.0.3",
+    "webpack-config-single-spa-react-ts": "^4.0.3",
+    "webpack-merge": "^5.8.0"
   },
   "packageManager": "yarn@3.2.0",
   "engines": {

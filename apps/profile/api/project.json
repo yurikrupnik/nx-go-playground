@@ -5,12 +5,16 @@
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/profile/api",
         "main": "apps/profile/api/src/main.ts",
         "tsConfig": "apps/profile/api/tsconfig.app.json",
-        "assets": ["apps/profile/api/src/assets"],
+        "assets": [
+          "apps/profile/api/src/assets"
+        ],
         "generatePackageJson": true
       },
       "configurations": {
@@ -35,24 +39,44 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/profile/api/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/profile/api/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/profile/api"],
+      "outputs": [
+        "coverage/apps/profile/api"
+      ],
       "options": {
         "jestConfig": "apps/profile/api/jest.config.js",
         "passWithNoTests": true
       }
     },
-    "docker": {
+    "docker-core": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
         "command": "docker buildx build --target nest-builder --build-arg DIST_PATH=dist/apps/profile/api --platform linux/amd64,linux/arm64 . -t yurikrupnik/profile-api --push"
+      }
+    },
+    "pack": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "pack build yurikrupnik/buildpack-api --path dist/apps/profile/api/ --builder cnbs/sample-builder:bionic"
+      }
+    },
+    "skaffold": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "skaffold build"
       }
     },
     "docker-alt": {
@@ -61,8 +85,13 @@
         "push": false,
         "target": "nest-builder",
         "context": "./",
-        "build-args": ["DIST_PATH=dist/apps/profile/api"],
-        "tags": ["yurikrupnik/profile-api:latest", "yurikrupnik/profile-api:v1"]
+        "build-args": [
+          "DIST_PATH=dist/apps/profile/api"
+        ],
+        "tags": [
+          "yurikrupnik/profile-api:latest",
+          "yurikrupnik/profile-api:v1"
+        ]
       }
     }
   },

@@ -3,6 +3,22 @@ import styles from './App.module.css';
 import axios from 'axios';
 import { Route, Routes, Link } from 'solid-app-router';
 import { createEffect } from 'solid-js';
+import Button from '@suid/material/Button';
+import { purple } from '@suid/material/colors';
+import { createTheme, ThemeProvider } from '@suid/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: purple[500],
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#11cb5f',
+    },
+  },
+});
 
 function getUsers() {
   return axios.get('http://localhost:3333/api/users').then((r) => r.data);
@@ -23,18 +39,21 @@ const About = () => {
 
 function App() {
   return (
-    <div class={styles.App}>
-      <h1 class="underline font-bold">Welcome users-client</h1>
-      <nav>
-        <Link href="/about">About</Link>
-        <Link href="/">Home</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Predictions />} />
-        <Route path="/about" element={<About />} />
-        {/*<Route path="/*all" element={<NotFound />} />*/}
-      </Routes>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div class={styles.App}>
+        <h1 class="underline font-bold">Welcome users-client</h1>
+        <Button>mui button</Button>
+        <nav>
+          <Link href="/about">About</Link>
+          <Link href="/">Home</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Predictions />} />
+          <Route path="/about" element={<About />} />
+          {/*<Route path="/*all" element={<NotFound />} />*/}
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 

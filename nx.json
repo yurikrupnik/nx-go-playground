@@ -53,5 +53,6 @@
       }
     }
   },
-  "defaultProject": "next-app"
+  "defaultProject": "next-app",
+  "plugins": ["@nx-go/nx-go"]
 }

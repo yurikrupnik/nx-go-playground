@@ -10,13 +10,20 @@
         "main": "apps/users/api/main.go"
       }
     },
-    "serve": {
+    "serves": {
       "executor": "@nx-go/nx-go:serve",
       "options": {
         "main": "apps/users/api/main.go"
       }
     },
-    "test": {
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "nodemon --exec go run main.go"
+      }
+    },
+    "tests": {
       "executor": "@nx-go/nx-go:test"
     },
     "lint": {

@@ -1,0 +1,7 @@
+namePrefix: dev
+#
+resources:
+  #  - secrets.yml
+  - deployment.yml
+#  - servi
+

@@ -1,0 +1,6 @@
+namePrefix: staging
+#
+resources:
+  - secrets.yml
+  - deployment.yml
+
