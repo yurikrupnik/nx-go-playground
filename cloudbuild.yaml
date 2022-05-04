@@ -33,12 +33,31 @@ steps:
   - name: node:latest
     entrypoint: yarn
     id: yarn
+  #  - name: node
+  #    entrypoint: yarn
+  #    waitFor:
+  #      - yarn
+  #    args:
+  #      - lint
   - name: node
     entrypoint: yarn
     waitFor:
       - yarn
     args:
-      - lint
+      - test
+  - name: node
+    entrypoint: yarn
+    waitFor:
+      - yarn
+    id: build
+    args:
+      - build
+#  - name: node
+#    entrypoint: yarn
+#    waitFor:
+#      - build
+#    args:
+#      - docker
 #    id: lint
 #  - name: node:latest
 #    entrypoint: yarn
