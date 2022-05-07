@@ -1,0 +1,155 @@
+#steps:
+#  - name: 'node16'
+#    args: [ 'yarn' ]
+#  - name: 'node16'
+#    args: [ 'yarn', 'test' ]
+#  - name: 'node16'
+#    args: [ 'yarn', 'build' ]
+#  - name: 'node16'
+#    args: [ 'yarn', 'lint' ]
+steps:
+  #  - name: gcr.io/kaniko-project/executor
+  #    args:
+  #      - --destination=gcr.io/$PROJECT_ID/foo
+  #      - --cache=true
+  #      - --cache-ttl=6h
+  #steps:
+  #    - name: "node16"
+  #      entrypoint: "npm"
+  #      args: [ "yarn" ]
+  #      id: ci
+  #  - name: 'gcr.io/cloud-builders/docker'
+  #    args:
+  #      - 'docker
+  #      - 'buildx'
+  #      - 'build'
+  #      - '--tag=gcr.io/$PROJECT_ID/my-node-packages:latest'
+  #      - '--file=Dockerfile'
+  #      - '--target=deps'
+  #      - '--platform linux/amd64,linux/arm64'
+  #      - '.'
+  #      - '--push'
+
+  - name: node:latest
+    entrypoint: yarn
+    id: yarn
+  #  - name: node
+  #    entrypoint: yarn
+  #    waitFor:
+  #      - yarn
+  #    args:
+  #      - lint
+  - name: node
+    entrypoint: yarn
+    waitFor:
+      - yarn
+    args:
+      - test
+  - name: node
+    entrypoint: yarn
+    waitFor:
+      - yarn
+    id: build
+    args:
+      - build
+#  - name: node
+#    entrypoint: yarn
+#    waitFor:
+#      - build
+#    args:
+#      - docker
+#    id: lint
+#  - name: node:latest
+#    entrypoint: yarn
+#    args:
+#      - test
+#    id: test
+#  - name: 'gcr.io/cloud-builders/gcloud'
+#    args:
+#      - app
+#      - deploy
+#      - [FUNCTION_NAME]
+#      - --source=.
+#      - --trigger-http
+
+#  - name: 'node:12.10.0'
+#    args: ['run', 'postinstall']
+#    entrypoint: 'npm'
+#    id: post-install
+#    waitFor:
+#      - ci
+#  - name: 'node:12.10.0'
+#    args: ['npx', 'lerna', 'changed']
+#    id: lerna
+#    waitFor:
+#      - ci
+#  - name: 'node:12.10.0'
+#    args: ['run', 'lint', '--', '--since']
+#    entrypoint: 'npm'
+#    id: lint
+#    waitFor:
+#      - ci
+#  - name: 'node:12.10.0'
+#    args: ['run', 'test', '--', '--since']
+#    entrypoint: 'npm'
+#    id: test
+#    waitFor:
+#      - post-install
+#  - name: 'node:12.10.0'
+#    args: ['run', 'build', '--', '--since']
+#    entrypoint: 'npm'
+#    id: build
+#    waitFor:
+#      - post-install
+#  - name: gcr.io/cloud-builders/docker
+#    args:
+#      - build
+#      - "--no-cache"
+#      - "-t"
+#      - "$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA"
+#      - packages/api
+#      - "-f"
+#      - packages/api/languages
+#    id: Build
+#  - name: gcr.io/cloud-builders/docker
+#    args:
+#      - push
+#      - "$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA"
+#    id: Push
+#  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+#    args:
+#      - run
+#      - deploy
+#      - $_SERVICE_NAME
+#      - "--platform=managed"
+#      - "--image=$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA"
+#      - >-
+#        --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID,$_LABELS
+#      - "--region=$_DEPLOY_REGION"
+#      - "--quiet"
+#    id: Deploy
+#    entrypoint: gcloud
+#  - name: 'node:12.10.0'
+#    args: ['run', 'build', '--', '--since']
+#    entrypoint: 'npm'
+#    waitFor:
+#      - build
+
+substitutions:
+  _NODE_VERSION: 16.10.0 #default value
+  _GCR_HOSTNAME: eu.gcr.io
+  _PLATFORM: managed
+  _SERVICE_NAME: billing
+  _DEPLOY_REGION: europe-west1
+#    _LABELS: gcb-trigger-id=2252203c-6669-453c-8695-97bb646e92e4
+#    _TRIGGER_ID: 2252203c-6669-453c-8695-97bb646e92e4
+
+images:
+  - "$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA"
+options:
+  substitutionOption: ALLOW_LOOSE
+
+tags:
+  - gcp-cloud-build-deploy-cloud-run
+  - gcp-cloud-build-deploy-cloud-run-managed
+  - billing

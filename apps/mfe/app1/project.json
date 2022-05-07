@@ -1,0 +1,83 @@
+{
+  "root": "apps/mfe/app1",
+  "sourceRoot": "apps/mfe/app1/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "swc",
+        "outputPath": "dist/apps/mfe/app1",
+        "index": "apps/mfe/app1/src/index.html",
+        "baseHref": "/",
+        "main": "apps/mfe/app1/src/main.tsx",
+        "polyfills": "apps/mfe/app1/src/polyfills.ts",
+        "tsConfig": "apps/mfe/app1/tsconfig.app.json",
+        "assets": [
+          "apps/mfe/app1/src/favicon.ico",
+          "apps/mfe/app1/src/assets"
+        ],
+        "styles": [
+          "apps/mfe/app1/src/styles.css"
+        ],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/mfe/app1/src/environments/environment.ts",
+              "with": "apps/mfe/app1/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "mfe-app1:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "mfe-app1:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/mfe/app1/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/mfe/app1"
+      ],
+      "options": {
+        "jestConfig": "apps/mfe/app1/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

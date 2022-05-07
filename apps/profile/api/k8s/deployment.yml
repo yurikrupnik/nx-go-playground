@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: profile-api
+  labels:
+    app: profile-api
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: profile-api
+      labels:
+        app: profile-api
+    spec:
+      containers:
+        - name: profile-api
+          image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client:latest
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: profile-api

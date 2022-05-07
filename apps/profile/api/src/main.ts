@@ -43,7 +43,7 @@ async function bootstrap() {
   const port = configService.get('PORT') || 3333;
   console.log('port', port)
   await app.listen(port, () => {
-    logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
+    logger.log(`Listening at http://localhost:${port}/${globalPrefix}`);
   });
 }
 

@@ -1,0 +1,59 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: nx-go-playground
+build:
+  artifacts:
+    #  - image: dist-apps-functions-my-message
+    #    context: dist/apps/functions/my-message
+    #    buildpacks:
+    #      builder: gcr.io/buildpacks/builder:v1
+    - image: dist-apps-next-app
+      context: dist/apps/next-app
+      #      docker:
+      #        target:
+      #        buildArgs:
+      #
+      buildpacks:
+        builder: gcr.io/buildpacks/builder:v1
+#    - image: dist-apps-profile-api
+#      context: dist/apps/profile/api
+#      buildpacks:
+#        builder: gcr.io/buildpacks/builder:v1
+#    - image: go-mod-image
+#      buildpacks:
+#        builder: gcr.io/buildpacks/builder:v1
+#    - image: package-json-image
+#      buildpacks:
+#        builder: gcr.io/buildpacks/builder:v1
+#    - image: dockerfile-image
+#      docker:
+#        dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - dist/apps/next-app/deployment.yaml
+      - dist/apps/profile/api/deployment.yaml
+      - deployment.yaml
+      - deployment.yaml
+      - deployment.yaml
+      - dist/apps/functions/my-message/deployment.yaml
+portForward:
+  - resourceType: service
+    resourceName: dist-apps-functions-my-message
+    port: 5000
+  - resourceType: service
+    resourceName: dist-apps-next-app
+    port: 5001
+  - resourceType: service
+    resourceName: dist-apps-profile-api
+    port: 5002
+  - resourceType: service
+    resourceName: go-mod-image
+    port: 5003
+  - resourceType: service
+    resourceName: package-json-image
+    port: 5004
+  - resourceType: service
+    resourceName: dockerfile-image
+    port: 5005

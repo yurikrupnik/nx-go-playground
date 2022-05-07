@@ -1,37 +1,46 @@
-# Install dependencies only when needed
-FROM node:16-alpine AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-
-# Rebuild the source code only when needed
-FROM node:16-alpine AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/package*.json ./
-
-COPY nx.json ./
-COPY workspace.json ./
-COPY .eslintignore ./
-COPY .eslintrc.json ./
-COPY babel.config.json ./
-COPY tsconfig.base.json ./
-COPY jest.*.js ./
-
-COPY apps ./apps
-COPY libs ./libs
-
-RUN npx nx run-many --parallel 10 --all --target=build
-
-
-
-FROM node:16-alpine AS runner
-WORKDIR /app
+#FROM ubuntu:latest AS ubuntu
+##RUN curl -O https://storage.googleapis.com/golang/go1.13.5.linux-amd64.tar.gz
+##RUN curl curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+##RUN apk add nodejs-current
+##RUN apk update && apk add git
+## Install dependencies only when needed
+##CMD git checkout
 #
-ENV NODE_ENV production
-COPY --from=builder /app/dist ./dist
+#FROM node:16 AS deps
+##RUN #yum install git
+## Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+##RUN #apk add --no-cache libc6-compat
+#WORKDIR /app
+#COPY package*.json ./
+#RUN yarn
+#
+## Rebuild the source code only when needed
+#FROM node:16-alpine AS builder
+#WORKDIR /app
+#COPY --from=deps /app/node_modules ./node_modules
+#COPY --from=deps /app/package*.json ./
+#
+#COPY . .
+##COPY nx.json ./
+##COPY workspace.json ./
+###COPY .eslintignore ./
+##COPY .eslintrc.json ./
+##COPY babel.config.json ./
+##COPY tsconfig.base.json ./
+##COPY jest.*.js ./
+##
+##COPY apps ./apps
+##COPY libs ./libs
+#
+#RUN npx nx run-many --parallel 10 --all --target=build
+#
+#
+## todo change to builds!
+#FROM node:16-alpine AS runner
+#WORKDIR /app
+##
+#ENV NODE_ENV production
+#COPY --from=builder /app/dist ./dist
 
 
 # Done!
@@ -84,3 +93,37 @@ CMD ["nginx", "-g", "daemon off;"]
 ## ENV NEXT_TELEMETRY_DISABLED 1
 #
 #CMD ["node", "server.js"]
+
+
+## Go sections
+###
+### Build
+###
+#FROM golang:1.16-buster AS go-build
+#
+#WORKDIR /app
+#
+#COPY go.mod ./
+#COPY go.sum ./
+#RUN go mod download
+#
+#ARG DIST_PATH
+#RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
+#COPY ./$DIST_PATH ./
+#
+#RUN #go build -o /go-app
+#
+###
+### Deploy
+###
+#FROM gcr.io/distroless/base-debian10
+#
+#WORKDIR /
+#
+#COPY --from=build /go-app /go-app
+#
+#EXPOSE 8080
+#
+#USER nonroot:nonroot
+#
+#ENTRYPOINT ["/go-app"]

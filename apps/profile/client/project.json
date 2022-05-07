@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "swc",
@@ -19,9 +21,11 @@
           "apps/profile/client/src/favicon.ico",
           "apps/profile/client/src/assets"
         ],
-        "styles": ["apps/profile/client/src/styles.css"],
+        "styles": [
+          "apps/profile/client/src/styles.css"
+        ],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "apps/profile/client/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -55,14 +59,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/profile/client/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/profile/client/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
-    "test": {
+    "tests": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/profile/client"],
+      "outputs": [
+        "coverage/apps/profile/client"
+      ],
       "options": {
         "jestConfig": "apps/profile/client/jest.config.js",
         "passWithNoTests": true
@@ -72,7 +82,15 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker buildx build --target web-builder --build-arg DIST_PATH=dist/apps/profile/client --platform linux/amd64,linux/arm64 . -t yurikrupnik/profile-client --push"
+        "command": "docker buildx build --target web-builder --build-arg DIST_PATH=dist/apps/profile/client --platform linux/amd64,linux/arm64 . -t yurikrupnik/profile-client -t europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client --push"
+      }
+    },
+    "deploy": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx run profile-client-infrastructure:up"
+        ]
       }
     }
   },

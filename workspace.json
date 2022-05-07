@@ -1,7 +1,12 @@
 {
   "version": 2,
   "projects": {
+    "api-helpers": "libs/api/helpers",
+    "api-products": "libs/api/products",
+    "api-users": "libs/api/users",
     "go-myutils": "libs/go/myutils",
+    "mfe-app1": "apps/mfe/app1",
+    "mfe-app1-e2e": "apps/mfe/app1-e2e",
     "nest-modules": "libs/nest/modules",
     "next-app": "apps/next-app",
     "next-app-e2e": "apps/next-app-e2e",
@@ -9,7 +14,7 @@
     "profile-client": "apps/profile/client",
     "profile-client-e2e": "apps/profile/client-e2e",
     "react-components": "libs/react/components",
-    "users-api": "apps/users/api",
+    "test-be-test-app": "apps/test/be-test-app",
     "users-client": "apps/users/client",
     "users-users-client-e2e": "apps/users/users-client-e2e"
   }

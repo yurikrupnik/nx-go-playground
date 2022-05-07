@@ -1,0 +1,60 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: nx-go-playground
+build:
+  artifacts:
+    #  - image: dockerfile-image
+    #    buildpacks:
+    #      builder: gcr.io/buildpacks/builder:v1
+    #    - image: yurikrupnik/be-test-app
+    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app
+      #      docker:
+      #        target: nest-builder
+      #        dockerfile: Dockerfile
+      #        buildArgs:
+      #          DIST_PATH: dist/apps/test/be-test-app
+
+      buildpacks:
+        builder: gcr.io/buildpacks/builder:v1
+        buildpacks:
+          - #    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client
+
+            #      docker:
+            #        dockerfile: Dockerfile
+            #        target:
+            #deploy:
+            #  kustomize:
+            #    paths:
+            #      - k8s/overlays/dev
+            #profiles:
+            #  - name: base
+            #    deploy:
+            #      kustomize:
+            #        paths:
+            #          - apps/profile/client/k8s/base
+            #  - name: base
+            #    deploy:
+            #      kustomize:
+            #        paths:
+            #          - k8s/base
+            #  - name: api
+            #    deploy:
+            #      kustomize:
+            #        paths:
+            #          - k8s/base/api
+            #  - name: nginx
+            #    deploy:
+            #      kustomize:
+            #        paths:
+            #          - k8s/base/nginx
+            #  - name: production
+            #    deploy:
+            #      kustomize:
+            #        paths:
+            #          - k8s/overlays/production
+            #  - name: staging
+            #    deploy:
+            #      kustomize:
+            #        paths:
+          #          - k8s/overlays/staging
