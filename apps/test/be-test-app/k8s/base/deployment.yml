@@ -18,6 +18,8 @@ spec:
           #          image: yurikrupnik/be-test-app:latest
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
+      imagePullSecrets:
+        - name: gcr-secret
   selector:
     matchLabels:
       app: be-test-app
