@@ -1,8 +1,8 @@
 resources:
   - service.yml
   - deployment.yml
-namespace: profile
+#namespace: profile
 #  - servi
 
 #namePrefix: demo
-nameSuffix: client
+#nameSuffix: client

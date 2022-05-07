@@ -1,16 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - argocd/base
-  - ../base/../../apps/test/be-test-app/k8s/base
+  - namespace.yml
+  #  - ../base/../../apps/test/be-test-app
   #  - ../base/../../dist/apps/functions/my-message
   #  - ../base/../../dist/apps/test/be-test-app
   #  - namespace.yaml
-  #  - ../base../
-  #  - api
   #  - nginx
-  #  - https://github.com/prometheus-operator/kube-prometheus/blob/main/kustomization.yaml
-  #  - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  #  - api
+  #  - github.com/prometheus-operator/kube-prometheus
+  #  - github.com/prometheus-operator/kube-prometheus/blob/main/kustomization.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 #  - github.com/argoproj/argo-cd/manifests/base
 #  - github.com/argoproj/argo-cd/manifests/crds
 #  - github.com/argoproj/argo-cd/manifests/base/application-controller
@@ -22,7 +22,13 @@ resources:
 #  - github.com/argoproj/argo-cd/manifests/cluster-rbac
 #  - ingress.yaml
 
-#namespace: argocd
+namespace: argocd
+#helmGlobals:
+#  - name: cert-manager
+#    repo: https://charts.jetstack.io
+#    version: v1.5.3
+#    releaseName: my-cert-manager
+#    namespace: argocd
 #  - secrets.yml
 #  - deployment.yml
 #  - ../base

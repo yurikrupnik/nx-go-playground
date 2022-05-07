@@ -5,4 +5,4 @@ namespace: profile
 #  - servi
 
 #namePrefix: demo
-nameSuffix: client
+nameSuffix: api

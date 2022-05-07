@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: profile-api-service
+  labels:
+    run: profile-api-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      protocol: TCP
+  #      targetPort: 3000
+  selector:
+    app: profile-api
