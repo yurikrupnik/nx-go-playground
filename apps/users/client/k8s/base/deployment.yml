@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-client
+  labels:
+    app: users-client
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: users-client
+      labels:
+        app: users-client
+    spec:
+      containers:
+        - name: users-client
+          image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/users-client:latest
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: users-client

@@ -17,9 +17,14 @@ spec:
           image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app:latest
           #          image: yurikrupnik/be-test-app:latest
           imagePullPolicy: IfNotPresent
+      #          env:
+      #            - name: Port
+      #              value: "8080"
       restartPolicy: Always
-      imagePullSecrets:
-        - name: gcr-secret
+  #      imagePullSecrets:
+  #        - name: gcp-account-creds
+  #      imagePullSecrets:
+  #        - name: docker-registry-key
   selector:
     matchLabels:
       app: be-test-app

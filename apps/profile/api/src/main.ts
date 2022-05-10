@@ -4,7 +4,10 @@ import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
 import { ConfigService } from '@nestjs/config';
-import { BackendDocsModule, HttpExceptionFilter } from '@nx-go-playground/nest/modules'
+import {
+  BackendDocsModule,
+  HttpExceptionFilter,
+} from '@nx-go-playground/nest/modules';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -38,13 +41,17 @@ async function bootstrap() {
 
   const logger = app.get(Logger);
   const docs = app.get(BackendDocsModule);
-  docs.setup(app, globalPrefix, 'nx-go-playground API', 'General use cloud run api');
+  docs.setup(
+    app,
+    globalPrefix,
+    'nx-go-playground API',
+    'General use cloud run api'
+  );
 
   const port = configService.get('PORT') || 3333;
-  console.log('port', port)
-  await app.listen(port, () => {
-    logger.log(`Listening at http://localhost:${port}/${globalPrefix}`);
-  });
+  console.log('port', port);
+  await app.listen(port);
+  logger.log(`Listenings at http://localhost:${port}/${globalPrefix}`);
 }
 
 bootstrap();

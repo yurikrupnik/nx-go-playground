@@ -1,8 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - secrets.yaml
+  #  - composition.yml
   - argocd/base
+  #  - https://github.com/kasunsjc/sealed-secret-with-kubernetes/blob/main/bitnami-sealed-controller/controller.yaml
   - ../base/../../apps/test/be-test-app/k8s/base
+  - ../base/../../apps/profile/client/k8s/base
+  - ../base/../../apps/profile/api/k8s/base
+  - ../base/../../apps/users/client/k8s/base
+  #  - ../base/../../apps/profile/api/k8s/base
   #  - ../base/../../dist/apps/functions/my-message
   #  - ../base/../../dist/apps/test/be-test-app
   #  - namespace.yaml
