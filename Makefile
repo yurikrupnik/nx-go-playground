@@ -31,21 +31,21 @@ minikube-gcp:
 
 minikube-up:
 	minikube start
-	#minikube addons enable gcp-auth
-	#minikube addons enable ingress
+	minikube addons enable gcp-auth
+	minikube addons enable ingress
 
-	kubectl create namespace crossplane-system
-	helm repo add crossplane-stable https://charts.crossplane.io/stable
-	helm repo update
-	helm install crossplane --namespace crossplane-system crossplane-stable/crossplane
-	kubectl create secret generic gcp-creds -n crossplane-system --from-file=creds=./creds.json
+#	kubectl create namespace crossplane-system
+#	helm repo add crossplane-stable https://charts.crossplane.io/stable
+#	helm repo update
+#	helm install crossplane --namespace crossplane-system crossplane-stable/crossplane
+	#kubectl create secret generic gcp-creds -n crossplane-system --from-file=creds=./creds.json
 
 
 
 	# Patches
 # does create a secret but does not work with pulling images - todo check
-#  kubectl create secret docker-registry gcr-access-token --docker-server=europe-west1-docker.pkg.dev --docker-username=oauth3accesstoken --docker-password="$(gcloud auth print-access-token)" --docker-email=krupnik.yuri@gmail.com
-	kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "docker-registry-key"}]}'
+#  kubectl create secret docker-registry docker-registry-key --docker-server=europe-west1-docker.pkg.dev --docker-username=oauth3accesstoken --docker-password="$(gcloud auth print-access-token)" --docker-email=krupnik.yuri@gmail.com
+	#kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "docker-registry-key"}]}'
 	#kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "gcp-creds"}]}'
 	# settings Kubecost
 	#kubectl create namespace kubecost

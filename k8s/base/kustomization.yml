@@ -9,6 +9,7 @@ resources:
   - ../base/../../apps/profile/client/k8s/base
   - ../base/../../apps/profile/api/k8s/base
   - ../base/../../apps/users/client/k8s/base
+  #  - ingress.yaml
   #  - ../base/../../apps/profile/api/k8s/base
   #  - ../base/../../dist/apps/functions/my-message
   #  - ../base/../../dist/apps/test/be-test-app

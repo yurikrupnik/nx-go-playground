@@ -16,7 +16,7 @@ spec:
         - name: profile-api
           image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api:latest
           imagePullPolicy: IfNotPresent
-          command: [ "node", "main.js" ]
+          #          command: [ "node", "main.js" ]
           #            - node
           #            - main.js
           env:
@@ -38,7 +38,7 @@ spec:
             #              valueFrom:
             #                secretKeyRef:
             #                  key: firebase-client-email
-            #                  name: firebase-secret
+          #                  name: firebase-secret
 
 
       restartPolicy: Always
