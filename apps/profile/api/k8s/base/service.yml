@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: be-test-app-service
+  name: profile-api-service
   labels:
-    run: be-test-app-service
+    run: profile-api-service
 spec:
   type: ClusterIP
   ports:
@@ -11,4 +11,4 @@ spec:
       protocol: TCP
       targetPort: 3333
   selector:
-    app: be-test-app
+    app: profile-api

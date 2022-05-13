@@ -27,7 +27,7 @@ function getUsers() {
 const Predictions = () => {
   createEffect(() => {
     getUsers().then((res) => {
-      console.log('res', res);
+      console.log('res!', res);
     });
   });
   return <div>Predictions</div>;

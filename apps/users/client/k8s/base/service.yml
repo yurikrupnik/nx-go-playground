@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: profile-api-service
+  name: users-client-service
   labels:
-    run: profile-api-service
+    run: users-client-service
 spec:
   type: ClusterIP
   ports:
     - port: 80
       protocol: TCP
-  #      targetPort: 3000
+      targetPort: 80
   selector:
-    app: profile-api
+    app: users-client

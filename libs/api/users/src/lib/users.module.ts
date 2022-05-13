@@ -7,12 +7,12 @@ import { UsersController } from './users.controller';
 import { User, UserSchema } from './users.entity';
 import { UsersRepository } from './users.repository';
 
-declare let process : {
+declare let process: {
   env: {
-    NODE_ENV: string
-    MONGO_URI: string
-  }
-}
+    NODE_ENV: string;
+    MONGO_URI: string;
+  };
+};
 
 export const mongoConfig = () => ({
   MONGO_URI: process.env.MONGO_URI || 'mongodb://localhost/mussia12',

@@ -11,15 +11,21 @@ spec:
       name: be-test-app
       labels:
         app: be-test-app
+
     spec:
       containers:
         - name: be-test-app
-          image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app:latest
-          #          image: yurikrupnik/be-test-app:latest
+          #          image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app:latest
+          image: yurikrupnik/be-test-app:latest
           imagePullPolicy: IfNotPresent
+      #          env:
+      #            - name: Port
+      #              value: "8080"
       restartPolicy: Always
-      imagePullSecrets:
-        - name: gcr-secret
+  #      imagePullSecrets:
+  #        - name: gcr-access-token
+  #      imagePullSecrets:
+  #        - name: docker-registry-key
   selector:
     matchLabels:
       app: be-test-app

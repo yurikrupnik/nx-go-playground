@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: profile-client
-          image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client:latest
+          image: yurikrupnik/profile-client:latest
+          #          image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client:latest
           imagePullPolicy: IfNotPresent
       restartPolicy: Always
   selector:
