@@ -15,4 +15,9 @@ export class AppController {
   getItem() {
     return this.appService.getItem();
   }
+
+  @Get('/items')
+  getItems() {
+    return this.appService.getItems();
+  }
 }

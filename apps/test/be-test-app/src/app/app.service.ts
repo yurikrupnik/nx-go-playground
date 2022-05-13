@@ -9,4 +9,8 @@ export class AppService {
   getItem() {
     return { message: 'item here' };
   }
+
+  getItems() {
+    return { message: 'items here' };
+  }
 }
