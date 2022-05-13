@@ -5,10 +5,10 @@ resources:
   #  - composition.yml
   - argocd/base
   #  - github.com/kasunsjc/sealed-secret-with-kubernetes/blob/main/bitnami-sealed-controller/controller.yaml
-  #  - ../base/../../apps/test/be-test-app/k8s/base
-  #  - ../base/../../apps/profile/client/k8s/base
-  #  - ../base/../../apps/profile/api/k8s/base
-  #  - ../base/../../apps/users/client/k8s/base
+  - ../base/../../apps/test/be-test-app/k8s/base
+  - ../base/../../apps/profile/client/k8s/base
+  - ../base/../../apps/profile/api/k8s/base
+  - ../base/../../apps/users/client/k8s/base
   #  - ingress.yaml
   #  - ../base/../../apps/profile/api/k8s/base
   #  - ../base/../../dist/apps/functions/my-message
