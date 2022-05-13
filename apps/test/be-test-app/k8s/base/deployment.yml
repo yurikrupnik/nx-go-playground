@@ -11,6 +11,11 @@ spec:
       name: be-test-app
       labels:
         app: be-test-app
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "be-test-app"
+        dapr.io/app-port: "3333"
+        dapr.io/enable-api-logging: "true"
 
     spec:
       containers:
