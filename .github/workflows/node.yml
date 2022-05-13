@@ -219,5 +219,31 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
-#      - run: docker buildx create --use
-#      - run: yarn docker
+      #      - run: docker buildx create --use
+      - run: yarn docker
+  pack:
+    runs-on: ubuntu-latest
+    #    needs: [ 'setup' ]
+    #    strategy:
+    #      matrix:
+    #        node-version: [ 14.x, 16.x, 17.x ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Get Yarn cache directory
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
+      - name: Use Yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
+      #      - run: docker buildx create --use
+      - run: yarn pack
