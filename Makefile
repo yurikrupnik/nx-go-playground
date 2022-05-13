@@ -47,6 +47,7 @@ minikube-up:
 #  kubectl create secret docker-registry docker-registry-key --docker-server=europe-west1-docker.pkg.dev --docker-username=oauth3accesstoken --docker-password="$(gcloud auth print-access-token)" --docker-email=krupnik.yuri@gmail.com
 	#kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "docker-registry-key"}]}'
 	#kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "gcp-creds"}]}'
+	#kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "gcr-access-token"}]}'
 	# settings Kubecost
 	#kubectl create namespace kubecost
 #  helm repo add kubecost https://kubecost.github.io/cost-analyzer/
