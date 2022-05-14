@@ -6,7 +6,8 @@ define get-secret
 $(shell gcloud secrets versions access latest --secret=MONGO_URI --project=mussia14)
 endef
 
-
+get-argocd-secret-yaml:
+	kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 -d
 # create service account
 csa:
 		SA="${NEW_SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"

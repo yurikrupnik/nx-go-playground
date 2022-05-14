@@ -9,8 +9,8 @@ build:
     useBuildkit: true
   #    push: true
 
-  #  cluster: { }
-  platforms: [ "linux/amd64", "linux/arm64" ]
+  #    cluster: { }
+  #  platforms: [ "linux/amd64", "linux/arm64" ]
   tagPolicy:
     gitCommit: { }
   #  googleCloudBuild: { }
@@ -59,6 +59,26 @@ build:
 #      context: dist/apps/profile/api
 #      buildpacks:
 #        builder: gcr.io/buildpacks/builder:v1
+deploy:
+  kustomize:
+    paths:
+      - k8s/base
+profiles:
+  - name: prod
+    deploy:
+      kustomize:
+        paths:
+          - k8s/overlays/production
+  - name: staging
+    deploy:
+      kustomize:
+        paths:
+          - k8s/overlays/staging
+  - name: dev
+    deploy:
+      kustomize:
+        paths:
+          - k8s/overlays/dev
 #deploy:
 #  kustomize:
 #    paths:

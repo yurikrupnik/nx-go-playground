@@ -1,3 +1,6 @@
+#
+# TODO does not work!!!!
+#
 #apiVersion: networking.k8s.io/v1
 #kind: Ingress
 #metadata:
@@ -24,18 +27,41 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: example-ingress
+  name: devops-toolkit
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: hello-yuri.info
-      http:
+    - http:
         paths:
           - path: /
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
-                name: users-client-service
+                name: be-test-app-service
                 port:
                   number: 80
+      host: acme.com
+    - http:
+        paths:
+          - path: /api
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: be-test-app-service
+                port:
+                  number: 80
+      host: devops-toolkit.192.168.49.2.xip.io
+    - http:
+        paths:
+          - path: /a
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: be-test-app-service
+                port:
+                  number: 80
+      host: yurikrupni.com
