@@ -11,37 +11,37 @@ services:
     ports:
       - "6379:6379"
 
-  profiles-api:
-    image: yurikrupnik/profiles-api
-    build:
-      dockerfile: Dockerfile
-      target: nest-builder
-      args:
-        - DIST_PATH=dist/apps/profile/api
-    container_name: profiles-api
-    environment:
-      - MONGO_URI=mongodb://db/profiles
-      - PORT=3333
-      - REDIS_URI=redis://redis:6379
-      - REDIS_HOST=redis
-    ports:
-      - 3333:3333
-    depends_on:
-      - redis
-  profiles-client:
-    image: yurikrupnik/profiles-client
-    build:
-      dockerfile: Dockerfile
-      target: web-builder
-      args:
-        - DIST_PATH=dist/apps/profile/client
-    container_name: profiles-client
-    environment:
-      - MONGO_URI=mongodb://db/profiles
-      - PORT=3333
-      - REDIS_URI=redis://redis:6379
-      - REDIS_HOST=redis
-    ports:
-      - 8080:80
-    depends_on:
-      - redis
+#  profiles-api:
+#    image: yurikrupnik/profiles-api
+#    build:
+#      dockerfile: Dockerfile
+#      target: nest-builder
+#      args:
+#        - DIST_PATH=dist/apps/profile/api
+#    container_name: profiles-api
+#    environment:
+#      - MONGO_URI=mongodb://db/profiles
+#      - PORT=3333
+#      - REDIS_URI=redis://redis:6379
+#      - REDIS_HOST=redis
+#    ports:
+#      - 3333:3333
+#    depends_on:
+#      - redis
+#  profiles-client:
+#    image: yurikrupnik/profiles-client
+#    build:
+#      dockerfile: Dockerfile
+#      target: web-builder
+#      args:
+#        - DIST_PATH=dist/apps/profile/client
+#    container_name: profiles-client
+#    environment:
+#      - MONGO_URI=mongodb://db/profiles
+#      - PORT=3333
+#      - REDIS_URI=redis://redis:6379
+#      - REDIS_HOST=redis
+#    ports:
+#      - 8080:80
+#    depends_on:
+#      - redis

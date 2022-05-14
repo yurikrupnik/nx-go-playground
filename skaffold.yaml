@@ -29,6 +29,12 @@ build:
         target: nest-builder
         buildArgs:
           DIST_PATH: dist/apps/profile/api
+    - image: yurikrupnik/users-client
+      docker:
+        dockerfile: Dockerfile
+        target: web-builder
+        buildArgs:
+          DIST_PATH: dist/apps/users/client
     #    #    - image: yurikrupnik/profile-client
 #    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client
 #      docker:
@@ -60,6 +66,17 @@ build:
 #      buildpacks:
 #        builder: gcr.io/buildpacks/builder:v1
 deploy:
+  #  helm: # fails
+  #    releases:
+  #      - name: my-redis
+  #        remoteChart: https://charts.bitnami.com/bitnami
+  #        valuesFiles: [ ]
+  #        namespace: redis
+  #        artifactOverrides:
+  #          imageKey: gcr.io/my-project/my-image
+  #  docker:
+  #    useCompose: true
+  #    images: [ nginx ]
   kustomize:
     paths:
       - k8s/base

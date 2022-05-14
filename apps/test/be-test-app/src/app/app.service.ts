@@ -7,7 +7,7 @@ export class AppService {
   }
 
   getItem() {
-    return { message: 'item here' };
+    return { message: 'item 1' };
   }
 
   getItems() {
