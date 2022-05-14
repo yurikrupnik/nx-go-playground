@@ -8,6 +8,7 @@ build:
     useDockerCLI: false
     useBuildkit: true
   #    push: true
+
   #  cluster: { }
   #  platforms: [ "linux/amd64", "linux/arm64" ]
   tagPolicy:
