@@ -82,7 +82,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker build --target web-builder --build-arg DIST_PATH=dist/apps/profile/client . -t yurikrupnik/profile-client -t europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client --push"
+        "command": "docker buildx build --target web-builder --build-arg DIST_PATH=dist/apps/profile/client . -t yurikrupnik/profile-client -t europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client --push"
       }
     },
     "dockerx": {

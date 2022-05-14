@@ -62,7 +62,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker build --target nest-builder --build-arg DIST_PATH=dist/apps/test/be-test-app . -t yurikrupnik/be-test-app -t europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app --push"
+        "command": "docker buildx build --target nest-builder --build-arg DIST_PATH=dist/apps/test/be-test-app . -t yurikrupnik/be-test-app -t europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app --push"
       }
     },
     "packer": {
