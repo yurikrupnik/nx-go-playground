@@ -1,0 +1,103 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: nx-go-playground
+build:
+  #  local: { }
+  local:
+    useDockerCLI: false
+    useBuildkit: false
+  #  cluster: { }
+  #  googleCloudBuild: { }
+  artifacts:
+    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app
+      #    - image: yurikrupnik/be-test-app
+      docker:
+        dockerfile: Dockerfile
+        target: nest-builder
+        #        cliFlags:
+        #          -
+        buildArgs:
+          DIST_PATH: dist/apps/test/be-test-app
+    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api
+      #    - image: yurikrupnik/profile-api
+      docker:
+        dockerfile: Dockerfile
+        target: nest-builder
+        buildArgs:
+          DIST_PATH: dist/apps/profile/api
+    #    #    - image: yurikrupnik/profile-client
+#    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client
+#      docker:
+#        dockerfile: Dockerfile
+#        target: web-builder
+#        buildArgs:
+#          DIST_PATH: dist/apps/profile/client
+#    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api
+#      docker:
+#        dockerfile: Dockerfile
+#        target: nest-builder
+#        buildArgs:
+#          DIST_PATH: dist/apps/profile/api
+#    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client
+#      #      context: dist/apps/test/be-test-app
+#      #      buildpacks:
+#      #        builder: gcr.io/buildpacks/builder:v1
+#      docker:
+#        dockerfile: Dockerfile
+#        target: web-builder
+#        buildArgs:
+#          DIST_PATH: dist/apps/profile/client
+#    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client
+#      context: dist/apps/profile/client
+#      buildpacks:
+#        builder: gcr.io/buildpacks/builder:v1
+#    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api
+#      context: dist/apps/profile/api
+#      buildpacks:
+#        builder: gcr.io/buildpacks/builder:v1
+#deploy:
+#  kustomize:
+#    paths:
+#      - k8s/overlays/base
+#profiles:
+#  - name: k8s
+#    deploy:
+#      kustomize:
+#        paths:
+#          - apps/profile/api/k8s
+#  - name: base
+#    deploy:
+#      kustomize:
+#        paths:
+#          - apps/profile/client/k8s/base
+#  - name: base
+#    deploy:
+#      kustomize:
+#        paths:
+#          - apps/test/be-test-app/k8s/base
+#  - name: base
+#    deploy:
+#      kustomize:
+#        paths:
+#          - k8s/base
+#  - name: api
+#    deploy:
+#      kustomize:
+#        paths:
+#          - k8s/base/api
+#  - name: nginx
+#    deploy:
+#      kustomize:
+#        paths:
+#          - k8s/base/nginx
+#  - name: production
+#    deploy:
+#      kustomize:
+#        paths:
+#          - k8s/overlays/production
+#  - name: staging
+#    deploy:
+#      kustomize:
+#        paths:
+#          - k8s/overlays/staging

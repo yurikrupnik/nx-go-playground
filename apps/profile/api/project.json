@@ -58,7 +58,7 @@
         "passWithNoTests": true
       }
     },
-    "docker-failes-locally": {
+    "docker": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
