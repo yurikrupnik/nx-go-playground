@@ -203,6 +203,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - run: yarn install
       - run: docker buildx -h
+      - run: yarn build
       - run: yarn docker
   pack:
     runs-on: ubuntu-latest
@@ -280,4 +281,4 @@ jobs:
           skaffold version
       #      - run: yarn dockerw
       #      - run: skaffold build
-      - run: yarn docker:affected
+      - run: Skaffold build

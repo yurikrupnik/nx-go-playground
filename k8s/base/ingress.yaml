@@ -1,29 +1,13 @@
-#
-# TODO does not work!!!!
-#
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
+#apiVersion: v1
+#kind: Service
 #metadata:
-#  name: argocd-server
-#  annotations:
-#    ingress.kubernetes.io/ssl-redirect: "false"
-#    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-#    ingress.kubernetes.io/rewrite-target: /
-#    nginx.ingress.kubernetes.io/rewrite-target: /
+#  name: nginx
 #spec:
-#  rules:
-#    - http:
-#        paths:
-#          - path: /
-#            pathType: ImplementationSpecific
-#            backend:
-#              service:
-#                name: nginx-service
-#                port:
-#                  number: 80
-#      host: acme.com
-#---
-#apiVersion: extensions/v1beta1
+#  selector:
+#    app: nginx
+#  ports:
+#    - port: 8080
+#  type: NodePort
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -41,27 +25,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: be-test-app-service
+                name: devops-toolkit
                 port:
                   number: 80
-      host: acme.com
-    - http:
-        paths:
-          - path: /api
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: be-test-app-service
-                port:
-                  number: 80
-      host: devops-toolkit.192.168.49.2.xip.io
-    - http:
-        paths:
-          - path: /a
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: be-test-app-service
-                port:
-                  number: 80
-      host: yurikrupni.com
+      host: dev.devops-toolkit.192.168.49.2.nip.io
