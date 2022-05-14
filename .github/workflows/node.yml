@@ -295,5 +295,7 @@ jobs:
           gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
       #      - run: docker buildx create --use
       - run: yarn build
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
       - run: yarn docker
 #      - run: skaffold -h
