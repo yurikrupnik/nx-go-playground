@@ -10,7 +10,7 @@ build:
   #    push: true
 
   #  cluster: { }
-  #  platforms: [ "linux/amd64", "linux/arm64" ]
+  platforms: [ "linux/amd64", "linux/arm64" ]
   tagPolicy:
     gitCommit: { }
   #  googleCloudBuild: { }
