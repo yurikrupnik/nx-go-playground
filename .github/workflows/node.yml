@@ -283,7 +283,7 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v0'
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
-      #      - name: Install kustomize, kubectl and skaffold
+      #      - name: Install kustomize, kubectl and skaffold -
       #        uses: daisaru11/setup-cd-tools@v1
       #        with:
       #          kubectl: '1.19.2'
