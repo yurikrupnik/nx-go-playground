@@ -6,21 +6,23 @@ build:
   #  local: { }
   local:
     useDockerCLI: false
-    useBuildkit: false
+    useBuildkit: true
+  #    push: true
   #  cluster: { }
+  #  platforms: [ "linux/amd64", "linux/arm64" ]
+  tagPolicy:
+    gitCommit: { }
   #  googleCloudBuild: { }
   artifacts:
-    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app
-      #    - image: yurikrupnik/be-test-app
+    #    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app
+    - image: yurikrupnik/be-test-app
       docker:
         dockerfile: Dockerfile
         target: nest-builder
-        #        cliFlags:
-        #          -
         buildArgs:
           DIST_PATH: dist/apps/test/be-test-app
-    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api
-      #    - image: yurikrupnik/profile-api
+    #    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api
+    - image: yurikrupnik/profile-api
       docker:
         dockerfile: Dockerfile
         target: nest-builder
