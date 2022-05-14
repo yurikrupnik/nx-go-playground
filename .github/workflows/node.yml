@@ -272,7 +272,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
       - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud
         with:
           project_id: nx-go-playground
           service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
