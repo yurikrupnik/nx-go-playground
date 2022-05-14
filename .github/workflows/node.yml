@@ -282,9 +282,9 @@ jobs:
           kubectl: '1.19.2'
           kustomize: '3.8.4'
           skaffold: '1.14.0'
-      - run: |-
-          gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - run: |-
+          gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
       #      - run: docker buildx create --use
       - run: yarn skaffold
