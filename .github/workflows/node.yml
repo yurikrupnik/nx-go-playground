@@ -246,4 +246,4 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
       #      - run: docker buildx create --use
-      - run: yarn pack
+      - run: yarn pack:build
