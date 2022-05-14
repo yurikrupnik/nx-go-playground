@@ -11,6 +11,7 @@
     "test": "yarn nx run-many --target=test --parallel --max-parallel=4 --all",
     "e2e": "yarn nx run-many --target=e2e --parallel --max-parallel=4 --all",
     "ups": "yarn nx run-many --target=up --parallel --max-parallel=4 --all",
+    "docker:affected": "yarn nx affected --target=docker --parallel --max-parallel=3",
     "docker": "yarn nx run-many --target=docker --parallel --max-parallel=4 --all",
     "buildpack": "yarn nx run-many --target=pack --parallel --max-parallel=4 --all",
     "skaffold": "yarn nx run-many --target=skaffold --parallel --max-parallel=4 --all",

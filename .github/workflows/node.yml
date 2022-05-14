@@ -293,5 +293,10 @@ jobs:
       - run: yarn build
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - run: yarn docker
+      - name: Install Skaffold
+        run: |
+          curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
+          sudo install skaffold /usr/local/bin/
+          skaffold version
+#      - run: yarn docker
 #      - run: skaffold -hs

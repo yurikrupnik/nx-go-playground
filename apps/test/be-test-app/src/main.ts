@@ -17,6 +17,7 @@ async function bootstrap() {
   Logger.log(
     `🚀 Application is runs on: http://localhost:${port}/${globalPrefix}`
   );
+  Logger.log(`Da`);
 }
 
 bootstrap();
