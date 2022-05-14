@@ -271,5 +271,20 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: nx-go-playground
+          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      - name: Install kustomize, kubectl and skaffold
+        uses: daisaru11/setup-cd-tools@v1
+        with:
+          kubectl: '1.19.2'
+          kustomize: '3.8.4'
+          skaffold: '1.14.0'
+      - run: |-
+          gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       #      - run: docker buildx create --use
       - run: yarn skaffold
