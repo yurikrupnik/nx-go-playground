@@ -260,12 +260,6 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v0'
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
-      #      - name: Install kustomize, kubectl and skaffold -
-      #        uses: daisaru11/setup-cd-tools@v1
-      #        with:
-      #          kubectl: '1.19.2'
-      #          kustomize: '3.8.4'
-      #          skaffold: '1.14.0'
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - run: |-
