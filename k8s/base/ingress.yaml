@@ -78,8 +78,8 @@ spec:
         paths:
           - path: /api/users
             #            pathType: ImplementationSpecific
-            #            pathType: Prefix
-            pathType: Exact
+            pathType: Prefix
+            #            pathType: Exact
             backend:
               service:
                 name: users-api-service
