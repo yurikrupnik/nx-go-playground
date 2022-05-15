@@ -31,17 +31,17 @@ spec:
     #                port:
     #                  number: 80
     #      host: acmo.io
-    #    - http:
-    #        paths:
-    #          - path: /api/profile
-    #            #            pathType: ImplementationSpecific
-    #            pathType: Prefix
-    #            backend:
-    #              service:
-    #                name: profile-api-service
-    #                port:
-    #                  number: 80
-    #      host: acmo.io
+    - http:
+        paths:
+          - path: /api/profile
+            #            pathType: ImplementationSpecific
+            pathType: Exact
+            backend:
+              service:
+                name: profile-api-service
+                port:
+                  number: 3333
+      host: acmo.io
     - http:
         paths:
           - path: /argoccd
