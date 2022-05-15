@@ -29,4 +29,34 @@ spec:
                 port:
                   number: 80
       host: acmo.io
+    - http:
+        paths:
+          - path: /profile
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: profile-client-service
+                port:
+                  number: 80
+      host: acmo.io
+    - http:
+        paths:
+          - path: /api/profile
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: profile-api-service
+                port:
+                  number: 80
+      host: acmo.io
+    - http:
+        paths:
+          - path: /api/test
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: be-test-app-service
+                port:
+                  number: 3333
+      host: acmo.io
 #      host: dev.devops-toolkit.192.168.49.2.nip.io
