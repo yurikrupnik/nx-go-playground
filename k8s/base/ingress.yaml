@@ -38,7 +38,7 @@ spec:
                 name: profile-client-service
                 port:
                   number: 80
-      host: acmo.io
+      host: profile.acmo.io
     - http:
         paths:
           - path: /api/profile
