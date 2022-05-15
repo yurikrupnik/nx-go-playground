@@ -139,3 +139,63 @@ CMD ["nginx", "-g", "daemon off;"]
 #USER nonroot:nonroot
 #
 #ENTRYPOINT ["/go-app"]
+# Install dependencies only when needed
+FROM node:16 AS deps
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+#RUN #apk add --no-cache libc6-compat
+WORKDIR /app
+COPY .yarn/releases ./.yarn/releases
+COPY package.json ./
+COPY yarn.lock ./
+COPY .yarnrc.yml ./
+RUN yarn
+#COPY . .
+#RUN yarn test
+#RUN yarn lint
+#RUN yarn build
+
+# Rebuild the source code only when needed
+FROM node:16-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/yarn.lock ./
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/package.json ./
+COPY --from=deps /app/.yarn/cache ./.yarn/cache
+#
+COPY nx.json ./
+COPY workspace.json ./
+COPY vite.config.js ./
+COPY tsconfig.base.json ./
+COPY Makefile ./
+COPY jest.*.js ./
+COPY go.mod ./
+COPY go.sum ./
+COPY Dockerfile ./
+COPY Dockerfile ./
+COPY babel.config.json ./
+#COPY .eslintignore ./
+COPY .eslintrc.json ./
+COPY .yarnrc.yml ./
+COPY .yarn/releases ./.yarn/releases
+## docker
+COPY skaffold.yaml ./
+COPY docker-compose.yml ./
+#
+COPY apps ./apps
+COPY libs ./libs
+COPY scripts ./scripts
+#
+#RUN #npx nx run-many --target=build --parallel --max-parallel=4 --prod --all
+RUN #yarn
+RUN #yarn test
+RUN #yarn build
+#RUN npx nx run-many --parallel 10 --all --target=build
+
+
+
+FROM node:16-alpine AS runner
+WORKDIR /app
+#
+ENV NODE_ENV production
+COPY --from=builder /app/apps ./dist
+
