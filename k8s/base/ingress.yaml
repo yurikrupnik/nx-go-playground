@@ -20,17 +20,17 @@ metadata:
 spec:
   rules:
 
-    #    - http:
-    #        paths:
-    #          - path: /profile
-    #            pathType: Prefix
-    #            #            pathType: ImplementationSpecific
-    #            backend:
-    #              service:
-    #                name: profile-client-service
-    #                port:
-    #                  number: 80
-    #      host: acmo.io
+    - http:
+        paths:
+          - path: /profile
+            pathType: Exact
+            #            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: profile-client-service
+                port:
+                  number: 80
+      host: acmo.io
     - http:
         paths:
           - path: /api/profile
@@ -67,7 +67,7 @@ spec:
         paths:
           - path: /
             #            pathType: ImplementationSpecific
-            pathType: Exact
+            pathType: Prefix
             backend:
               service:
                 name: users-client-service
