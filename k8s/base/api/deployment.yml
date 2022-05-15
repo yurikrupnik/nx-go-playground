@@ -15,7 +15,7 @@ spec:
       containers:
         - name: be-test-app
           image:
-            europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app:latest
+            europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/be-test-app:latest
           #          image: yurikrupnik/be-test-app:latest
           imagePullPolicy: IfNotPresent
       restartPolicy: Always

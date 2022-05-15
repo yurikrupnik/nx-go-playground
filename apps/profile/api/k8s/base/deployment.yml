@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: profile-api
-          #          image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api:latest
+          #          image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/profile-api:latest
           image: yurikrupnik/profile-api:latest
           imagePullPolicy: IfNotPresent
           #          command: [ "node", "main.js" ]

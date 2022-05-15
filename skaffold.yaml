@@ -15,14 +15,14 @@ build:
     gitCommit: { }
   #  googleCloudBuild: { }
   artifacts:
-    #    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/be-test-app
+    #    - image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/be-test-app
     - image: yurikrupnik/be-test-app
       docker:
         dockerfile: Dockerfile
         target: nest-builder
         buildArgs:
           DIST_PATH: dist/apps/test/be-test-app
-    #    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api
+    #    - image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/profile-api
     - image: yurikrupnik/profile-api
       docker:
         dockerfile: Dockerfile
@@ -36,13 +36,13 @@ build:
         buildArgs:
           DIST_PATH: dist/apps/users/client
     #    #    - image: yurikrupnik/profile-client
-#    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-client
+#    - image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/profile-client
 #      docker:
 #        dockerfile: Dockerfile
 #        target: web-builder
 #        buildArgs:
 #          DIST_PATH: dist/apps/profile/client
-#    - image: europe-west1-docker.pkg.dev/nx-go-playground/nx-go-playground/profile-api
+#    - image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/profile-api
 #      docker:
 #        dockerfile: Dockerfile
 #        target: nest-builder

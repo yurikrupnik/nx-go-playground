@@ -33,7 +33,7 @@
 #            - containerPort: 80
 #          env:
 #            - name: PROJECT_ID
-#              value: nx-go-playground
+#              value: maya-mussia
 #            - name: FIREBASE_DATABASE_URL
 #              valueFrom:
 #                secretKeyRef:
