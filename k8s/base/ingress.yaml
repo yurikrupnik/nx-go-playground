@@ -22,7 +22,8 @@ spec:
     - http:
         paths:
           - path: /
-            pathType: ImplementationSpecific
+            #            pathType: ImplementationSpecific
+            pathType: Prefix
             backend:
               service:
                 name: users-client-service
@@ -32,7 +33,8 @@ spec:
     - http:
         paths:
           - path: /profile
-            pathType: ImplementationSpecific
+            pathType: Prefix
+            #            pathType: ImplementationSpecific
             backend:
               service:
                 name: profile-client-service
@@ -42,7 +44,8 @@ spec:
     - http:
         paths:
           - path: /api/profile
-            pathType: ImplementationSpecific
+            #            pathType: ImplementationSpecific
+            pathType: Prefix
             backend:
               service:
                 name: profile-api-service
@@ -52,7 +55,8 @@ spec:
     - http:
         paths:
           - path: /api/test
-            pathType: ImplementationSpecific
+            pathType: Prefix
+            #            pathType: ImplementationSpecific
             backend:
               service:
                 name: be-test-app-service
