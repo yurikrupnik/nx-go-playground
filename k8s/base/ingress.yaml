@@ -8,24 +8,25 @@
 #  ports:
 #    - port: 8080
 #  type: NodePort
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
-#metadata:
-#  name: devops-toolkit
-#  annotations:
-#    ingress.kubernetes.io/ssl-redirect: "false"
-#    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-#    ingress.kubernetes.io/rewrite-target: /
-#    nginx.ingress.kubernetes.io/rewrite-target: /
-#spec:
-#  rules:
-#    - http:
-#        paths:
-#          - path: /
-#            pathType: ImplementationSpecific
-#            backend:
-#              service:
-#                name: devops-toolkit
-#                port:
-#                  number: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: users-client-service
+                port:
+                  number: 80
+      host: acmo.io
 #      host: dev.devops-toolkit.192.168.49.2.nip.io
