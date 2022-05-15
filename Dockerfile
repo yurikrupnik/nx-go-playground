@@ -155,47 +155,47 @@ RUN yarn
 #RUN yarn build
 
 # Rebuild the source code only when needed
-FROM node:16-alpine AS builder
-WORKDIR /app
-COPY --from=deps /app/yarn.lock ./
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/package.json ./
-COPY --from=deps /app/.yarn/cache ./.yarn/cache
+#FROM node:16-alpine AS builder
+#WORKDIR /app
+#COPY --from=deps /app/yarn.lock ./
+#COPY --from=deps /app/node_modules ./node_modules
+#COPY --from=deps /app/package.json ./
+#COPY --from=deps /app/.yarn/cache ./.yarn/cache
+##
+#COPY nx.json ./
+#COPY workspace.json ./
+#COPY vite.config.js ./
+#COPY tsconfig.base.json ./
+#COPY Makefile ./
+#COPY jest.*.js ./
+#COPY go.mod ./
+#COPY go.sum ./
+#COPY Dockerfile ./
+#COPY Dockerfile ./
+#COPY babel.config.json ./
+##COPY .eslintignore ./
+#COPY .eslintrc.json ./
+#COPY .yarnrc.yml ./
+#COPY .yarn/releases ./.yarn/releases
+### docker
+#COPY skaffold.yaml ./
+#COPY docker-compose.yml ./
+##
+#COPY apps ./apps
+#COPY libs ./libs
+#COPY scripts ./scripts
+##
+##RUN #npx nx run-many --target=build --parallel --max-parallel=4 --prod --all
+#RUN #yarn
+#RUN #yarn test
+#RUN #yarn build
+##RUN npx nx run-many --parallel 10 --all --target=build
 #
-COPY nx.json ./
-COPY workspace.json ./
-COPY vite.config.js ./
-COPY tsconfig.base.json ./
-COPY Makefile ./
-COPY jest.*.js ./
-COPY go.mod ./
-COPY go.sum ./
-COPY Dockerfile ./
-COPY Dockerfile ./
-COPY babel.config.json ./
-#COPY .eslintignore ./
-COPY .eslintrc.json ./
-COPY .yarnrc.yml ./
-COPY .yarn/releases ./.yarn/releases
-## docker
-COPY skaffold.yaml ./
-COPY docker-compose.yml ./
 #
-COPY apps ./apps
-COPY libs ./libs
-COPY scripts ./scripts
 #
-#RUN #npx nx run-many --target=build --parallel --max-parallel=4 --prod --all
-RUN #yarn
-RUN #yarn test
-RUN #yarn build
-#RUN npx nx run-many --parallel 10 --all --target=build
-
-
-
-FROM node:16-alpine AS runner
-WORKDIR /app
-#
-ENV NODE_ENV production
-COPY --from=builder /app/apps ./dist
+#FROM node:16-alpine AS runner
+#WORKDIR /app
+##
+#ENV NODE_ENV production
+#COPY --from=builder /app/apps ./dist
 
