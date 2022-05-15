@@ -23,7 +23,8 @@ spec:
     - http:
         paths:
           - path: /profile
-            pathType: Exact
+            pathType: Prefix
+            #            pathType: Exact
             #            pathType: ImplementationSpecific
             backend:
               service:
@@ -45,8 +46,8 @@ spec:
     - http:
         paths:
           - path: /argoccd
-            pathType: Exact
-            #            pathType: Prefix
+            #            pathType: Exact
+            pathType: Prefix
             #            pathType: ImplementationSpecific
             backend:
               service:
