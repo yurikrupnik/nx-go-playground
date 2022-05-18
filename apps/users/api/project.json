@@ -34,7 +34,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker buildx build --target go-runner --build-arg DIST_PATH=dist/apps/users/api . -t yurikrupnik/go-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/go-api --push"
+        "command": "docker buildx build --target go-builder --build-arg DIST_PATH=dist/apps/users/api . -t yurikrupnik/go-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/go-api --push"
       }
     }
   },
