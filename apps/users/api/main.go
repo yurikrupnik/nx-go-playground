@@ -95,7 +95,7 @@ func getUsers() {
 func main() {
 	// Force log's color
 	//mongoDb()
-	gin.ForceConsoleColor()
+	//gin.ForceConsoleColor()
 	r := gin.Default()
 	//gin.RouterGroup{}
 	//r.Use(Logger())
