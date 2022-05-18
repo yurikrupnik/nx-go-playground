@@ -11,7 +11,7 @@ resources:
   #  - github.com/prometheus-operator/kube-prometheus
   #  - github.com/prometheus-operator/kube-prometheus/blob/main/kustomization.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-  - apps.yml
+#  - apps.yml
 #  - github.com/argoproj/argo-cd/manifests/base
 #  - github.com/argoproj/argo-cd/manifests/crds
 #  - github.com/argoproj/argo-cd/manifests/base/application-controller

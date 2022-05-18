@@ -76,9 +76,21 @@ WORKDIR /app
 ARG DIST_PATH
 RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
 COPY ./$DIST_PATH /usr/share/nginx/html
-EXPOSE 80
+ENV PORT=80
+EXPOSE ${PORT}
 CMD ["nginx", "-g", "daemon off;"]
 
+# Done
+FROM gcr.io/distroless/base-debian10 AS go-builder
+WORKDIR /
+# not using it yet
+ARG DIST_PATH
+ARG ENTRY_NAME=app
+COPY $DIST_PATH ./app
+USER nonroot:nonroot
+ENTRYPOINT ["/app"]
+ENV PORT=8080
+EXPOSE ${PORT}
 #
 #RUN addgroup -g 1001 -S nodejs
 #RUN adduser -S nextjs -u 1001
