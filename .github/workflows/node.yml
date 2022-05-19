@@ -287,4 +287,4 @@ jobs:
           skaffold version
       #      - run: yarn dockerw
       #      - run: skaffold build
-      - run: skaffold build
+      - run: skaffold build --build-concurrency=0

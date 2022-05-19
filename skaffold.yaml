@@ -35,6 +35,12 @@ build:
         target: web-builder
         buildArgs:
           DIST_PATH: dist/apps/users/client
+    - image: yurikrupnik/users-api
+      docker:
+        dockerfile: Dockerfile
+        target: go-builder
+        buildArgs:
+          DIST_PATH: dist/apps/users/api
     #    #    - image: yurikrupnik/profile-client
 #    - image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/profile-client
 #      docker:
