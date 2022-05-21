@@ -1,11 +1,12 @@
 // import logo from './logo.svg';
 import styles from './App.module.css';
-import axios from 'axios';
 import { Route, Routes, Link } from 'solid-app-router';
-import { createEffect } from 'solid-js';
+import { lazy } from 'solid-js';
 import Button from '@suid/material/Button';
 import { purple } from '@suid/material/colors';
 import { createTheme, ThemeProvider } from '@suid/material/styles';
+
+const Predictions = lazy(() => import('./components/Predictions/Predictions'));
 
 const theme = createTheme({
   palette: {
@@ -20,18 +21,18 @@ const theme = createTheme({
   },
 });
 
-function getUsers() {
-  return axios.get('http://localhost:3333/api/users').then((r) => r.data);
-}
+// function getUsers() {
+//   return axios.get('http://localhost:8080/api/users').then((r) => r.data);
+// }
 
-const Predictions = () => {
-  createEffect(() => {
-    getUsers().then((res) => {
-      console.log('res!', res);
-    });
-  });
-  return <div>Predictions</div>;
-};
+// const Predictions = () => {
+//   createEffect(() => {
+//     getUsers().then((res) => {
+//       console.log('res!', res);
+//     });
+//   });
+//   return <div>Predictions</div>;
+// };
 
 const About = () => {
   return <div>About</div>;

@@ -18,9 +18,9 @@ import solidPlugin from 'vite-plugin-solid';
 // });
 import { defineConfig } from 'vite';
 // import react from '@vitejs/plugin-react';
-import federation from '@originjs/vite-plugin-federation';
+// import federation from '@originjs/vite-plugin-federation';
 import { argv } from 'yargs';
-import path from 'path';
+// import path from 'path';
 
 const { port, open } = argv;
 

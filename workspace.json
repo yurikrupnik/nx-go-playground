@@ -4,6 +4,8 @@
     "api-helpers": "libs/api/helpers",
     "api-products": "libs/api/products",
     "api-users": "libs/api/users",
+    "go-fiber-helpers": "libs/go/fiber-helpers",
+    "go-mongodb": "libs/go/mongodb",
     "go-myutils": "libs/go/myutils",
     "mfe-app1": "apps/mfe/app1",
     "mfe-app1-e2e": "apps/mfe/app1-e2e",

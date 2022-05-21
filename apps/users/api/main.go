@@ -3,188 +3,252 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/gin-gonic/gin"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/csrf"
+	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/fiber/v2/middleware/monitor"
+	"github.com/gofiber/fiber/v2/middleware/recover"
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
-	"io/ioutil"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
 	"net/http"
+	go_fiber_helpers "nx-go-playground/libs/go/fiber-helpers"
+	go_mongodb "nx-go-playground/libs/go/mongodb"
+	"nx-go-playground/libs/go/myutils"
 	"time"
-	//"@nx-go-playground/my_lib"
 )
 
-var mongoUrl string = "mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/"
-
-func mongoDb() {
-	/*
-	   Connect to my cluster
-	*/
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI(mongoUrl))
-
-	//client, err := mongo.NewClient(options.Client().ApplyURI(mongoUrl))
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
-	//ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	//err = client.Connect(ctx)
-	//if err != nil {
-	//	log.Fatal(err)
-	//} else {
-	//	log.Println(">>>>>>>>>>all was good")
-	//}
-	//defer client.Disconnect(ctx)
-
-	/*
-	   List databases
-	*/
-	databases, err := client.ListDatabaseNames(ctx, bson.M{})
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(databases)
-}
-
-func users() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		r := gin.New()
-		r.GET("/ping", func(c *gin.Context) {
-			//fmt.Println(c)
-			//c.Error("my error")
-			//c.AbortWithStatusJSON(400, {"aris": true})
-			c.JSON(200, gin.H{
-				"message": "pong",
-			})
-		})
-	}
-}
-
-func Hello(name string) string {
-	result := "Hello " + name
-	//res := my_lib.MyLib("aris")
-	return result
-}
-
-func getUsers() {
-	//return make([]{})
-}
-
-//func Logger() gin.HandlerFunc {
-//	return func(c *gin.Context) {
-//		t := time.Now()
+//var mongoUrl string = "mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/"
 //
-//		// Set example variable
-//		c.Set("example", "12345")
+////MongoInstance contains the Mongo client and database objects
+//type MongoInstance struct {
+//	Client *mongo.Client
+//	Db     *mongo.Database
+//}
 //
-//		// before request
+//var mg MongoInstance
 //
-//		c.Next()
+//// Connect configures the MongoDB client and initializes the database connection.
+//// Source: https://www.mongodb.com/blog/post/quick-start-golang--mongodb--starting-and-setup
+//func Connect() error {
+//	client, err := mongo.NewClient(options.Client().ApplyURI(mongoUrl))
 //
-//		// after request
-//		latency := time.Since(t)
-//		log.Print("latency", latency)
+//	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+//	defer cancel()
 //
-//		// access the status we are sending
-//		status := c.Writer.Status()
-//		log.Println("<<< My statuses", status)
+//	err = client.Connect(ctx)
+//	db := client.Database("test")
+//
+//	if err != nil {
+//		return err
 //	}
+//
+//	mg = MongoInstance{
+//		Client: client,
+//		Db:     db,
+//	}
+//
+//	return nil
 //}
 
-func main() {
-	// Force log's color
-	//mongoDb()
-	//gin.ForceConsoleColor()
-	r := gin.Default()
-	//gin.RouterGroup{}
-	//r.Use(Logger())
-	//r.Use(users())
-	//r.
-	//r.Handlers
-	//r.GET("/ping", func(c *gin.Context) {
-	//	fmt.Println(c)
-	//	//c.Error("my error")
-	//	//c.AbortWithStatusJSON(400, {"aris": true})
-	//	c.JSON(200, gin.H{
-	//		"message": "pong",
+func UserRoute(app *fiber.App) {
+	//other routes goes here
+	co := app.Group("/api/v1", func(ctx *fiber.Ctx) error {
+		ctx.Set("Version", "v1")
+		return ctx.Next()
+	})
+	co.Get("/nir/:name?", func(c *fiber.Ctx) error {
+		//return c.SendString("All good with nir api")
+		//return c.SendString(c.Params("*"))
+		return c.SendString(c.Params("name"))
+	})
+
+	// Second way
+	//app.Route("/api", func(router fiber.Router) {
+	//	router.Get("/shit", func(ctx *fiber.Ctx) error {
+	//		return ctx.SendString("Hello, from shit!")
 	//	})
 	//})
-	r.GET("/long_async", func(c *gin.Context) {
-		// create copy to be used inside the goroutine
-		cCp := c.Copy()
-		go func() {
-			// simulate a long task with time.Sleep(). 5 seconds
-			time.Sleep(5 * time.Second)
+	////app.Use("/api", func(c *fiber.Ctx) {
+	////	//router.Get("/shit1", func(ctx *fiber.Ctx) error {
+	////	return c.SendString("Hello, World!")
+	////	//})
+	////})
+	//app.Get("/api/users", func(c *fiber.Ctx) error {
+	//	// Pass error to Fiber
+	//	return c.SendString("Hello, World!")
+	//	//return c.SendFile("file-does-not-exist")
+	//	//return c.JSON()
+	//}) //add this
+}
 
-			// note that you are using the copied context "cCp", IMPORTANT
-			log.Println("Done! in path " + cCp.Request.URL.Path)
-		}()
+func FakeGroup(api fiber.Router) {
+	//DoIt()
+	router := api.Group("/users")
+	router.Get("", func(ctx *fiber.Ctx) error {
+		//return ctx.SendString("all good in new api 2")
+		return ctx.SendString("some string")
 	})
+}
 
-	r.GET("/long_sync", func(c *gin.Context) {
-		// simulate a long task with time.Sleep(). 5 seconds
-		time.Sleep(4 * time.Second)
-		fmt.Println("Time is: ", time.Now())
-		// since we are NOT using a goroutine, we do not have to copy the context
-		log.Println("Done! in path " + c.Request.URL.Path)
+// User struct
+type User struct {
+	ID    string `json:"id,omitempty" bson:"_id,omitempty"`
+	Email string `json:"email"`
+	Name  string `json:"name"`
+	Role  string `json:"role"`
+	//Role float64 `json:"salary"`
+	//Age    float64 `json:"age"`
+}
+type UserResponse struct {
+	Status  int        `json:"status"`
+	Message string     `json:"message"`
+	Data    *fiber.Map `json:"data"`
+}
+
+// @securityDefinitions.basic  BasicAuth
+func main() {
+	// Connect to the database
+	if err := go_mongodb.Connect(); err != nil {
+		log.Fatal(err)
+	}
+	app := fiber.New(fiber.Config{
+		ErrorHandler: go_fiber_helpers.DefaultErrorHandler,
 	})
-	r.GET("/cookie", func(c *gin.Context) {
+	//client := mongoDb(mongoUrl)
+	//mongoConfig.ConnectDB()
+	app.Use(recover.New())
+	// Default middleware config
+	app.Use(logger.New())
+	app.Use(csrf.New())
+	app.Use(cors.New())
+	apiGroup := app.Group("/api")
 
-		cookie, err := c.Cookie("gin_cookie")
+	UserRoute(app)
+	FakeGroup(apiGroup)
 
+	app.Get("/", func(c *fiber.Ctx) error {
+		// get all records as a cursor
+		query := bson.D{{}}
+		cursor, err := go_mongodb.Mg.Db.Collection("users").Find(c.Context(), query)
 		if err != nil {
-			cookie = "NotSet"
-			c.SetCookie("gin_cookie", "test", 3600, "/", "localhost", false, true)
+			return c.Status(500).SendString(err.Error())
 		}
 
-		fmt.Printf("Cookie value: %s \n", cookie)
-	})
-	r.GET("/welcome", func(c *gin.Context) {
-		firstname := c.DefaultQuery("firstname", "Guest")
-		lastname := c.Query("lastname") // shortcut for c.Request.URL.Query().Get("lastname")
-		shit := c.Query("shit")         // shortcut for c.Request.URL.Query().Get("lastname")
+		var users []User = make([]User, 0)
 
-		c.String(http.StatusOK, "Hello %s %s %s %s", firstname, lastname, lastname, shit)
-	})
-	r.POST("/users", func(c *gin.Context) {
-		//body := c.Request.Body
-		jsonData, err := c.GetRawData()
-		bodyAsByteArray, _ := ioutil.ReadAll(c.Request.Body)
-		jsonBody := string(bodyAsByteArray)
-		if err != nil {
-			//Handle Error
+		// iterate the cursor and decode each item into an Employee
+		if err := cursor.All(c.Context(), &users); err != nil {
+			return c.Status(500).SendString(err.Error())
+
 		}
-		log.Println("jsonData: ", jsonData)
-		log.Println("jsonBody: ", jsonBody)
-		//err = client.Set("id", jsonData, 0).Err()
-		//ra := body.Read()
-		id := c.Query("id")
-		page := c.DefaultQuery("page", "0")
-		name := c.PostForm("name")
-		message := c.PostForm("message")
-
-		fmt.Printf("id: %s; page: %s; name: %s; message: %s", id, page, name, message)
-		c.String(http.StatusOK, "Hello %s %s %s %s", id, page, name, message)
+		// return employees list in JSON format
+		return c.JSON(users)
 	})
 
-	r.GET("/", func(c *gin.Context) {
-		// If you set TrustedPlatform, ClientIP() will resolve the
-		// corresponding header and return IP directly
-		fmt.Printf("ClientIP: %s\n", c.ClientIP())
-		fmt.Printf("Request url: %s\n", c.Request.URL.Path)
-		fmt.Printf("Body: %s\n", c.Request.Body)
+	app.Get("/:id", func(c *fiber.Ctx) error {
+		// get all records as a cursor
+		query := bson.D{{}}
+		cursor, err := go_mongodb.Mg.Db.Collection("users").Find(c.Context(), query)
+		if err != nil {
+			return c.Status(500).SendString(err.Error())
+		}
+
+		var users []User = make([]User, 0)
+
+		// iterate the cursor and decode each item into an Employee
+		if err := cursor.All(c.Context(), &users); err != nil {
+			return c.Status(500).SendString(err.Error())
+
+		}
+		// return employees list in JSON format
+		return c.JSON(users)
 	})
-	r.POST("/", func(c *gin.Context) {
-		// If you set TrustedPlatform, ClientIP() will resolve the
-		// corresponding header and return IP directly
-		fmt.Printf("ClientIP: %s\n", c.ClientIP())
-		fmt.Printf("Request url: %s\n", c.Request.URL.Path)
-		fmt.Printf("Body: %s\n", c.Request.Body)
-		bodyAsByteArray, _ := ioutil.ReadAll(c.Request.Body)
-		jsonBody := string(bodyAsByteArray)
-		log.Println("jsonBody: ", jsonBody)
-		//log.Println("jsonBody: ", bodyAsByteArray["name"])
+
+	app.Put("/:id", func(c *fiber.Ctx) error {
+		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+		userId := c.Params("id")
+		var user User
+		defer cancel()
+
+		objId, _ := primitive.ObjectIDFromHex(userId)
+
+		//validate the request body
+		if err := c.BodyParser(&user); err != nil {
+			return c.Status(http.StatusBadRequest).JSON(UserResponse{Status: http.StatusBadRequest, Message: "error", Data: &fiber.Map{"data": err.Error()}})
+		}
+
+		//use the validator library to validate required fields
+		//if validationErr := validate.Struct(&user); validationErr != nil {
+		//  return c.Status(http.StatusBadRequest).JSON(UserResponse{Status: http.StatusBadRequest, Message: "error", Data: &fiber.Map{"data": validationErr.Error()}})
+		//}
+
+		update := bson.M{"name": user.Name, "email": user.Email, "role": user.Role}
+
+		result, err := go_mongodb.Mg.Db.Collection("users").UpdateOne(ctx, bson.M{"id": objId}, bson.M{"$set": update})
+
+		if err != nil {
+			return c.Status(http.StatusInternalServerError).JSON(UserResponse{Status: http.StatusInternalServerError, Message: "error", Data: &fiber.Map{"data": err.Error()}})
+		}
+		//get updated user details
+		var updatedUser User
+		if result.MatchedCount == 1 {
+			err := go_mongodb.Mg.Db.Collection("users").FindOne(ctx, bson.M{"id": objId}).Decode(&updatedUser)
+
+			if err != nil {
+				return c.Status(http.StatusInternalServerError).JSON(UserResponse{Status: http.StatusInternalServerError, Message: "error", Data: &fiber.Map{"data": err.Error()}})
+			}
+		}
+
+		return c.Status(http.StatusOK).JSON(UserResponse{Status: http.StatusOK, Message: "success", Data: &fiber.Map{"data": updatedUser}})
+		//result, err := userCollection.DeleteOne(ctx, bson.M{"id": objId})
+		//result, err := go_mongodb.Mg.Db.Collection("users").DeleteOne(ctx, bson.M{"id": objId})
+		//if err != nil {
+		//  return c.Status(http.StatusInternalServerError).JSON(UserResponse{Status: http.StatusInternalServerError, Message: "error", Data: &fiber.Map{"data": err.Error()}})
+		//}
+		//
+		//if result.DeletedCount < 1 {
+		//  return c.Status(http.StatusNotFound).JSON(
+		//    UserResponse{Status: http.StatusNotFound, Message: "error", Data: &fiber.Map{"data": "User with specified ID not found!"}},
+		//  )
+		//}
+		//
+		//return c.Status(http.StatusOK).JSON(
+		//  UserResponse{Status: http.StatusOK, Message: "success", Data: &fiber.Map{"data": "User successfully deleted!"}},
+		//)
 	})
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+
+	app.Delete("/:id", func(c *fiber.Ctx) error {
+		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+		userId := c.Params("id")
+		fmt.Println("user id>>", userId)
+		defer cancel()
+
+		objId, _ := primitive.ObjectIDFromHex(userId)
+
+		//result, err := userCollection.DeleteOne(ctx, bson.M{"id": objId})
+		result, err := go_mongodb.Mg.Db.Collection("users").DeleteOne(ctx, bson.M{"id": objId})
+		if err != nil {
+			return c.Status(http.StatusInternalServerError).JSON(UserResponse{Status: http.StatusInternalServerError, Message: "error", Data: &fiber.Map{"data": err.Error()}})
+		}
+
+		if result.DeletedCount < 1 {
+			return c.Status(http.StatusNotFound).JSON(
+				UserResponse{Status: http.StatusNotFound, Message: "error", Data: &fiber.Map{"data": "User with specified ID not found!"}},
+			)
+		}
+
+		return c.Status(http.StatusOK).JSON(
+			UserResponse{Status: http.StatusOK, Message: "success", Data: &fiber.Map{"data": "User successfully deleted!"}},
+		)
+	})
+
+	app.Get("/dashboard", monitor.New())
+
+	port := go_myutils.Getenv("PORT", "8080")
+	host := go_myutils.Getenv("HOST", "0.0.0.0")
+	result := fmt.Sprintf("%s:%s", host, port)
+	log.Panic(app.Listen(result))
+
 }
