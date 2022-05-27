@@ -236,6 +236,7 @@ jobs:
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - run: |-
           gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
+      - run: docker run --privileged --rm tonistiigi/binfmt --install all
       - run: yarn docker
   pack:
     runs-on: ubuntu-latest
