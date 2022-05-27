@@ -1,0 +1,14 @@
+{
+  "root": "libs/go/models/user",
+  "projectType": "library",
+  "sourceRoot": "libs/go/models/user",
+  "targets": {
+    "test": {
+      "executor": "@nx-go/nx-go:test"
+    },
+    "lint": {
+      "executor": "@nx-go/nx-go:lint"
+    }
+  },
+  "tags": []
+}
