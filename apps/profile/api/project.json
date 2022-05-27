@@ -58,13 +58,6 @@
         "passWithNoTests": true
       }
     },
-    "docker": {
-      "executor": "@nrwl/workspace:run-commands",
-      "outputs": [],
-      "options": {
-        "command": "docker buildx build --target nest-builder --build-arg DIST_PATH=dist/apps/profile/api --platform linux/amd64,linux/arm64 . -t yurikrupnik/profile-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/profile-api --push"
-      }
-    },
     "pack": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
