@@ -39,7 +39,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn -v
       - run: yarn install
-
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
       #      - name: Cache pnpm modules
       #        uses: actions/cache@v2
       #        with:
@@ -93,6 +96,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn -v
       - run: yarn install
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
       #      - run: npm i -g dotenv
       #       yarn cache
       #      - name: Use Yarn cache
