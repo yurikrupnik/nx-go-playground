@@ -14,7 +14,7 @@ import (
 	"nx-go-playground/libs/go/myutils"
 )
 
-type UserResponse struct {
+type UserResponses struct {
 	Status  int        `json:"status"`
 	Message string     `json:"message"`
 	Data    *fiber.Map `json:"data"`
