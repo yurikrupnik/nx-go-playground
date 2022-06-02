@@ -7,6 +7,7 @@ build:
   local:
     useDockerCLI: false
     useBuildkit: true
+    push: false
   #    push: true
 
   #    cluster: { }
@@ -36,6 +37,8 @@ build:
         buildArgs:
           DIST_PATH: dist/apps/users/client
     - image: yurikrupnik/users-api
+      #  todo check locally amd works with docker
+      #      platforms: [ "linux/amd64" ]
       docker:
         dockerfile: Dockerfile
         target: go-builder

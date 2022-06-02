@@ -85,13 +85,6 @@
         "command": "docker buildx build --target web-builder --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/profile/client . -t yurikrupnik/profile-client -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/profile-client --push"
       }
     },
-    "dockerx": {
-      "executor": "@nrwl/workspace:run-commands",
-      "outputs": [],
-      "options": {
-        "command": "docker buildx build --target web-builder --build-arg DIST_PATH=dist/apps/profile/client --platform linux/amd64,linux/arm64 . -t yurikrupnik/profile-client -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/profile-client --push"
-      }
-    },
     "deploy": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
