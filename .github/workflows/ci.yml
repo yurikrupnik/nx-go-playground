@@ -32,6 +32,10 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
       - run: yarn nx-cloud start-ci-run
       - run: yarn nx affected --target=build --parallel --max-parallel=3 --prod
       - run: yarn nx affected --target=test --parallel --max-parallel=3
@@ -62,6 +66,10 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
       - run: yarn nx-cloud start-ci-run
       - run: yarn nx affected --target=build --parallel --max-parallel=3 --prod
       - run: yarn nx affected --target=test --parallel --max-parallel=3
@@ -94,5 +102,9 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
       - name: Start Nx Agent ${{ matrix.agent }}
         run: yarn nx-cloud start-agent

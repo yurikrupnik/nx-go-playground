@@ -20,12 +20,17 @@ export const mongoConfig = () => ({
 
 @Module({
   imports: [
-    MongooseModule.forRoot(mongoConfig().MONGO_URI, {
-      // connectionFactory: (connection) => {
-      //   connection.plugin(paginate);
-      //   return connection;
-      // },
-    }),
+    // MongooseModule.forRoot(
+    //   'mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/',
+    //   {
+    //     // connectionFactory: (connection) => {
+    //     //   connection.plugin(paginate);
+    //     //   return connection;
+    //     // },
+    MongooseModule.forRoot(
+      'mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/',
+      {}
+    ),
     // MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     MongooseModule.forFeatureAsync([
       {

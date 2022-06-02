@@ -76,12 +76,14 @@ WORKDIR /app
 ARG DIST_PATH
 RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
 COPY ./$DIST_PATH /usr/share/nginx/html
+#COPY ./apps/users/client/nginx-config/default.conf /etc/nginx/conf.d/default.conf
 ENV PORT=80
 EXPOSE ${PORT}
 CMD ["nginx", "-g", "daemon off;"]
 
 # Done
 FROM gcr.io/distroless/base-debian10 AS go-builder
+#FROM golang:1.18 AS go-builder
 WORKDIR /
 # not using it yet
 ARG DIST_PATH
