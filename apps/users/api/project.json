@@ -11,14 +11,6 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
-      "outputs": [],
-      "options": {
-        "cwd": "apps/users/api",
-        "command": "npx nodemon --exec go run main.go"
-      }
-    },
-    "serves": {
       "executor": "@nx-go/nx-go:serve",
       "options": {
         "cmd": "gow",

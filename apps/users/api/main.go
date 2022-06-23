@@ -44,6 +44,7 @@ func main() {
 	app.Get("/dashboard", monitor.New())
 
 	port := go_myutils.Getenv("PORT", "8080")
+	log.Println("port", port)
 	host := go_myutils.Getenv("HOST", "0.0.0.0")
 	result := fmt.Sprintf("%s:%s", host, port)
 	log.Panic(app.Listen(result))
