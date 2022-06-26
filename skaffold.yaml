@@ -5,7 +5,7 @@ metadata:
 build:
   #  local: { }
   local:
-    useDockerCLI: false
+    useDockerCLI: true
     useBuildkit: true
     push: false
   #    push: true
