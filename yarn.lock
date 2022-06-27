@@ -1792,9 +1792,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/functions-framework@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@google-cloud/functions-framework@npm:3.1.1"
+"@google-cloud/functions-framework@npm:3.1.2":
+  version: 3.1.2
+  resolution: "@google-cloud/functions-framework@npm:3.1.2"
   dependencies:
     "@types/express": 4.17.13
     body-parser: ^1.18.3
@@ -1807,7 +1807,7 @@ __metadata:
   bin:
     functions-framework: build/src/main.js
     functions-framework-nodejs: build/src/main.js
-  checksum: 9520943915ed298520dac2ae5b7353df72eb0312bb8ae76a2a7277f2f1cc5bb2eadfb0fea3b5628eaa428a2a1ac8708bdb5f10f039295cc985c7997751e1e995
+  checksum: c35a417cf63d16e7df7b89dda41e7aaf4fb6ee4a16ac2bf5d69bd3df77803c93c0024804cb8cece7c4568123ceb2f7e99c7c48c9c450da6a8520fdc635b9ddc6
   languageName: node
   linkType: hard
 
@@ -13461,7 +13461,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nx-go-playground@workspace:."
   dependencies:
-    "@google-cloud/functions-framework": ^3.1.1
+    "@google-cloud/functions-framework": 3.1.2
     "@nestjs/common": ^8.0.0
     "@nestjs/config": ^2.0.0
     "@nestjs/core": ^8.0.0
