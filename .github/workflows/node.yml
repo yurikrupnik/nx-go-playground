@@ -215,6 +215,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+      #          path: dist
       - run: ls
       - name: Get Yarn cache directory
         id: yarn-cache-dir-path
