@@ -8,8 +8,6 @@
     "go-models-user": "libs/go/models/user",
     "go-mongodb": "libs/go/mongodb",
     "go-myutils": "libs/go/myutils",
-    "mfe-app1": "apps/mfe/app1",
-    "mfe-app1-e2e": "apps/mfe/app1-e2e",
     "my-lib": "libs/my-lib",
     "nest-modules": "libs/nest/modules",
     "next-app": "apps/next-app",
