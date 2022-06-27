@@ -233,7 +233,11 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - run: yarn install
       - run: docker buildx -h
-      - run: yarn build # no need for build using artifacts
+      - name: build artifacts
+        run: yarn build # no need for build using artifacts
+        env:
+          GOOS: linux
+          GOARCH: amd64
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
