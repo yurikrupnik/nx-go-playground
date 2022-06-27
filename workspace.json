@@ -15,8 +15,6 @@
     "next-app": "apps/next-app",
     "next-app-e2e": "apps/next-app-e2e",
     "profile-api": "apps/profile/api",
-    "profile-client": "apps/profile/client",
-    "profile-client-e2e": "apps/profile/client-e2e",
     "react-components": "libs/react/components",
     "simple-app": "apps/simple-app",
     "test-be-test-app": "apps/test/be-test-app",
