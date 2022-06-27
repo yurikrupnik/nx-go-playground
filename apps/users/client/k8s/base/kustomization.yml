@@ -1,8 +1,13 @@
 resources:
+  - configMap.yml
   - service.yml
   - deployment.yml
-#namespace: profile
-#  - servi
 
+#namespace: users
+#  - servi
 #namePrefix: demo
 #nameSuffix: client
+#configMapGenerator:
+#  - name: nginx-config
+#    files:
+#      - default.conf

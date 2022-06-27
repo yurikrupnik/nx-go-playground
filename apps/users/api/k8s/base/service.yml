@@ -9,6 +9,6 @@ spec:
   ports:
     - port: 3333
       protocol: TCP
-      targetPort: 3333
+      targetPort: 8080
   selector:
     app: users-api

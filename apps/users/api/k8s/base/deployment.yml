@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: users-api
+  #  namespace: users
   labels:
     app: users-api
 spec:
@@ -13,7 +14,7 @@ spec:
         app: users-api
     spec:
       containers:
-        - name: profile-api
+        - name: users-api
           #          image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api:latest
           image: yurikrupnik/users-api:latest
           imagePullPolicy: IfNotPresent

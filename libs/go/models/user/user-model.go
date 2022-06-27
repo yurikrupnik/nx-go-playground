@@ -137,6 +137,7 @@ func CreateHandlerList() fiber.Handler {
 		//if err != nil {
 		//	fmt.Println("error parsing json")
 		//}
+		fmt.Println("aris")
 		fmt.Println("usr => ", usr)
 		//fmt.Println("das => ", das)
 		//fmt.Println("jsons => ", jsons)
