@@ -40,10 +40,10 @@ func main() {
 	//app.Use(csrf.New()) // todo check it - forbidden post events
 	app.Use(cors.New())
 	apiGroup := app.Group("api")
-	//apiGroup1 := app.Group("b")
-	//apiGroup1.Get("/s", func(ctx *fiber.Ctx) error {
-	//	return ctx.SendString("ds")
-	//})
+	apiGroup1 := app.Group("b")
+	apiGroup1.Get("/s", func(ctx *fiber.Ctx) error {
+		return ctx.SendString("ds")
+	})
 	go_models_user.CreateFakeGroup(apiGroup, "users")
 
 	app.Get("/dashboard", monitor.New())
