@@ -215,11 +215,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-          path: dist
-      - run: ls dist
+      #      - uses: actions/download-artifact@v3
+      #        with:
+      #          name: build-artifacts
+      #          path: dist
+      #      - run: ls dist
       - name: Get Yarn cache directory
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
@@ -233,7 +233,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - run: yarn install
       - run: docker buildx -h
-      #      - run: yarn build no need for build using artifacts
+      - run: yarn build # no need for build using artifacts
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
