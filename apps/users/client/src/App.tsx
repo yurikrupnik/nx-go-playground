@@ -33,7 +33,7 @@ const theme = createTheme({
 //   });
 //   return <div>Predictions</div>;
 // };
-
+console.log('BASE_URL', import.meta.env.BASE_URL);
 const About = () => {
   return <div>About</div>;
 };

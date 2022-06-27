@@ -12,6 +12,7 @@ import (
 	"nx-go-playground/libs/go/models/user"
 	go_mongodb "nx-go-playground/libs/go/mongodb"
 	"nx-go-playground/libs/go/myutils"
+	"os"
 )
 
 type UserResponseM struct {
@@ -39,11 +40,17 @@ func main() {
 	//app.Use(csrf.New()) // todo check it - forbidden post events
 	app.Use(cors.New())
 	apiGroup := app.Group("api")
+	//apiGroup1 := app.Group("b")
+	//apiGroup1.Get("/s", func(ctx *fiber.Ctx) error {
+	//	return ctx.SendString("ds")
+	//})
 	go_models_user.CreateFakeGroup(apiGroup, "users")
 
 	app.Get("/dashboard", monitor.New())
-
+	ds := os.Getenv("MONGO_URI")
+	fmt.Println("ds", ds)
 	port := go_myutils.Getenv("PORT", "8080")
+	log.Println("port", port)
 	host := go_myutils.Getenv("HOST", "0.0.0.0")
 	result := fmt.Sprintf("%s:%s", host, port)
 	log.Panic(app.Listen(result))
