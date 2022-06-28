@@ -82,7 +82,7 @@
     "@nxext/solid": "13.1.1",
     "@originjs/vite-plugin-federation": "1.1.4",
     "@swc/core": "1.2.207",
-    "@swc/jest": "0.2.15",
+    "@swc/jest": "0.2.21",
     "@tailwindcss/aspect-ratio": "0.4.0",
     "@tailwindcss/forms": "0.5.0",
     "@tailwindcss/line-clamp": "0.3.1",
