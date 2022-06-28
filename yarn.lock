@@ -5657,7 +5657,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:10.4.4, autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.4.4":
+"autoprefixer@npm:10.4.7":
+  version: 10.4.7
+  resolution: "autoprefixer@npm:10.4.7"
+  dependencies:
+    browserslist: ^4.20.3
+    caniuse-lite: ^1.0.30001335
+    fraction.js: ^4.2.0
+    normalize-range: ^0.1.2
+    picocolors: ^1.0.0
+    postcss-value-parser: ^4.2.0
+  peerDependencies:
+    postcss: ^8.1.0
+  bin:
+    autoprefixer: bin/autoprefixer
+  checksum: 0e55d0d19806c672ec0c79cc23c27cf77e90edf2600670735266ba33ec5294458f404baaa2f7cd4cfe359cf7a97b3c86f01886bdbdc129a4f2f76ca5977a91af
+  languageName: node
+  linkType: hard
+
+"autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.4.4":
   version: 10.4.4
   resolution: "autoprefixer@npm:10.4.4"
   dependencies:
@@ -6185,6 +6203,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist@npm:^4.20.3":
+  version: 4.21.1
+  resolution: "browserslist@npm:4.21.1"
+  dependencies:
+    caniuse-lite: ^1.0.30001359
+    electron-to-chromium: ^1.4.172
+    node-releases: ^2.0.5
+    update-browserslist-db: ^1.0.4
+  bin:
+    browserslist: cli.js
+  checksum: 4904a9ded0702381adc495e003e7f77970abb7f8c8b8edd9e54f026354b5a96b1bddc26e6d9a7df9f043e468ecd2fcff2c8f40fc489909a042880117c2aca8ff
+  languageName: node
+  linkType: hard
+
 "bs-logger@npm:0.x":
   version: 0.2.6
   resolution: "bs-logger@npm:0.2.6"
@@ -6371,6 +6403,13 @@ __metadata:
   version: 1.0.30001332
   resolution: "caniuse-lite@npm:1.0.30001332"
   checksum: e54182ea42ab3d2ff1440f9a6480292f7ab23c00c188df7ad65586312e4da567e8bedd5cb5fb8f0ff4193dc027a54e17e0b3c0b6db5d5a3fb61c7726ff9c45b3
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001335, caniuse-lite@npm:^1.0.30001359":
+  version: 1.0.30001359
+  resolution: "caniuse-lite@npm:1.0.30001359"
+  checksum: e15dbf4ea445367e998ad525c54620275ae382446d0bc289d14bf014a159074a2207881b46406b011a72676686f8a734457ea8e8d4856dc3f700c3391e89b43e
   languageName: node
   linkType: hard
 
@@ -7828,6 +7867,13 @@ __metadata:
   bin:
     ejs: ./bin/cli.js
   checksum: 81a9cdea0b4ded3b5a4b212b7c17e20bb07468f08394e2d519708d367957a70aef3d282a6d5d38bf6ad313ba25802b9193d4227f29b084d2ee0f28d115141d48
+  languageName: node
+  linkType: hard
+
+"electron-to-chromium@npm:^1.4.172":
+  version: 1.4.172
+  resolution: "electron-to-chromium@npm:1.4.172"
+  checksum: fe1db1c41cea55d700871f051f4662c5d988db9eca5f3f234294b73ccbaa2eabfd8349fa9c68433f5d6160988c604eff6bbf41f0600694ec03e758c0eb010355
   languageName: node
   linkType: hard
 
@@ -13357,6 +13403,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-releases@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "node-releases@npm:2.0.5"
+  checksum: e85d949addd19f8827f32569d2be5751e7812ccf6cc47879d49f79b5234ff4982225e39a3929315f96370823b070640fb04d79fc0ddec8b515a969a03493a42f
+  languageName: node
+  linkType: hard
+
 "nopt@npm:^5.0.0":
   version: 5.0.0
   resolution: "nopt@npm:5.0.0"
@@ -13508,7 +13561,7 @@ __metadata:
     "@types/react-router-dom": 5.3.3
     "@typescript-eslint/eslint-plugin": 5.18.0
     "@typescript-eslint/parser": 5.18.0
-    autoprefixer: 10.4.4
+    autoprefixer: 10.4.7
     axios: 0.26.1
     babel-jest: 27.2.3
     class-transformer: 0.5.1
@@ -17963,6 +18016,20 @@ __metadata:
   peerDependencies:
     "@types/node": "*"
   checksum: b452e3b19a2e3cb172fad7f1c47188b1c12ef383f767262d3e9a9d45d9eb9b7adae981eab5086f362b08ec88fe1252dded892b7d3c4062f7052ed52db11374fc
+  languageName: node
+  linkType: hard
+
+"update-browserslist-db@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "update-browserslist-db@npm:1.0.4"
+  dependencies:
+    escalade: ^3.1.1
+    picocolors: ^1.0.0
+  peerDependencies:
+    browserslist: ">= 4.21.0"
+  bin:
+    browserslist-lint: cli.js
+  checksum: 7c7da28d0fc733b17e01c8fa9385ab909eadce64b8ea644e9603867dc368c2e2a6611af8247e72612b23f9e7cb87ac7c7585a05ff94e1759e9d646cbe9bf49a7
   languageName: node
   linkType: hard
 
