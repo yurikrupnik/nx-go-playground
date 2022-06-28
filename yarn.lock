@@ -3028,23 +3028,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-extend/core@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@nx-extend/core@npm:1.2.0"
-  dependencies:
-    shelljs: ^0.8.4
-  checksum: d8c1f875cbbe110cdc753f3fdbfdc3b42c53ba54dc6492d1a202d8555a2a8c97c7cc586f82fa8b0b58c65f7ba524db9e03334a30de3b63d9fabcccc7458eaec8
+"@nx-extend/core@npm:1.2.2":
+  version: 1.2.2
+  resolution: "@nx-extend/core@npm:1.2.2"
+  peerDependencies:
+    shelljs: ^0.8.5
+  checksum: 8a3da424b1936123c4bbc346efdf657c117b7aa7277e1c001f02eb9b90815d0432796a7673bee0c29acb0a48c1825ba65dcf63f2bbf1dbddc5254b4da50d6950
   languageName: node
   linkType: hard
 
-"@nx-extend/gcp-functions@npm:6.2.0":
-  version: 6.2.0
-  resolution: "@nx-extend/gcp-functions@npm:6.2.0"
+"@nx-extend/gcp-functions@npm:6.2.3":
+  version: 6.2.3
+  resolution: "@nx-extend/gcp-functions@npm:6.2.3"
   dependencies:
-    "@nx-extend/core": 1.2.0
-    rxjs-for-await: ^0.0.2
-    shelljs: ^0.8.4
-  checksum: 3bf07caff1ac5aa35a40f7dd3a7007785272d8564de3747b2a03969ff242c16afe60d3b3a9418d7420179b9765f70e6a24f93a73c91ade4050ae4a05b20b3d9f
+    "@nx-extend/core": 1.2.2
+    shelljs: ^0.8.5
+  checksum: 2cd591f73c3c2f3a716862ab433ec232a9ea1356c0e702fcaaf0a34e187a1b5a7458c3b9277ecd26a44af7fa59c2ef17042bf18e2ae70be7a3150bc7f7cc2139
   languageName: node
   linkType: hard
 
@@ -13485,7 +13484,7 @@ __metadata:
     "@nrwl/react": 13.10.2
     "@nrwl/web": 13.10.2
     "@nrwl/workspace": 13.10.2
-    "@nx-extend/gcp-functions": 6.2.0
+    "@nx-extend/gcp-functions": 6.2.3
     "@nx-go/nx-go": 2.5.0
     "@nx-tools/nx-docker": 2.3.0
     "@nxext/solid": 13.1.1
@@ -15992,7 +15991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs-for-await@npm:0.0.2, rxjs-for-await@npm:^0.0.2":
+"rxjs-for-await@npm:0.0.2":
   version: 0.0.2
   resolution: "rxjs-for-await@npm:0.0.2"
   peerDependencies:
@@ -16381,7 +16380,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shelljs@npm:^0.8.4":
+"shelljs@npm:^0.8.5":
   version: 0.8.5
   resolution: "shelljs@npm:0.8.5"
   dependencies:

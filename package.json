@@ -76,7 +76,7 @@
     "@nrwl/react": "13.10.2",
     "@nrwl/web": "13.10.2",
     "@nrwl/workspace": "13.10.2",
-    "@nx-extend/gcp-functions": "6.2.0",
+    "@nx-extend/gcp-functions": "6.2.3",
     "@nx-go/nx-go": "2.5.0",
     "@nx-tools/nx-docker": "2.3.0",
     "@nxext/solid": "13.1.1",
