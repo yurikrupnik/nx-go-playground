@@ -2234,7 +2234,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^8.0.0":
+"@nestjs/common@npm:8.4.4":
   version: 8.4.4
   resolution: "@nestjs/common@npm:8.4.4"
   dependencies:
@@ -2259,7 +2259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/config@npm:^2.0.0":
+"@nestjs/config@npm:2.0.0":
   version: 2.0.0
   resolution: "@nestjs/config@npm:2.0.0"
   dependencies:
@@ -2275,7 +2275,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:^8.0.0":
+"@nestjs/core@npm:8.4.4":
   version: 8.4.4
   resolution: "@nestjs/core@npm:8.4.4"
   dependencies:
@@ -2321,7 +2321,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/mongoose@npm:^9.0.3":
+"@nestjs/mongoose@npm:9.0.3":
   version: 9.0.3
   resolution: "@nestjs/mongoose@npm:9.0.3"
   peerDependencies:
@@ -2334,7 +2334,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/passport@npm:^8.2.1":
+"@nestjs/passport@npm:8.2.1":
   version: 8.2.1
   resolution: "@nestjs/passport@npm:8.2.1"
   peerDependencies:
@@ -2344,7 +2344,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:^8.0.0":
+"@nestjs/platform-express@npm:8.4.4":
   version: 8.4.4
   resolution: "@nestjs/platform-express@npm:8.4.4"
   dependencies:
@@ -2360,7 +2360,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-socket.io@npm:^8.4.5":
+"@nestjs/platform-socket.io@npm:8.4.5":
   version: 8.4.5
   resolution: "@nestjs/platform-socket.io@npm:8.4.5"
   dependencies:
@@ -2374,7 +2374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/schematics@npm:^8.0.0":
+"@nestjs/schematics@npm:8.0.10, @nestjs/schematics@npm:^8.0.0":
   version: 8.0.10
   resolution: "@nestjs/schematics@npm:8.0.10"
   dependencies:
@@ -2389,7 +2389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/swagger@npm:^5.2.1":
+"@nestjs/swagger@npm:5.2.1":
   version: 5.2.1
   resolution: "@nestjs/swagger@npm:5.2.1"
   dependencies:
@@ -2411,7 +2411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/terminus@npm:^8.0.6":
+"@nestjs/terminus@npm:8.0.6":
   version: 8.0.6
   resolution: "@nestjs/terminus@npm:8.0.6"
   dependencies:
@@ -2425,7 +2425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/testing@npm:^8.0.0":
+"@nestjs/testing@npm:8.4.4":
   version: 8.4.4
   resolution: "@nestjs/testing@npm:8.4.4"
   dependencies:
@@ -2742,7 +2742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/nest@npm:^13.10.2":
+"@nrwl/nest@npm:13.10.2":
   version: 13.10.2
   resolution: "@nrwl/nest@npm:13.10.2"
   dependencies:
@@ -3037,7 +3037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-extend/gcp-functions@npm:^6.2.0":
+"@nx-extend/gcp-functions@npm:6.2.0":
   version: 6.2.0
   resolution: "@nx-extend/gcp-functions@npm:6.2.0"
   dependencies:
@@ -3048,7 +3048,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-go/nx-go@npm:^2.5.0":
+"@nx-go/nx-go@npm:2.5.0":
   version: 2.5.0
   resolution: "@nx-go/nx-go@npm:2.5.0"
   dependencies:
@@ -3100,7 +3100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/nx-docker@npm:^2.3.0":
+"@nx-tools/nx-docker@npm:2.3.0":
   version: 2.3.0
   resolution: "@nx-tools/nx-docker@npm:2.3.0"
   dependencies:
@@ -3120,7 +3120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nxext/solid@npm:^13.1.1":
+"@nxext/solid@npm:13.1.1":
   version: 13.1.1
   resolution: "@nxext/solid@npm:13.1.1"
   dependencies:
@@ -3261,7 +3261,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@originjs/vite-plugin-federation@npm:^1.1.4":
+"@originjs/vite-plugin-federation@npm:1.1.4":
   version: 1.1.4
   resolution: "@originjs/vite-plugin-federation@npm:1.1.4"
   dependencies:
@@ -3594,7 +3594,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@suid/icons-material@npm:^0.1.0":
+"@suid/icons-material@npm:0.1.0":
   version: 0.1.0
   resolution: "@suid/icons-material@npm:0.1.0"
   dependencies:
@@ -3605,7 +3605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@suid/material@npm:0.1.0, @suid/material@npm:^0.1.0":
+"@suid/material@npm:0.1.0":
   version: 0.1.0
   resolution: "@suid/material@npm:0.1.0"
   dependencies:
@@ -3932,7 +3932,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.2.119, @swc/core@npm:^1.2.152, @swc/core@npm:~1.2.143":
+"@swc/core@npm:1.2.168, @swc/core@npm:^1.2.119, @swc/core@npm:^1.2.152":
   version: 1.2.168
   resolution: "@swc/core@npm:1.2.168"
   dependencies:
@@ -3993,7 +3993,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/aspect-ratio@npm:^0.4.0":
+"@tailwindcss/aspect-ratio@npm:0.4.0":
   version: 0.4.0
   resolution: "@tailwindcss/aspect-ratio@npm:0.4.0"
   peerDependencies:
@@ -4002,7 +4002,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/forms@npm:^0.5.0":
+"@tailwindcss/forms@npm:0.5.0":
   version: 0.5.0
   resolution: "@tailwindcss/forms@npm:0.5.0"
   dependencies:
@@ -4013,7 +4013,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/line-clamp@npm:^0.3.1":
+"@tailwindcss/line-clamp@npm:0.3.1":
   version: 0.3.1
   resolution: "@tailwindcss/line-clamp@npm:0.3.1"
   peerDependencies:
@@ -4022,7 +4022,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/typography@npm:^0.5.2":
+"@tailwindcss/typography@npm:0.5.2":
   version: 0.5.2
   resolution: "@tailwindcss/typography@npm:0.5.2"
   dependencies:
@@ -4407,7 +4407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.182":
+"@types/lodash@npm:4.14.182":
   version: 4.14.182
   resolution: "@types/lodash@npm:4.14.182"
   checksum: 7dd137aa9dbabd632408bd37009d984655164fa1ecc3f2b6eb94afe35bf0a5852cbab6183148d883e9c73a958b7fec9a9bcf7c8e45d41195add6a18c34958209
@@ -4435,7 +4435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0, @types/node@npm:^17.0.25":
+"@types/node@npm:*, @types/node@npm:17.0.25, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0":
   version: 17.0.25
   resolution: "@types/node@npm:17.0.25"
   checksum: 6a820bd624e69ea772f52a6cdb326484eff5829443dc981939373929ade109f58c21698b9f0a831bd6ceea799e722a75dc49c5fa7a6bc32a81e1cbdfc6507b64
@@ -4707,7 +4707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:~5.18.0":
+"@typescript-eslint/eslint-plugin@npm:5.18.0":
   version: 5.18.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.18.0"
   dependencies:
@@ -4758,7 +4758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:~5.18.0":
+"@typescript-eslint/parser@npm:5.18.0":
   version: 5.18.0
   resolution: "@typescript-eslint/parser@npm:5.18.0"
   dependencies:
@@ -5657,7 +5657,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.4.4":
+"autoprefixer@npm:10.4.4, autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.4.4":
   version: 10.4.4
   resolution: "autoprefixer@npm:10.4.4"
   dependencies:
@@ -5703,7 +5703,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:0.26.1, axios@npm:^0.26.1":
+"axios@npm:0.26.1":
   version: 0.26.1
   resolution: "axios@npm:0.26.1"
   dependencies:
@@ -6487,14 +6487,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"class-transformer@npm:^0.5.1":
+"class-transformer@npm:0.5.1":
   version: 0.5.1
   resolution: "class-transformer@npm:0.5.1"
   checksum: f191c8b4cc4239990f5efdd790cabdd852c243ed66248e39f6616a349c910c6eed2d9fd1fbf7ee6ea89f69b4f1d0b493b27347fe0cd0ae26b47c3745a805b6d3
   languageName: node
   linkType: hard
 
-"class-validator@npm:^0.13.2":
+"class-validator@npm:0.13.2":
   version: 0.13.2
   resolution: "class-validator@npm:0.13.2"
   dependencies:
@@ -6928,7 +6928,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.0.1, core-js@npm:^3.6.5":
+"core-js@npm:3.22.0, core-js@npm:^3.0.1, core-js@npm:^3.6.5":
   version: 3.22.0
   resolution: "core-js@npm:3.22.0"
   checksum: 88ac28dfb8e7fdcd80d32a69dc634900e3daf3bc873ebefb6f189b598ce96e9b68fe553428627e5c43f27749779389faceb865a2a120cf2d44f05795830b5cd7
@@ -7290,7 +7290,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^9.1.0":
+"cypress@npm:9.5.4":
   version: 9.5.4
   resolution: "cypress@npm:9.5.4"
   dependencies:
@@ -8302,7 +8302,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-loader@npm:^2.18.0":
+"esbuild-loader@npm:2.18.0":
   version: 2.18.0
   resolution: "esbuild-loader@npm:2.18.0"
   dependencies:
@@ -8703,7 +8703,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-cypress@npm:^2.10.3":
+"eslint-plugin-cypress@npm:2.12.1":
   version: 2.12.1
   resolution: "eslint-plugin-cypress@npm:2.12.1"
   dependencies:
@@ -8933,7 +8933,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:~8.12.0":
+"eslint@npm:8.12.0":
   version: 8.12.0
   resolution: "eslint@npm:8.12.0"
   dependencies:
@@ -9281,7 +9281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"faker@npm:^6.6.6":
+"faker@npm:6.6.6":
   version: 6.6.6
   resolution: "faker@npm:6.6.6"
   checksum: bfb0d581ab4d76095f2c6bff213fe1735ce077f0f8df849c144ad26035e105bce1b7a704cc030366338c52e25b636ac097a712426a78c9b8804af78f6f2bffe7
@@ -9503,7 +9503,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"firebase-admin@npm:^10.0.2":
+"firebase-admin@npm:10.0.2":
   version: 10.0.2
   resolution: "firebase-admin@npm:10.0.2"
   dependencies:
@@ -10267,7 +10267,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"helmet@npm:^5.0.2":
+"helmet@npm:5.0.2":
   version: 5.0.2
   resolution: "helmet@npm:5.0.2"
   checksum: 3fe107f3f73fb6a79173e5599f87a016c69f1c7cc46bcde1c60043ea36e64f893434592890d3c0be68f1d35731f2f2f22094a1cfd70438f9d35740861071dcf3
@@ -13030,7 +13030,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:^6.3.0":
+"mongoose@npm:6.3.0":
   version: 6.3.0
   resolution: "mongoose@npm:6.3.0"
   dependencies:
@@ -13172,7 +13172,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nestjs-pino@npm:^2.5.2":
+"nestjs-pino@npm:2.5.2":
   version: 2.5.2
   resolution: "nestjs-pino@npm:2.5.2"
   peerDependencies:
@@ -13182,7 +13182,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nestjs-status-monitor@npm:^1.0.1":
+"nestjs-status-monitor@npm:1.0.1":
   version: 1.0.1
   resolution: "nestjs-status-monitor@npm:1.0.1"
   dependencies:
@@ -13462,110 +13462,110 @@ __metadata:
   resolution: "nx-go-playground@workspace:."
   dependencies:
     "@google-cloud/functions-framework": 3.1.2
-    "@nestjs/common": ^8.0.0
-    "@nestjs/config": ^2.0.0
-    "@nestjs/core": ^8.0.0
-    "@nestjs/mongoose": ^9.0.3
-    "@nestjs/passport": ^8.2.1
-    "@nestjs/platform-express": ^8.0.0
-    "@nestjs/platform-socket.io": ^8.4.5
-    "@nestjs/schematics": ^8.0.0
-    "@nestjs/swagger": ^5.2.1
-    "@nestjs/terminus": ^8.0.6
-    "@nestjs/testing": ^8.0.0
+    "@nestjs/common": 8.4.4
+    "@nestjs/config": 2.0.0
+    "@nestjs/core": 8.4.4
+    "@nestjs/mongoose": 9.0.3
+    "@nestjs/passport": 8.2.1
+    "@nestjs/platform-express": 8.4.4
+    "@nestjs/platform-socket.io": 8.4.5
+    "@nestjs/schematics": 8.0.10
+    "@nestjs/swagger": 5.2.1
+    "@nestjs/terminus": 8.0.6
+    "@nestjs/testing": 8.4.4
     "@nrwl/cli": 13.10.2
     "@nrwl/cypress": 13.10.2
     "@nrwl/eslint-plugin-nx": 13.10.2
     "@nrwl/jest": 13.10.2
     "@nrwl/linter": 13.10.2
-    "@nrwl/nest": ^13.10.2
+    "@nrwl/nest": 13.10.2
     "@nrwl/next": 13.10.2
     "@nrwl/node": 13.10.2
     "@nrwl/nx-cloud": latest
     "@nrwl/react": 13.10.2
     "@nrwl/web": 13.10.2
     "@nrwl/workspace": 13.10.2
-    "@nx-extend/gcp-functions": ^6.2.0
-    "@nx-go/nx-go": ^2.5.0
-    "@nx-tools/nx-docker": ^2.3.0
-    "@nxext/solid": ^13.1.1
-    "@originjs/vite-plugin-federation": ^1.1.4
-    "@suid/icons-material": ^0.1.0
-    "@suid/material": ^0.1.0
-    "@swc/core": ~1.2.143
+    "@nx-extend/gcp-functions": 6.2.0
+    "@nx-go/nx-go": 2.5.0
+    "@nx-tools/nx-docker": 2.3.0
+    "@nxext/solid": 13.1.1
+    "@originjs/vite-plugin-federation": 1.1.4
+    "@suid/icons-material": 0.1.0
+    "@suid/material": 0.1.0
+    "@swc/core": 1.2.168
     "@swc/jest": 0.2.15
-    "@tailwindcss/aspect-ratio": ^0.4.0
-    "@tailwindcss/forms": ^0.5.0
-    "@tailwindcss/line-clamp": ^0.3.1
-    "@tailwindcss/typography": ^0.5.2
+    "@tailwindcss/aspect-ratio": 0.4.0
+    "@tailwindcss/forms": 0.5.0
+    "@tailwindcss/line-clamp": 0.3.1
+    "@tailwindcss/typography": 0.5.2
     "@testing-library/react": 13.0.0
     "@testing-library/react-hooks": 7.0.2
     "@types/jest": 27.0.2
-    "@types/lodash": ^4.14.182
-    "@types/node": ^17.0.25
+    "@types/lodash": 4.14.182
+    "@types/node": 17.0.25
     "@types/react": 18.0.0
     "@types/react-dom": 18.0.0
     "@types/react-router-dom": 5.3.3
-    "@typescript-eslint/eslint-plugin": ~5.18.0
-    "@typescript-eslint/parser": ~5.18.0
-    autoprefixer: ^10.4.4
-    axios: ^0.26.1
+    "@typescript-eslint/eslint-plugin": 5.18.0
+    "@typescript-eslint/parser": 5.18.0
+    autoprefixer: 10.4.4
+    axios: 0.26.1
     babel-jest: 27.2.3
-    class-transformer: ^0.5.1
-    class-validator: ^0.13.2
-    core-js: ^3.6.5
-    cypress: ^9.1.0
-    esbuild-loader: ^2.18.0
-    eslint: ~8.12.0
+    class-transformer: 0.5.1
+    class-validator: 0.13.2
+    core-js: 3.22.0
+    cypress: 9.5.4
+    esbuild-loader: 2.18.0
+    eslint: 8.12.0
     eslint-config-next: 12.1.2
     eslint-config-prettier: 8.1.0
-    eslint-plugin-cypress: ^2.10.3
+    eslint-plugin-cypress: 2.12.1
     eslint-plugin-import: 2.26.0
     eslint-plugin-jsx-a11y: 6.5.1
     eslint-plugin-react: 7.29.4
     eslint-plugin-react-hooks: 4.4.0
     eslint-plugin-solid: 0.4.3
-    express: ^4.17.3
-    faker: ^6.6.6
-    firebase-admin: ^10.0.2
-    helmet: ^5.0.2
+    express: 4.17.3
+    faker: 6.6.6
+    firebase-admin: 10.0.2
+    helmet: 5.0.2
     jest: 27.2.3
-    lodash: ^4.17.21
-    mongoose: ^6.3.0
-    nestjs-pino: ^2.5.2
-    nestjs-status-monitor: ^1.0.1
+    lodash: 4.17.21
+    mongoose: 6.3.0
+    nestjs-pino: 2.5.2
+    nestjs-status-monitor: 1.0.1
     next: 12.1.2
     nx: 13.10.2
-    passport: ^0.5.2
-    passport-firebase-jwt: ^1.2.1
-    postcss: ^8.4.12
-    postcss-preset-env: ^7.4.3
-    prettier: ^2.5.1
+    passport: 0.5.2
+    passport-firebase-jwt: 1.2.1
+    postcss: 8.4.12
+    postcss-preset-env: 7.4.3
+    prettier: 2.6.2
     react: 18.0.0
     react-dom: 18.0.0
-    react-query: ^3.37.0
+    react-query: 3.37.0
     react-router-dom: 5.3.0
     react-test-renderer: 18.0.0
-    reflect-metadata: ^0.1.13
+    reflect-metadata: 0.1.13
     regenerator-runtime: 0.13.7
-    rxjs: ^7.0.0
-    single-spa: ^5.9.3
-    single-spa-react: ^4.6.1
-    solid-app-router: ^0.3.2
-    solid-jest: ^0.2.0
-    solid-js: ^1.3.3
-    solid-testing-library: ^0.2.1
-    swagger-ui-express: ^4.3.0
+    rxjs: 7.5.5
+    single-spa: 5.9.3
+    single-spa-react: 4.6.1
+    solid-app-router: 0.3.2
+    solid-jest: 0.2.0
+    solid-js: 1.3.15
+    solid-testing-library: 0.2.1
+    swagger-ui-express: 4.3.0
     swc-loader: 0.1.15
-    tailwindcss: ^3.0.24
+    tailwindcss: 3.0.24
     ts-jest: 27.0.5
-    tslib: ^2.0.0
-    typescript: ^4.6.3
-    vite: ^2.8.0
+    tslib: 2.3.1
+    typescript: 4.6.3
+    vite: 2.9.5
     vite-plugin-solid: 2.2.3
-    webpack-config-single-spa-react: ^4.0.3
-    webpack-config-single-spa-react-ts: ^4.0.3
-    webpack-merge: ^5.8.0
+    webpack-config-single-spa-react: 4.0.3
+    webpack-config-single-spa-react-ts: 4.0.3
+    webpack-merge: 5.8.0
   languageName: unknown
   linkType: soft
 
@@ -14023,7 +14023,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport-firebase-jwt@npm:^1.2.1":
+"passport-firebase-jwt@npm:1.2.1":
   version: 1.2.1
   resolution: "passport-firebase-jwt@npm:1.2.1"
   dependencies:
@@ -14039,7 +14039,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport@npm:^0.5.2":
+"passport@npm:0.5.2":
   version: 0.5.2
   resolution: "passport@npm:0.5.2"
   dependencies:
@@ -14884,7 +14884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-preset-env@npm:^7.4.3":
+"postcss-preset-env@npm:7.4.3":
   version: 7.4.3
   resolution: "postcss-preset-env@npm:7.4.3"
   dependencies:
@@ -15031,6 +15031,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:8.4.12, postcss@npm:^8.2.13, postcss@npm:^8.2.15, postcss@npm:^8.3.5, postcss@npm:^8.4.12, postcss@npm:^8.4.7":
+  version: 8.4.12
+  resolution: "postcss@npm:8.4.12"
+  dependencies:
+    nanoid: ^3.3.1
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 248e3d0f9bbb8efaafcfda7f91627a29bdc9a19f456896886330beb28c5abea0e14c7901b35191928602e2eccbed496b1e94097d27a0b2a980854cd00c7a835f
+  languageName: node
+  linkType: hard
+
 "postcss@npm:8.4.5":
   version: 8.4.5
   resolution: "postcss@npm:8.4.5"
@@ -15039,17 +15050,6 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.1
   checksum: b78abdd89c10f7b48f4bdcd376104a19d6e9c7495ab521729bdb3df315af6c211360e9f06887ad3bc0ab0f61a04b91d68ea11462997c79cced58b9ccd66fac07
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.2.13, postcss@npm:^8.2.15, postcss@npm:^8.3.5, postcss@npm:^8.4.12, postcss@npm:^8.4.7":
-  version: 8.4.12
-  resolution: "postcss@npm:8.4.12"
-  dependencies:
-    nanoid: ^3.3.1
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: 248e3d0f9bbb8efaafcfda7f91627a29bdc9a19f456896886330beb28c5abea0e14c7901b35191928602e2eccbed496b1e94097d27a0b2a980854cd00c7a835f
   languageName: node
   linkType: hard
 
@@ -15067,7 +15067,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.5.1":
+"prettier@npm:2.6.2":
   version: 2.6.2
   resolution: "prettier@npm:2.6.2"
   bin:
@@ -15407,7 +15407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-query@npm:^3.37.0":
+"react-query@npm:3.37.0":
   version: 3.37.0
   resolution: "react-query@npm:3.37.0"
   dependencies:
@@ -15603,7 +15603,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reflect-metadata@npm:^0.1.13":
+"reflect-metadata@npm:0.1.13":
   version: 0.1.13
   resolution: "reflect-metadata@npm:0.1.13"
   checksum: 798d379a7b6f6455501145419505c97dd11cbc23857a386add2b9ef15963ccf15a48d9d15507afe01d4cd74116df8a213247200bac00320bd7c11ddeaa5e8fb4
@@ -16019,7 +16019,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.0.0, rxjs@npm:^7.5.1":
+"rxjs@npm:7.5.5, rxjs@npm:^7.0.0, rxjs@npm:^7.5.1":
   version: 7.5.5
   resolution: "rxjs@npm:7.5.5"
   dependencies:
@@ -16419,7 +16419,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"single-spa-react@npm:^4.6.1":
+"single-spa-react@npm:4.6.1":
   version: 4.6.1
   resolution: "single-spa-react@npm:4.6.1"
   dependencies:
@@ -16432,7 +16432,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"single-spa@npm:^5.9.3":
+"single-spa@npm:5.9.3":
   version: 5.9.3
   resolution: "single-spa@npm:5.9.3"
   checksum: f262be4624519cd7dc01c04d51d95326fa5e6ddf425d6ceddfcf121d0747765b284c87540f9c7d9cfdd3fda9395c0a41149360832a5afdf5eca09af81bff4a8f
@@ -16588,7 +16588,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solid-app-router@npm:^0.3.2":
+"solid-app-router@npm:0.3.2":
   version: 0.3.2
   resolution: "solid-app-router@npm:0.3.2"
   peerDependencies:
@@ -16597,7 +16597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solid-jest@npm:^0.2.0":
+"solid-jest@npm:0.2.0":
   version: 0.2.0
   resolution: "solid-jest@npm:0.2.0"
   dependencies:
@@ -16610,7 +16610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solid-js@npm:^1.3.0, solid-js@npm:^1.3.3":
+"solid-js@npm:1.3.15, solid-js@npm:^1.3.0":
   version: 1.3.15
   resolution: "solid-js@npm:1.3.15"
   checksum: 912453b3f7df9f05c1c57ceb00888c3e9c5697b24a2ca72b73e52495cabe71522d588050c6e34e5422f4ebe46eb3ea06d1dc0dc192149b50559033b58f3acb39
@@ -16630,7 +16630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solid-testing-library@npm:^0.2.1":
+"solid-testing-library@npm:0.2.1":
   version: 0.2.1
   resolution: "solid-testing-library@npm:0.2.1"
   dependencies:
@@ -17221,7 +17221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swagger-ui-express@npm:^4.3.0":
+"swagger-ui-express@npm:4.3.0":
   version: 4.3.0
   resolution: "swagger-ui-express@npm:4.3.0"
   dependencies:
@@ -17260,7 +17260,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.0.24":
+"tailwindcss@npm:3.0.24":
   version: 3.0.24
   resolution: "tailwindcss@npm:3.0.24"
   dependencies:
@@ -17659,7 +17659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.3.1, tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1":
+"tslib@npm:2.3.1, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.3.1":
   version: 2.3.1
   resolution: "tslib@npm:2.3.1"
   checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
@@ -17800,7 +17800,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.1.2, typescript@npm:^4.5.3, typescript@npm:^4.6.3":
+"typescript@npm:4.6.3, typescript@npm:^4.1.2, typescript@npm:^4.5.3":
   version: 4.6.3
   resolution: "typescript@npm:4.6.3"
   bin:
@@ -17810,7 +17810,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.1.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.6.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.1.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.3#~builtin<compat/typescript>":
   version: 4.6.3
   resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
   bin:
@@ -18143,7 +18143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^2.7.10, vite@npm:^2.8.0":
+"vite@npm:2.9.5, vite@npm:^2.7.10":
   version: 2.9.5
   resolution: "vite@npm:2.9.5"
   dependencies:
@@ -18274,7 +18274,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-config-single-spa-react-ts@npm:^4.0.3":
+"webpack-config-single-spa-react-ts@npm:4.0.3":
   version: 4.0.3
   resolution: "webpack-config-single-spa-react-ts@npm:4.0.3"
   dependencies:
@@ -18284,7 +18284,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-config-single-spa-react@npm:4.0.3, webpack-config-single-spa-react@npm:^4.0.3":
+"webpack-config-single-spa-react@npm:4.0.3":
   version: 4.0.3
   resolution: "webpack-config-single-spa-react@npm:4.0.3"
   dependencies:
@@ -18381,7 +18381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-merge@npm:^5.8.0":
+"webpack-merge@npm:5.8.0, webpack-merge@npm:^5.8.0":
   version: 5.8.0
   resolution: "webpack-merge@npm:5.8.0"
   dependencies:
