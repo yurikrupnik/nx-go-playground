@@ -13736,7 +13736,7 @@ __metadata:
     reflect-metadata: 0.1.13
     regenerator-runtime: 0.13.7
     rxjs: 7.5.5
-    single-spa: 5.9.3
+    single-spa: 5.9.4
     single-spa-react: 4.6.1
     solid-app-router: 0.3.2
     solid-jest: 0.2.0
@@ -16619,10 +16619,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"single-spa@npm:5.9.3":
-  version: 5.9.3
-  resolution: "single-spa@npm:5.9.3"
-  checksum: f262be4624519cd7dc01c04d51d95326fa5e6ddf425d6ceddfcf121d0747765b284c87540f9c7d9cfdd3fda9395c0a41149360832a5afdf5eca09af81bff4a8f
+"single-spa@npm:5.9.4":
+  version: 5.9.4
+  resolution: "single-spa@npm:5.9.4"
+  checksum: 8547b5db3d1c6788f44833b1bf7a89697a72a4ca4b801c3f9ddbf4e2949a40bc1d9e9a24650460c7a16f5a668d4e332fc237acacb84f329031815c19578a5907
   languageName: node
   linkType: hard
 

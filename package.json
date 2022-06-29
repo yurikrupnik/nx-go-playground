@@ -55,7 +55,7 @@
     "reflect-metadata": "0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "7.5.5",
-    "single-spa": "5.9.3",
+    "single-spa": "5.9.4",
     "single-spa-react": "4.6.1",
     "solid-app-router": "0.3.2",
     "swagger-ui-express": "4.3.0",
