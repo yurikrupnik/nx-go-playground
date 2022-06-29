@@ -2018,7 +2018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/create-cache-key-function@npm:^27.3.1":
+"@jest/create-cache-key-function@npm:^27.4.2":
   version: 27.5.1
   resolution: "@jest/create-cache-key-function@npm:27.5.1"
   dependencies:
@@ -4169,14 +4169,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/jest@npm:0.2.15":
-  version: 0.2.15
-  resolution: "@swc/jest@npm:0.2.15"
+"@swc/jest@npm:0.2.21":
+  version: 0.2.21
+  resolution: "@swc/jest@npm:0.2.21"
   dependencies:
-    "@jest/create-cache-key-function": ^27.3.1
+    "@jest/create-cache-key-function": ^27.4.2
   peerDependencies:
     "@swc/core": "*"
-  checksum: 37cc4012df91fbcb583131c0c8b399475c3bb6d85a4328bf5ac4207fa94d7b5a172347d038911d28655de23038ee3c566f9d392382bd8c837706a0dc62262be8
+  checksum: 8208032fc7ccc26a9bcae744b7b7dc2d3ea313af1ea049e95dfe3c8b6abd708c6f8fd0a2cce45315e7e5627044f6c3e08363b89eb958df7d8a8693a2e45edecb
   languageName: node
   linkType: hard
 
@@ -13680,7 +13680,7 @@ __metadata:
     "@suid/icons-material": 0.1.0
     "@suid/material": 0.1.0
     "@swc/core": 1.2.207
-    "@swc/jest": 0.2.15
+    "@swc/jest": 0.2.21
     "@tailwindcss/aspect-ratio": 0.4.0
     "@tailwindcss/forms": 0.5.0
     "@tailwindcss/line-clamp": 0.3.1
