@@ -2458,9 +2458,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/terminus@npm:8.0.6":
-  version: 8.0.6
-  resolution: "@nestjs/terminus@npm:8.0.6"
+"@nestjs/terminus@npm:8.1.0":
+  version: 8.1.0
+  resolution: "@nestjs/terminus@npm:8.1.0"
   dependencies:
     check-disk-space: 3.3.0
   peerDependencies:
@@ -2468,7 +2468,7 @@ __metadata:
     "@nestjs/core": 8.x
     reflect-metadata: 0.1.x
     rxjs: 7.x
-  checksum: 15e759c223789e199481e042856492cf7299202e22f0c846554dba6682180eb8ac7cceb8393a81bf908b3435132738ce37d484373ac04c6740004a6a934bcf8b
+  checksum: f9762701efae6ff0b8561619c5566a10fc638509f467f6cf59a5651f5e762b3853df465c3e7760bbad7932a48c8c08f4f9f3e320f72e21f0e79693c2bc989279
   languageName: node
   linkType: hard
 
@@ -13812,7 +13812,7 @@ __metadata:
     "@nestjs/platform-socket.io": 8.4.7
     "@nestjs/schematics": 8.0.11
     "@nestjs/swagger": 5.2.1
-    "@nestjs/terminus": 8.0.6
+    "@nestjs/terminus": 8.1.0
     "@nestjs/testing": 8.4.7
     "@nrwl/cli": 13.10.6
     "@nrwl/cypress": 13.10.6
