@@ -3649,22 +3649,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@suid/base@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@suid/base@npm:0.1.0"
-  dependencies:
-    "@popperjs/core": ^2.11.5
-    "@suid/css": 0.1.0
-    "@suid/system": 0.1.0
-    "@suid/types": 0.1.0
-    "@suid/utils": 0.1.0
-    clsx: ^1.1.1
-  peerDependencies:
-    solid-js: ^1.3.7
-  checksum: a9c7bc79e496fcb1181d45e77cec385f2e48ac4e6dca75a1842f0fd229c307f30ac07c03d8cc3dbee349d5778fff5201c2b698c683f208d8225545e4e38b27d7
-  languageName: node
-  linkType: hard
-
 "@suid/base@npm:0.2.5":
   version: 0.2.5
   resolution: "@suid/base@npm:0.2.5"
@@ -3678,15 +3662,6 @@ __metadata:
   peerDependencies:
     solid-js: ^1.3.0
   checksum: c05d245ef6dfeed300335267467891547c822d64275ac068d94e5651e063ae9dea06dfd81446c7250015e14bc33331477f78c1ae51a42df3bd6a9ccaa5aab01a
-  languageName: node
-  linkType: hard
-
-"@suid/css@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@suid/css@npm:0.1.0"
-  dependencies:
-    "@suid/utils": 0.1.0
-  checksum: 2c32b91612b9e0e291ad7b9a539a99471e72bc6b4d171564507e86a1b1a8a7c2bf1ec1c16cd8188312c985be7b271f38d981ea0401a5aca427c5017367a61d3b
   languageName: node
   linkType: hard
 
@@ -3707,22 +3682,6 @@ __metadata:
   peerDependencies:
     solid-js: ^1.3.0
   checksum: 8e70cc91fa8ba3289858b59a8d95c536eb616ad0b8f1593e70b57eec6d4d77dd77f547770a8acfe72a4e3a6e86fa2a107413707150ebfa6573f0f940794a16f1
-  languageName: node
-  linkType: hard
-
-"@suid/material@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@suid/material@npm:0.1.0"
-  dependencies:
-    "@suid/base": 0.1.0
-    "@suid/css": 0.1.0
-    "@suid/system": 0.1.0
-    "@suid/types": 0.1.0
-    "@suid/utils": 0.1.0
-    clsx: ^1.1.1
-  peerDependencies:
-    solid-js: ^1.3.7
-  checksum: 12023e79b5ff21851ab70a93ad4cf60395ec07c20e01d4017d5f70a833d89bae86ec6f1f51ebcf8743a7022b19c6185b3033d40f7f13f1d9fd1e7a4e0b724a43
   languageName: node
   linkType: hard
 
@@ -3754,19 +3713,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@suid/system@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@suid/system@npm:0.1.0"
-  dependencies:
-    "@suid/css": 0.1.0
-    "@suid/types": 0.1.0
-    "@suid/utils": 0.1.0
-    clsx: ^1.1.1
-    csstype: ^3.0.11
-  checksum: 18b4be660de9e8c547e0e4f4ec3fd730a9a317508e6397906f836ed04278c55127c0b7223248b82388b275c1fc3cf52de4f11c68fd557d6b7aacdda14471d057
-  languageName: node
-  linkType: hard
-
 "@suid/system@npm:0.4.2":
   version: 0.4.2
   resolution: "@suid/system@npm:0.4.2"
@@ -3783,32 +3729,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@suid/types@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@suid/types@npm:0.1.0"
-  peerDependencies:
-    solid-js: ^1.3.7
-  checksum: 59102ff2eac752e779decff509a2c1b98d160425a032a64ff298d4ad0f5536aebba2c887174101b7745c0826e9a1f5309187ca0ac7ec16067f10dc8af6866a78
-  languageName: node
-  linkType: hard
-
 "@suid/types@npm:0.1.2":
   version: 0.1.2
   resolution: "@suid/types@npm:0.1.2"
   peerDependencies:
     solid-js: ^1.3.0
   checksum: 92bf004e0c2b5e9ced07c33a98af10023d5bdcae257a50ac4a7485eae04091eb37244110c4617c2823101c2775f452bdd95c47df44fb548f6af0295fc41d21c8
-  languageName: node
-  linkType: hard
-
-"@suid/utils@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@suid/utils@npm:0.1.0"
-  dependencies:
-    "@suid/types": 0.1.0
-  peerDependencies:
-    solid-js: ^1.3.7
-  checksum: b97ca1cfd6b830f42380d167235a2e5a80f5614721850d8adc3276d14dee898828fda12c82d96f5c3b9514e98d1500a63f24f27ab9e452fc16ab0af0bfcf03e8
   languageName: node
   linkType: hard
 
@@ -7634,7 +7560,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.0.11, csstype@npm:^3.0.2":
+"csstype@npm:^3.0.2":
   version: 3.0.11
   resolution: "csstype@npm:3.0.11"
   checksum: 95e56abfe9ca219ae065acb4e43f61771a03170eed919127f558dfa168240867aba7629c8d98a201a0dd06d9a5ce82686f0570031c928516c61816adbc7c877f
@@ -13928,7 +13854,7 @@ __metadata:
     "@nxext/solid": 13.1.1
     "@originjs/vite-plugin-federation": 1.1.6
     "@suid/icons-material": 0.2.5
-    "@suid/material": 0.1.0
+    "@suid/material": 0.4.3
     "@swc/core": 1.2.207
     "@swc/jest": 0.2.21
     "@tailwindcss/aspect-ratio": 0.4.0
