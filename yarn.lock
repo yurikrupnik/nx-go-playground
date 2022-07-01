@@ -9250,9 +9250,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-solid@npm:0.4.3":
-  version: 0.4.3
-  resolution: "eslint-plugin-solid@npm:0.4.3"
+"eslint-plugin-solid@npm:0.7.0":
+  version: 0.7.0
+  resolution: "eslint-plugin-solid@npm:0.7.0"
   dependencies:
     "@typescript-eslint/utils": ^5.10.0
     is-html: ^2.0.0
@@ -9262,7 +9262,7 @@ __metadata:
     style-to-object: ^0.3.0
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 29c7396505958958d543ca5e0f32ce23752a8577c4fe033fc96554372c8879ec577e91aae7844945390000bd95f26e1cfbc15170c607eb22262785c342ad30b2
+  checksum: 9ddb07be8c51f522448de7977d753f9cdbced0fb8db82911a1ac38d558286bf1b9db7c335545a6ed34dbc2d1d36358c4b109a8a1504f87fe4b21dcac29795ae0
   languageName: node
   linkType: hard
 
@@ -14006,7 +14006,7 @@ __metadata:
     eslint-plugin-jsx-a11y: 6.6.0
     eslint-plugin-react: 7.29.4
     eslint-plugin-react-hooks: 4.4.0
-    eslint-plugin-solid: 0.4.3
+    eslint-plugin-solid: 0.7.0
     express: 4.17.3
     faker: 6.6.6
     firebase-admin: 10.0.2
