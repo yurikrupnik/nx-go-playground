@@ -13656,13 +13656,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nestjs-pino@npm:2.5.2":
-  version: 2.5.2
-  resolution: "nestjs-pino@npm:2.5.2"
+"nestjs-pino@npm:2.6.0":
+  version: 2.6.0
+  resolution: "nestjs-pino@npm:2.6.0"
   peerDependencies:
     "@nestjs/common": ^8.0.0
-    pino-http: ^6.4.0
-  checksum: a938301d52bbe034faf0f0d685fb2aa694a61c931f19ed35e7714fc051f48a9bace391243750d72bd4d63d578ac0587f339cc9c41cfef779672f26730c8acdb9
+    pino-http: ^6.4.0 || ^7.0.0
+  checksum: b274e607e24d924a95b0b55902b5631725d894b4951fbbe3a7f70fd6f7ae78a4217dd3c1a579b1ccd5e825f42bf19cfbfba3ae559b0ee069b57248fb7127a055
   languageName: node
   linkType: hard
 
@@ -14023,7 +14023,7 @@ __metadata:
     jest: 27.2.3
     lodash: 4.17.21
     mongoose: 6.4.1
-    nestjs-pino: 2.5.2
+    nestjs-pino: 2.6.0
     nestjs-status-monitor: 1.0.1
     next: 12.1.2
     nx: 13.10.6
