@@ -7241,7 +7241,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:3.22.0, core-js@npm:^3.0.1, core-js@npm:^3.6.5":
+"core-js@npm:3.23.3":
+  version: 3.23.3
+  resolution: "core-js@npm:3.23.3"
+  checksum: f517546388e468bd3155afbf06f38f8fe0448134fe086c4ed9c4d371d52db71e80585073b59362948777e01f2377ef7064925e1a3d9312a1c56da47eadfaca9a
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.0.1, core-js@npm:^3.6.5":
   version: 3.22.0
   resolution: "core-js@npm:3.22.0"
   checksum: 88ac28dfb8e7fdcd80d32a69dc634900e3daf3bc873ebefb6f189b598ce96e9b68fe553428627e5c43f27749779389faceb865a2a120cf2d44f05795830b5cd7
@@ -13988,7 +13995,7 @@ __metadata:
     babel-jest: 27.2.3
     class-transformer: 0.5.1
     class-validator: 0.13.2
-    core-js: 3.22.0
+    core-js: 3.23.3
     cypress: 9.7.0
     esbuild-loader: 2.18.0
     eslint: 8.18.0
