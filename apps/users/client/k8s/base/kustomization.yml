@@ -2,12 +2,26 @@ resources:
   - configMap.yml
   - service.yml
   - deployment.yml
+commonLabels:
+  demo: profile-client-label
+  service: users
+#namespace: frontend
 
-#namespace: users
 #  - servi
 #namePrefix: demo
 #nameSuffix: client
-#configMapGenerator:
-#  - name: nginx-config
+#images:
+#  - name: busybox
+#    newName: alpine
+#    newTag: 3.6
+configMapGenerator:
+  - name: nginx-configs
+    files:
+      - nginx.conf
+#  - name: haproxy-config
 #    files:
-#      - default.conf
+#      - haproxy.cfg
+#labels:
+#  - pairs:
+#      kubernetes.io/metadata.shit: aris
+#      kubernetes.io/metadata.name: Aris

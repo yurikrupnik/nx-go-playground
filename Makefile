@@ -1,6 +1,25 @@
 GCP_PROJECT:=$(gcloud config get-value project)
 #NEW_SA_NAME=test-service-account-name
 
+# helm start
+create-repo:
+	helm package charts/main-charts
+
+helm-install:
+	helm install --name main-charts myrepo/main-charts
+
+helm-lint:
+	helm lint charts/main-charts
+
+helm-dry-run:
+	helm install --dry-run --debug charts/main-charts/ --generate-name --values services/my-nginx/values.yaml
+
+helm-install:
+	helm install example1 charts/main-charts --values values/values.yaml
+
+helm-uninstall:
+	helm uninstall example1
+# helm end
 
 define get-secret
 $(shell gcloud secrets versions access latest --secret=MONGO_URI --project=mussia14)

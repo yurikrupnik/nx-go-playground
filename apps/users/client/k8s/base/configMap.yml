@@ -56,3 +56,14 @@ data:
         #    deny  all;
         #}
     }
+
+
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: haproxy-configdsdsds
+data:
+  haproxy.fng: |
+    global
