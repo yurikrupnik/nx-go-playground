@@ -14024,7 +14024,7 @@ __metadata:
     prettier: 2.7.1
     react: 18.0.0
     react-dom: 18.0.0
-    react-query: 3.37.0
+    react-query: 3.39.1
     react-router-dom: 5.3.0
     react-test-renderer: 18.0.0
     reflect-metadata: 0.1.13
@@ -15944,9 +15944,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-query@npm:3.37.0":
-  version: 3.37.0
-  resolution: "react-query@npm:3.37.0"
+"react-query@npm:3.39.1":
+  version: 3.39.1
+  resolution: "react-query@npm:3.39.1"
   dependencies:
     "@babel/runtime": ^7.5.5
     broadcast-channel: ^3.4.1
@@ -15958,7 +15958,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 0dc78540518a4f902a97c7f73596903e58ffd7396c358f79b887c3531ca571b6f57443a1fa28854d1056b593c6db57038e9a151d5ea47c201a1f319378bd10e6
+  checksum: 9273b7c2adf4a78152d3c0b0ac44cfabacc867d5e8e4ad66e6aaccd8a2bd10c5a836c4d3b462e5f083f273998e1c3dd01ed5d126b7508bcfd615eb5aba419b3b
   languageName: node
   linkType: hard
 
