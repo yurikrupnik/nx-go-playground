@@ -13,28 +13,65 @@ load('ext://helm_remote', 'helm_remote')
     #        repo_url='https://charts.bitnami.com/bitnami')
 # helm_resource('vault', 'hashicorp/vault')
 # helm_resource('kube-prometheus-stack', 'devtron/kube-prometheus-stack')
-helm_resource('secrets', 'external-secrets/external-secrets')
-helm_resource('cert-manager', 'bitnami/cert-manager')
 
-helm_resource('prometheus', 'bitnami/kube-prometheus')
 
-helm_remote('grafana',
-            repo_name='grafana',
-            namespace='grafana',
+# Start of cert-manager
+# different way - shows in helm charts
+# but creates namespace and can pass values file
+# helm_resource('cert-manager', 'bitnami/cert-manager')
+helm_remote('cert-manager',
+            repo_name='cert-manager',
+            namespace='cert-manager',
             create_namespace="true",
             repo_url='https://charts.bitnami.com/bitnami')
-# helm_remote('prometheus',
+# End of cert-manager
+
+# helm_resource('secrets', 'external-secrets/external-secrets')
+helm_remote('external-secrets',
+           repo_name='external-secrets',
+           namespace='external-secrets',
+           create_namespace="true",
+           repo_url='https://charts.external-secrets.io')
+
+# Prometheus start
+helm_resource('prometheus', 'bitnami/kube-prometheus')
+#helm_remote('prometheus',
 #            repo_name='kube-prometheus',
-#            namespace='prometheus',
+#            namespace='kube-prometheus',
 #            create_namespace="true",
 #            repo_url='https://charts.bitnami.com/bitnami')
+k8s_resource("prometheus", port_forwards="9090:9090")
+# Grafana end
+
+# Grafana start
+#helm_remote('grafana',
+#            repo_name='grafana',
+#            namespace='grafana',
+#            create_namespace="true",
+#            repo_url='https://charts.bitnami.com/bitnami')
+# k8s_resource("grafana", port_forwards="3000:3000")
+# Grafana end
+
+# Redis start
+# no namespace and values
+# helm_resource('redis', 'bitnami/redis')
+#helm_remote('redis',
+#            repo_name='redis',
+#            namespace='redis',
+#            create_namespace="true",
+#            repo_url='https://charts.bitnami.com/bitnami')
+# k8s_resource("redis", port_forwards="3000:3000")
+# Redis end
+#helm_remote('kube-prometheus',
+ #           repo_name='kube-prometheus',
+  #          namespace='kube-prometheus',
+   #         create_namespace="true",
+    #        repo_url='https://charts.bitnami.com/bitnami')
 
 # helm_resource('grafana', 'bitnami/grafana')
-k8s_resource("prometheus", port_forwards="9090:9090")
-k8s_resource("grafana", port_forwards="3000:3000")
+# k8s_resource("kube-prometheus", port_forwards="9090:9090")
 
 # helm_resource('mongo', 'bitnami/mongodb-sharded')
-helm_resource('redis', 'bitnami/redis')
 
 # k8s_yaml(helm('./charts/main-chart', name="main-chart"))
 

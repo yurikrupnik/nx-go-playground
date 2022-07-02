@@ -1,14 +1,21 @@
+#vars:
+#  - name: MYSQL_SERVICE
+#    objref:
+#      kind: Service
+#      name: mysql
+#      apiVersion: v1
 resources:
-  #  - configMap.yml
+  - configMap.yml
   - service.yml
   - deployment.yml
 commonLabels:
   demo: profile-client-label
   service: users
+  my-type: client
 #namespace: frontend
 
 #  - servi
-#namePrefix: demo
+#namePrefix: demo-prefix
 #nameSuffix: client
 #images:
 #  - name: busybox
@@ -21,10 +28,14 @@ configMapGenerator:
 commonAnnotations:
   "consul.hashicorp.com/connect-inject": "true"
   "consul.hashicorp.com/connect-service": "users-client-test"
+  "consul.hashicorp.com/connect-service-protocol": "http"
+  "consul.hashicorp.com/service-meta-version": "v.1.1"
+  "prometheus.io/scrape": "true"
+  "prometheus.io/port": "9102"
 #  - name: haproxy-config
 #    files:
 #      - haproxy.cfg
-#labels:
-#  - pairs:
-#      kubernetes.io/metadata.shit: aris
-#      kubernetes.io/metadata.name: Aris
+labels:
+  - pairs:
+      kubernetes.io/metadata.shit: shit-aris
+      kubernetes.io/metadata.app: Aris

@@ -20,13 +20,6 @@ spec:
       name: users-client
       labels:
         app: users-client
-      annotations:
-        "consul.hashicorp.com/connect-inject": "true"
-        #        "consul.hashicorp.com/connect-service": "users-client"
-        "consul.hashicorp.com/connect-service-protocol": "http"
-        "consul.hashicorp.com/service-meta-version": "v.1.1"
-        "prometheus.io/scrape": "true"
-        "prometheus.io/port": "9102"
     spec:
       containers:
         - name: users-client
