@@ -6,25 +6,31 @@ helm_repo('devtron', 'https://helm.devtron.ai')
 # helm_repo('external-secrets', 'https://charts.external-secrets.io')
 # helm_repo('bitnami', 'https://charts.bitnami.com/bitnami')
 load('ext://helm_remote', 'helm_remote')
-helm_remote('mysql',
-            repo_name='bitnami',
-            namespace='mysql',
-            create_namespace="true",
-            repo_url='https://charts.bitnami.com/bitnami')
+#helm_remote('mysql',
+ #           repo_name='bitnami',
+  #          namespace='mysql',
+   #         create_namespace="true",
+    #        repo_url='https://charts.bitnami.com/bitnami')
 # helm_resource('vault', 'hashicorp/vault')
 # helm_resource('kube-prometheus-stack', 'devtron/kube-prometheus-stack')
 helm_resource('secrets', 'external-secrets/external-secrets')
 helm_resource('cert-manager', 'bitnami/cert-manager')
 
-helm_resource('kube-prometheus', 'bitnami/kube-prometheus')
-k8s_resource("kube-prometheus", port_forwards="9090:9090")
+helm_resource('prometheus', 'bitnami/kube-prometheus')
 
 helm_remote('grafana',
             repo_name='grafana',
             namespace='grafana',
             create_namespace="true",
             repo_url='https://charts.bitnami.com/bitnami')
+# helm_remote('prometheus',
+#            repo_name='kube-prometheus',
+#            namespace='prometheus',
+#            create_namespace="true",
+#            repo_url='https://charts.bitnami.com/bitnami')
+
 # helm_resource('grafana', 'bitnami/grafana')
+k8s_resource("prometheus", port_forwards="9090:9090")
 k8s_resource("grafana", port_forwards="3000:3000")
 
 # helm_resource('mongo', 'bitnami/mongodb-sharded')
