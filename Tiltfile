@@ -2,7 +2,7 @@ load('ext://helm_resource', 'helm_resource', 'helm_repo')
 
 helm_repo('bitnami', 'https://charts.bitnami.com/bitnami')
 helm_repo('devtron', 'https://helm.devtron.ai')
-# helm_repo('hashicorp', 'https://helm.releases.hashicorp.com')
+helm_repo('hashicorp', 'https://helm.releases.hashicorp.com')
 # helm_repo('external-secrets', 'https://charts.external-secrets.io')
 # helm_repo('bitnami', 'https://charts.bitnami.com/bitnami')
 load('ext://helm_remote', 'helm_remote')
@@ -26,15 +26,18 @@ helm_remote('cert-manager',
             repo_url='https://charts.bitnami.com/bitnami')
 # End of cert-manager
 
+# Start of external-secrets
 # helm_resource('secrets', 'external-secrets/external-secrets')
 helm_remote('external-secrets',
            repo_name='external-secrets',
            namespace='external-secrets',
            create_namespace="true",
            repo_url='https://charts.external-secrets.io')
+# End of external-secrets
 
 # Prometheus start
 helm_resource('prometheus', 'bitnami/kube-prometheus')
+# todo does not work
 #helm_remote('prometheus',
 #            repo_name='kube-prometheus',
 #            namespace='kube-prometheus',

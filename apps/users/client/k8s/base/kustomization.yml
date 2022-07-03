@@ -25,6 +25,9 @@ configMapGenerator:
   - name: nginx-configs
     files:
       - nginx.conf
+#  - name: haproxy-config
+#    files:
+#      - haproxy.cfg
 commonAnnotations:
   "consul.hashicorp.com/connect-inject": "true"
   "consul.hashicorp.com/connect-service": "users-client-test"
@@ -32,9 +35,7 @@ commonAnnotations:
   "consul.hashicorp.com/service-meta-version": "v.1.1"
   "prometheus.io/scrape": "true"
   "prometheus.io/port": "9102"
-#  - name: haproxy-config
-#    files:
-#      - haproxy.cfg
+
 labels:
   - pairs:
       kubernetes.io/metadata.shit: shit-aris

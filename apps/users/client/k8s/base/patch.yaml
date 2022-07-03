@@ -11,11 +11,12 @@ spec:
     #      labels:
     #        app: users-client
     spec:
-      #      initContainers:
-      #        - name: init-command
-      #          image: debian
-      #          command:
-      #            - "curl $(MYSQL_SERVICE)"
+      initContainers:
+        - name: init-command
+          image: debian
+          command:
+            - "curl $(MYSQL_SERVICE)"
+
       containers:
         - name: users-client
 #          image: gcr.io/google-containers/busybox
