@@ -3441,12 +3441,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-go/nx-go@npm:2.5.0":
-  version: 2.5.0
-  resolution: "@nx-go/nx-go@npm:2.5.0"
+"@nx-go/nx-go@npm:2.6.0":
+  version: 2.6.0
+  resolution: "@nx-go/nx-go@npm:2.6.0"
   dependencies:
     fs-extra: ^9.1.0
-  checksum: 808233440702843293b174017435061cf5d27eef9901bd652f06137c8564e3209e5c2dad50ff43c0de3e369a4034b1472f84dda8016a343ee3e7758ab9c13038
+  checksum: 1172de3a95afb3e9b45a780c3230753ff5e33b8b4d9c12ddf8e1215aac159d7bf661c2b839b72bd75992857dbee25fe18e350dfbdb0bcf52bf434a4ac146e35f
   languageName: node
   linkType: hard
 
@@ -14266,7 +14266,7 @@ __metadata:
     "@nrwl/web": 13.10.6
     "@nrwl/workspace": 13.10.6
     "@nx-extend/gcp-functions": 6.2.3
-    "@nx-go/nx-go": 2.5.0
+    "@nx-go/nx-go": 2.6.0
     "@nx-tools/nx-docker": 2.3.0
     "@nxext/solid": 13.1.1
     "@originjs/vite-plugin-federation": 1.1.6
