@@ -1,8 +1,8 @@
 load('ext://helm_resource', 'helm_resource', 'helm_repo')
 
-helm_repo('bitnami', 'https://charts.bitnami.com/bitnami')
-helm_repo('devtron', 'https://helm.devtron.ai')
-helm_repo('hashicorp', 'https://helm.releases.hashicorp.com')
+helm_repo('bitnami', 'https://charts.bitnami.com/bitnami', labels=["helm"])
+helm_repo('devtron', 'https://helm.devtron.ai', labels=["helm"])
+helm_repo('hashicorp', 'https://helm.releases.hashicorp.com', labels=["helm"])
 # helm_repo('external-secrets', 'https://charts.external-secrets.io')
 # helm_repo('bitnami', 'https://charts.bitnami.com/bitnami')
 load('ext://helm_remote', 'helm_remote')
@@ -76,16 +76,18 @@ load('ext://helm_remote', 'helm_remote')
 
 # helm_resource('mongo', 'bitnami/mongodb-sharded')
 
-k8s_yaml(helm('./charts/main-chart', name="main-chart",namespace="aris"))
+# k8s_yaml(helm('./charts/main-chart', name="main-chart",namespace="aris"))
 
 
 #k8s_yaml(local('helm template --set key1=val1,key2=val2 ./charts/main-chart'))
 #watch_file('/charts/main-chart')
 
-local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'])
+local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'], labels=['npm'])
+local_resource('helm', cmd='helm -h', deps=["."], labels=['manifests'])
 
-include('./apps/users/api/Tiltfile')
-include('./apps/users/client/Tiltfile')
+include('./apps/users/api/Tiltfile') # labels=["users", "api"]
+#include('./apps/users/api/Tiltfile', labels: ["aris"])
+include('./apps/users/client/Tiltfile') # labels=["users", "client"]
 # include('./apps/infra/my-kube-controller/Tiltfile')
 
 #local_resource(

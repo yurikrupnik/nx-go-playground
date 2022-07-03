@@ -7,6 +7,7 @@ local_resource(
   resource_deps=["yarn"],
   ignore=["k8s"],
   env={"GOOS":"linux","GOARCH":"amd64"},
+  labels=["users", "pre-docker"],
 )
 
 docker_build(
@@ -19,5 +20,5 @@ docker_build(
 
 # k8s_yaml(kustomize('k8s/base'))
 
-# k8s_resource("users-api", port_forwards="5001:8080", labels=["backend"])
+k8s_resource("users-api", port_forwards="5001:8080")
 
