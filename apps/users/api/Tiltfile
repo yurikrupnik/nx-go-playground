@@ -7,7 +7,7 @@ local_resource(
   resource_deps=["yarn"],
   ignore=["k8s"],
   env={"GOOS":"linux","GOARCH":"amd64"},
-  labels=["users", "pre-docker"],
+  labels=["npm"],
 )
 
 docker_build(
