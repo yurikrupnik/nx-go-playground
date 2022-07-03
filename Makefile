@@ -5,6 +5,7 @@ GCP_PROJECT:=$(gcloud config get-value project)
 local:
 	echo $GCP_PROJECT
 	echo ${GCP_PROJECT}
+
 compile-manifests:
 	helm template vault hashicorp/vault -n vault -f ./k8s/base/values/vault-values.yaml > ./k8s/base/vault/manifests/vault.yaml
 

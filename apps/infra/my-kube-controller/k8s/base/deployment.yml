@@ -53,4 +53,4 @@ spec:
       restartPolicy: Always
   selector:
     matchLabels:
-      app: users-api
+      app: main-controller

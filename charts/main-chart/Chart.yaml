@@ -23,22 +23,25 @@ version: 0.1.0
 # It is recommended to use it with quotes.
 appVersion: "1.16.0"
 dependencies:
+  - name: cert-manager
+    version: 0.7.1
+    repository: https://charts.bitnami.com/bitnami
   - name: external-secrets
     version: 0.5.7
-    repository: "https://charts.external-secrets.io"
-  #  - name: cert-manager
-  #    version: 1.8.2
-  #    repository: https://charts.bitnami.com/bitnami
-  #    import-values:
-#      - values/nginx-values.yaml
-#  - name: consul
-#    version: "4.2.5"
-#    repository: "https://cloudnativeapp.github.io/charts/curated/"
-#  - name: redis
-#    version: "16.13.1"
-#    repository: "https://charts.bitnami.com/bitnami"
-#    import-values:
-#  - name: nginx
-#    version: 0.1.0
-#    repository: https://charts.mirantis.com
-#      -
+    repository: https://charts.external-secrets.io
+  #  - name: vault
+  #    version: 0.20.1
+  #    repository: https://statcan.github.io/charts
+  - name: consul
+    version: 10.7.0
+    repository: https://charts.bitnami.com/bitnami
+  - name: redis
+    version: 16.13.1
+    repository: https://charts.bitnami.com/bitnami
+  - name: kube-prometheus
+    version: 8.0.9
+    repository: https://charts.bitnami.com/bitnami
+    #  - name: prometheus
+    #  - name: grafana
+    #    repository: https://charts.bitnami.com/bitnami
+    #    version: "16.13.1"

@@ -6,11 +6,11 @@ helm_repo('hashicorp', 'https://helm.releases.hashicorp.com')
 # helm_repo('external-secrets', 'https://charts.external-secrets.io')
 # helm_repo('bitnami', 'https://charts.bitnami.com/bitnami')
 load('ext://helm_remote', 'helm_remote')
-helm_remote('mysql',
-            repo_name='bitnami',
-            namespace='mysql',
-            create_namespace="true",
-            repo_url='https://charts.bitnami.com/bitnami')
+#helm_remote('mysql',
+#            repo_name='bitnami',
+#            namespace='mysql',
+#            create_namespace="true",
+#            repo_url='https://charts.bitnami.com/bitnami')
 # helm_resource('vault', 'hashicorp/vault')
 # helm_resource('kube-prometheus-stack', 'devtron/kube-prometheus-stack')
 
@@ -76,11 +76,11 @@ helm_remote('mysql',
 
 # helm_resource('mongo', 'bitnami/mongodb-sharded')
 
-# k8s_yaml(helm('./charts/main-chart', name="main-chart"))
+k8s_yaml(helm('./charts/main-chart', name="main-chart",namespace="aris"))
 
 
-# k8s_yaml(local('helm template --set key1=val1,key2=val2 ./charts/main-chart'))
-# watch_file('/charts/main-chart')
+#k8s_yaml(local('helm template --set key1=val1,key2=val2 ./charts/main-chart'))
+#watch_file('/charts/main-chart')
 
 local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'])
 
