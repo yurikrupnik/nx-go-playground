@@ -14034,7 +14034,7 @@ __metadata:
     single-spa-react: 4.6.1
     solid-app-router: 0.4.1
     solid-jest: 0.2.0
-    solid-js: 1.3.15
+    solid-js: 1.4.5
     solid-testing-library: 0.2.1
     swagger-ui-express: 4.3.0
     swc-loader: 0.1.15
@@ -17121,7 +17121,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solid-js@npm:1.3.15, solid-js@npm:^1.3.0":
+"solid-js@npm:1.4.5":
+  version: 1.4.5
+  resolution: "solid-js@npm:1.4.5"
+  checksum: ef1b2140d27e9537b859bb9af925a11454af3926b189bcfe0eae914ece70ffeec5d9d7e653c35b704de936b85ac63ae6e7d4e7d43dd2b25712d30eecf5d5bc6f
+  languageName: node
+  linkType: hard
+
+"solid-js@npm:^1.3.0":
   version: 1.3.15
   resolution: "solid-js@npm:1.3.15"
   checksum: 912453b3f7df9f05c1c57ceb00888c3e9c5697b24a2ca72b73e52495cabe71522d588050c6e34e5422f4ebe46eb3ea06d1dc0dc192149b50559033b58f3acb39
