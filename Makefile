@@ -1,5 +1,30 @@
 GCP_PROJECT:=$(gcloud config get-value project)
 #NEW_SA_NAME=test-service-account-name
+# local cluster start
+
+local:
+	echo $GCP_PROJECT
+	echo ${GCP_PROJECT}
+compile-manifests:
+	helm template vault hashicorp/vault -n vault -f ./k8s/base/values/vault-values.yaml > ./k8s/base/vault/manifests/vault.yaml
+
+up:
+		#if gcc -o main main.c; then \
+#		if ls; then \
+#							echo succeeded; \
+#					 else \
+#							echo compilation failed; \
+#					 fi
+	-kind create cluster --name test-env --image kindest/node:v1.21.1 --config local-cluster/cluster.yaml
+	-nvm install node
+	#helm template vault hashicorp/vault -n vault -f ./k8s/base/values/values.yaml > ./k8s/base/manifests/vault.yaml
+#	helm template consul hashicorp/consul -n vault -f ./k8s/base/consul/values.yaml > ./k8s/base/consul/manifests/vault.yaml
+	tilt up
+down:
+	kind delete cluster --name test-env
+	tilt down
+# local cluster end
+
 
 # helm start
 create-repo:

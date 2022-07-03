@@ -8,6 +8,7 @@
     "go-models-user": "libs/go/models/user",
     "go-mongodb": "libs/go/mongodb",
     "go-myutils": "libs/go/myutils",
+    "infra-my-kube-controller": "apps/infra/my-kube-controller",
     "my-lib": "libs/my-lib",
     "nest-modules": "libs/nest/modules",
     "next-app": "apps/next-app",

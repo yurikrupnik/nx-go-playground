@@ -1,0 +1,36 @@
+{
+  "root": "apps/infra/my-kube-controller",
+  "projectType": "application",
+  "sourceRoot": "apps/infra/my-kube-controller",
+  "targets": {
+    "build": {
+      "executor": "@nx-go/nx-go:build",
+      "options": {
+        "outputPath": "dist/apps/infra/my-kube-controller",
+        "main": "apps/infra/my-kube-controller/main.go"
+      }
+    },
+    "serve": {
+      "executor": "@nx-go/nx-go:serve",
+      "options": {
+        "main": "apps/infra/my-kube-controller/main.go"
+      }
+    },
+    "test": {
+      "executor": "@nx-go/nx-go:test"
+    },
+    "lint": {
+      "executor": "@nx-go/nx-go:lint"
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --platform linux/amd64,linux/arm64 . -t yurikrupnik/main-controller -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/main-controller --push"
+      }
+    }
+  },
+  "tags": [
+    "kuberneter=true"
+  ]
+}

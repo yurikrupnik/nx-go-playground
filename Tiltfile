@@ -6,11 +6,11 @@ helm_repo('hashicorp', 'https://helm.releases.hashicorp.com')
 # helm_repo('external-secrets', 'https://charts.external-secrets.io')
 # helm_repo('bitnami', 'https://charts.bitnami.com/bitnami')
 load('ext://helm_remote', 'helm_remote')
-#helm_remote('mysql',
- #           repo_name='bitnami',
-  #          namespace='mysql',
-   #         create_namespace="true",
-    #        repo_url='https://charts.bitnami.com/bitnami')
+helm_remote('mysql',
+            repo_name='bitnami',
+            namespace='mysql',
+            create_namespace="true",
+            repo_url='https://charts.bitnami.com/bitnami')
 # helm_resource('vault', 'hashicorp/vault')
 # helm_resource('kube-prometheus-stack', 'devtron/kube-prometheus-stack')
 
@@ -19,31 +19,31 @@ load('ext://helm_remote', 'helm_remote')
 # different way - shows in helm charts
 # but creates namespace and can pass values file
 # helm_resource('cert-manager', 'bitnami/cert-manager')
-helm_remote('cert-manager',
-            repo_name='cert-manager',
-            namespace='cert-manager',
-            create_namespace="true",
-            repo_url='https://charts.bitnami.com/bitnami')
+#helm_remote('cert-manager',
+#            repo_name='cert-manager',
+#            namespace='cert-manager',
+#            create_namespace="true",
+#            repo_url='https://charts.bitnami.com/bitnami')
 # End of cert-manager
 
 # Start of external-secrets
 # helm_resource('secrets', 'external-secrets/external-secrets')
-helm_remote('external-secrets',
-           repo_name='external-secrets',
-           namespace='external-secrets',
-           create_namespace="true",
-           repo_url='https://charts.external-secrets.io')
+#helm_remote('external-secrets',
+#           repo_name='external-secrets',
+#           namespace='external-secrets',
+#           create_namespace="true",
+#           repo_url='https://charts.external-secrets.io')
 # End of external-secrets
 
 # Prometheus start
-helm_resource('prometheus', 'bitnami/kube-prometheus')
+# helm_resource('prometheus', 'bitnami/kube-prometheus')
 # todo does not work
 #helm_remote('prometheus',
 #            repo_name='kube-prometheus',
 #            namespace='kube-prometheus',
 #            create_namespace="true",
 #            repo_url='https://charts.bitnami.com/bitnami')
-k8s_resource("prometheus", port_forwards="9090:9090")
+#k8s_resource("prometheus", port_forwards="9090:9090")
 # Grafana end
 
 # Grafana start
@@ -86,6 +86,7 @@ local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'])
 
 include('./apps/users/api/Tiltfile')
 include('./apps/users/client/Tiltfile')
+# include('./apps/infra/my-kube-controller/Tiltfile')
 
 #local_resource(
  # 'build-users-api',
