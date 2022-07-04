@@ -2,6 +2,14 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   #  - secrets.yaml
-  - redis/
-  - vault/
+  - vault.yaml
+  - redis.yaml
+#  - prometheus.yaml
+#  - consul.yaml
+#  - redis.yaml
+#  - redis/templates/configmap.yaml
+#  - redis/templates/secret.yaml
+#  - grafana
+#  - vault
+#  - kube-prometheus
 #  - ../base/../../apps/users/client/k8s/base

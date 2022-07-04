@@ -7,8 +7,10 @@ local:
 	echo ${GCP_PROJECT}
 
 compile-manifests:
-	helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/vault-values.yaml > ./k8s/base/helm/manifests/vault.yaml
-
+	ls dist
+	ls apps
+	helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/values/vault-values.yaml > ./k8s/base/helm/manifests/vault.yaml
+	helm template consul hashicorp/consul -n consul -f ./k8s/base/helm/values/consul-values.yaml > ./k8s/base/helm/manifests/consul.yaml
 up:
 		#if gcc -o main main.c; then \
 #		if ls; then \
