@@ -25,43 +25,6 @@ local_resource(
 
 local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'], labels=['npm'])
 
-#local_resource('vault-templates',
-#    cmd="helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/values/vault-values.yaml > ./k8s/base/helm/manifests/vault1.yaml",
-#    deps=["/k8s/base/helm/vault-values.yaml"],
-#    labels=['manifests', "helm", "generator"]
-#)
-#local_resource('vault-templates',
-#    cmd="helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/values/vault-values.yaml > ./k8s/base/helm/manifests/vault.yaml",
-#    deps=["/k8s/base/helm/vault-values.yaml"],
-#    labels=['manifests', "helm", "generator"]
-#)
-#local_resource('consul-template',
-#    cmd="helm template consul hashicorp/consul -n consul -f ./k8s/base/helm/values/consul-values.yaml > ./k8s/base/helm/manifests/consul.yaml",
-#    deps=["/k8s/base/helm/consul-values.yaml"],
-#    labels=['manifests', "helm", "generator", "self-test"]
-#)
-
-# using kubctl aplly command
-#local_resource('redis-template',
- #   cmd="helm template redis bitnami/redis -n redis -f ./k8s/base/helm/values/redis-values.yaml> ./k8s/base/helm/manifests/redis.yaml",
- #   deps=["/k8s/base/helm/values/redis-values.yaml"],
- #   labels=['manifests', "helm", "generator", "self-test"]
-#)
-#local_resource('prometheus-template',
-#    cmd="helm template prometheus bitnami/kube-prometheus -n prometheus -f k8s/base/helm/values/prometheus-values.yaml > ./k8s/base/helm/manifests/prometheus.yaml",
-#    deps=["/k8s/base/helm/values/prometheus-values.yaml"],
-#    labels=['manifests', "helm", "generator", "self-test1"]
-#)
-#local_resource('grafana-template',
-#    cmd="helm template grafana bitnami/grafana -n grafana -f k8s/base/helm/values/grafana-values.yaml --output-dir ./k8s/base/helm/manifests/",
- #   deps=["/k8s/base/helm/values/grafana-values.yaml"],
- #   labels=['manifests', "helm", "generator", "self-test1"]
-#)
-#local_resource('grafana',
-#    cmd='helm template grafana bitnami/grafana -n grafana -f ./k8s/base/helm/grafana-values.yaml > ./k8s/base/manifests/grafana.yaml',
-#    deps=["/k8s/base/helm/grafana-values.yaml"],
-#    labels=['manifests']
-#)
 include('./k8s/base/helm/Tiltfile')
 
 include('./apps/users/api/Tiltfile')

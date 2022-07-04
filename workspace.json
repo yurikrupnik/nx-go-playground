@@ -15,6 +15,7 @@
     "next-app-e2e": "apps/next-app-e2e",
     "profile-api": "apps/profile/api",
     "react-components": "libs/react/components",
+    "services-projects": "apps/services/projects",
     "simple-app": "apps/simple-app",
     "test-be-test-app": "apps/test/be-test-app",
     "users-api": "apps/users/api",
