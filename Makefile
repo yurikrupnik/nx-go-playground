@@ -7,25 +7,26 @@ local:
 	echo ${GCP_PROJECT}
 
 compile-manifests:
-	ls dist
-	ls apps
-	helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/values/vault-values.yaml > ./k8s/base/helm/manifests/vault.yaml
 	helm template consul hashicorp/consul -n consul -f ./k8s/base/helm/values/consul-values.yaml > ./k8s/base/helm/manifests/consul.yaml
+	helm template grafana bitnami/grafana -n grafana -f ./k8s/base/helm/values/grafana-values.yaml > ./k8s/base/helm/manifests/grafana.yaml
+	helm template redis bitnami/redis -n redis -f ./k8s/base/helm/values/redis-values.yaml > ./k8s/base/helm/manifests/redis.yaml
+	helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/values/vault-values.yaml > ./k8s/base/helm/manifests/vault.yaml
+	# failing
+# Build Failed: kubernetes apply: error mapping monitoring.coreos.com/Alertmanager: no matches for kind "Alertmanager" in version "monitoring.coreos.com/v1"
+	#helm template prometheus bitnami/kube-prometheus -n prometheus -f ./k8s/base/helm/values/prometheus-values.yaml > ./k8s/base/helm/manifests/grafana.yaml
+	#kustomize build ./k8s/base/helm/manifests | kubectl apply -f -
+k-b-a: compile-manifests
+	kustomize build ./k8s/base/helm/manifests | kubectl apply -f -
+k-b-d: compile-manifests
+	kustomize build ./k8s/base/helm/manifests | kubectl delete -f -
+# | kubectl apply -f -
 up:
-		#if gcc -o main main.c; then \
-#		if ls; then \
-#							echo succeeded; \
-#					 else \
-#							echo compilation failed; \
-#					 fi
 	-kind create cluster --name test-env --image kindest/node:v1.21.1 --config local-cluster/cluster.yaml
 	-nvm install node
-	#helm template vault hashicorp/vault -n vault -f ./k8s/base/values/values.yaml > ./k8s/base/manifests/vault.yaml
-#	helm template consul hashicorp/consul -n vault -f ./k8s/base/consul/values.yaml > ./k8s/base/consul/manifests/vault.yaml
 	tilt up
 down:
+	-tilt down
 	kind delete cluster --name test-env
-	tilt down
 # local cluster end
 
 
