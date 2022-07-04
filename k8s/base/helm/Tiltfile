@@ -5,18 +5,23 @@ helm_repo('bitnami', 'https://charts.bitnami.com/bitnami', labels=["helm"])
 helm_repo('devtron', 'https://helm.devtron.ai', labels=["helm"])
 helm_repo('hashicorp', 'https://helm.releases.hashicorp.com', labels=["helm"])
 
-helm_resource('mysql','bitnami/mysql', labels=["mysql", "db", "helm"])
+#helm_resource('mysql','bitnami/mysql', labels=["mysql", "db", "helm"])
 helm_resource('redis', 'bitnami/redis', labels=["redis", "db", "helm"])
 helm_resource('kube-prometheus','bitnami/kube-prometheus', labels=["monitoring", "helm"])
 helm_resource('grafana','bitnami/grafana', labels=["monitoring", "helm"])
-# helm_resource('mongodb','bitnami/mongodb', labels=["mongodb", "db", "helm"])
-# helm_resource('consul','hashicorp/consul', labels=["helm", "hashicorp"])
-# helm_resource('vault','hashicorp/vault', labels=["helm", "hashicorp"])
+# helm_resource('mongodb','bitnami/mongodb', labels=["monitoring", "helm"])
+#helm_resource('consul','hashicorp/consul', labels=["helm", "hashicorp"])
+#helm_resource('vault','hashicorp/vault', labels=["helm", "hashicorp"])
 
 k8s_resource("kube-prometheus", port_forwards="9090:9090")
 k8s_resource("grafana", port_forwards="3000:3000")
 
 #load('ext://helm_remote', 'helm_remote')
+#helm_remote('grafana',
+#            repo_name='bitnami',
+#            namespace='grafana',
+#            create_namespace="true",
+#            repo_url='https://charts.bitnami.com/bitnami', labels=["helm", "grafana"])
 #helm_remote('mysql',
 #            repo_name='bitnami',
 #            namespace='mysql',
@@ -33,4 +38,4 @@ k8s_resource("grafana", port_forwards="3000:3000")
     # cmd="helm template vault hashicorp/vault -n vault --output-dir ./k8s/base/helm/manifests/",
     # deps=["/k8s/base/helm/vault-values.yaml"],
     # labels=['manifests', "helm", "generator"]
-)
+# )

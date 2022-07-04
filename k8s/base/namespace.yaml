@@ -22,11 +22,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: grafana
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: storage
 #---
 #apiVersion: v1

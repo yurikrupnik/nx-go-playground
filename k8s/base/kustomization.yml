@@ -3,7 +3,8 @@ kind: Kustomization
 resources:
   #  - secrets.yaml
   - namespace.yaml
-  - ../base/../../k8s/base/helm/manifests/
+  #  manual jobs from helm to kubectl thro kustomize
+  #- ../base/../../k8s/base/helm/manifests/
   #  - ../base/vault/manifests/vault.yaml
   #  - storage.yaml
   - ../base/../../apps/users/client/k8s/base

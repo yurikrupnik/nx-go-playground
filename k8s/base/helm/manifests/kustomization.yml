@@ -6,6 +6,11 @@ resources:
   - grafana.yaml
   - redis.yaml
   - vault.yaml
+commonLabels:
+  tilt: "true"
+#labels:
+#  - pairs:
+#      label: 1
 #  - prometheus.yaml
 #  - consul.yaml
 #  - redis.yaml

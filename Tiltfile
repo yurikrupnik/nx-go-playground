@@ -4,7 +4,8 @@
 
 local_resource(
   "make k-b-a",
-  cmd="make k-b-a",
+  #cmd="make k-b-a",
+  cmd="ls",
   allow_parallel = True,
   trigger_mode=TRIGGER_MODE_MANUAL,
   # only=["/k8s/base/helm/values/"],
@@ -13,13 +14,15 @@ local_resource(
 )
 local_resource(
   "make k-b-d",
-  cmd="make k-b-d",
+  cmd="ls",
+  #cmd="make k-b-d",
   allow_parallel = True,
   trigger_mode=TRIGGER_MODE_MANUAL,
   # only=["/k8s/base/helm/values/"],
   deps=["/k8s/base/helm/values/"],
   labels=["makefile", "helm", "manual"],
 )
+
 local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'], labels=['npm'])
 
 #local_resource('vault-templates',
@@ -59,7 +62,7 @@ local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'], l
 #    deps=["/k8s/base/helm/grafana-values.yaml"],
 #    labels=['manifests']
 #)
-# include('./k8s/base/helm/Tiltfile')
+include('./k8s/base/helm/Tiltfile')
 
 include('./apps/users/api/Tiltfile')
 include('./apps/users/client/Tiltfile')
