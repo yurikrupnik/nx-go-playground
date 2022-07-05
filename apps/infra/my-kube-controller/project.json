@@ -9,9 +9,6 @@
         "main": "apps/infra/my-kube-controller/main.go"
       }
     },
-    "test": {
-      "executor": "@nx-go/nx-go:test"
-    },
     "lint": {
       "executor": "@nx-go/nx-go:lint"
     },
@@ -19,7 +16,10 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker buildx build . --platform linux/amd64,linux/arm64 -t yurikrupnik/main-controller -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/main-controller --push",
+        "commands": [
+          "docker build . -t yurikrupnik/main-controller",
+          "docker push yurikrupnik/main-controller"
+        ],
         "cwd": "apps/infra/my-kube-controller"
       }
     }
