@@ -8,7 +8,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
 ---
@@ -20,12 +20,12 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
 type: Opaque
 data:
-  redis-password: "Rndua05TNXE5aQ=="
+  redis-password: "WHkxSm9aRWxPRg=="
 ---
 # Source: redis/templates/configmap.yaml
 apiVersion: v1
@@ -35,7 +35,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
 data:
@@ -67,7 +67,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
 data:
@@ -174,7 +174,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
 data:
@@ -253,7 +253,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
   annotations:
@@ -277,7 +277,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: master
@@ -303,7 +303,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: replica
@@ -329,7 +329,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: master
@@ -348,15 +348,15 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: redis
-        helm.sh/chart: redis-16.13.1
+        helm.sh/chart: redis-16.13.2
         app.kubernetes.io/instance: redis
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: master
       annotations:
-        checksum/configmap: d0218147c19d465b3a3416109fdf50e53050478952a9c63984e72c0edd4f5eb3
-        checksum/health: 91a60662ee7a15f7ebbdb74a5bb79136a86211cb9e3d48f47483ed2e878f528b
-        checksum/scripts: ed018d5497967f7e6423b5df7be600ef92a725f11a957b556ab8dadc1dbecaca
-        checksum/secret: 57898d6997d8998e65b0e4ee6062205c1802a7a08630fa8775c290d837b4f429
+        checksum/configmap: 40b0370cda3661b76a4d1fe1e587115b5612e8ab7173e2ed92aa8e3998e7cce0
+        checksum/health: 450720a0326c578fc38a8b18542d15e319b4b645c1e0e368000c2d0db9feba43
+        checksum/scripts: 8fc33cea0546b3ca3d38c7860f5b28d50036f04a26e535508268a4c038cb68df
+        checksum/secret: d2b4b6f8a4fb2fab3aa009f3784a21508c86a79528f67bf43942f400410973c0
     spec:
       
       securityContext:
@@ -382,7 +382,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: redis
-          image: docker.io/bitnami/redis:6.2.7-debian-11-r9
+          image: docker.io/bitnami/redis:6.2.7-debian-11-r11
           imagePullPolicy: "IfNotPresent"
           securityContext:
             runAsUser: 1001
@@ -488,7 +488,7 @@ metadata:
   namespace: "redis"
   labels:
     app.kubernetes.io/name: redis
-    helm.sh/chart: redis-16.13.1
+    helm.sh/chart: redis-16.13.2
     app.kubernetes.io/instance: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: replica
@@ -507,15 +507,15 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: redis
-        helm.sh/chart: redis-16.13.1
+        helm.sh/chart: redis-16.13.2
         app.kubernetes.io/instance: redis
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: replica
       annotations:
-        checksum/configmap: d0218147c19d465b3a3416109fdf50e53050478952a9c63984e72c0edd4f5eb3
-        checksum/health: 91a60662ee7a15f7ebbdb74a5bb79136a86211cb9e3d48f47483ed2e878f528b
-        checksum/scripts: ed018d5497967f7e6423b5df7be600ef92a725f11a957b556ab8dadc1dbecaca
-        checksum/secret: 0c31a5bec49b1def285a207e37c6326177f3f44c9a8bd9b2613054cb232e6224
+        checksum/configmap: 40b0370cda3661b76a4d1fe1e587115b5612e8ab7173e2ed92aa8e3998e7cce0
+        checksum/health: 450720a0326c578fc38a8b18542d15e319b4b645c1e0e368000c2d0db9feba43
+        checksum/scripts: 8fc33cea0546b3ca3d38c7860f5b28d50036f04a26e535508268a4c038cb68df
+        checksum/secret: e1aa9ebbf5852018571dfdab052d08a1299814c6bcedf992d19064c46ae2f97b
     spec:
       
       securityContext:
@@ -541,7 +541,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: redis
-          image: docker.io/bitnami/redis:6.2.7-debian-11-r9
+          image: docker.io/bitnami/redis:6.2.7-debian-11-r11
           imagePullPolicy: "IfNotPresent"
           securityContext:
             runAsUser: 1001

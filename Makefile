@@ -1,16 +1,25 @@
 GCP_PROJECT:=$(gcloud config get-value project)
 #NEW_SA_NAME=test-service-account-name
 # local cluster start
+.PHONY: all
+all: build
 
-local:
+##@ Docker
+docker-rmi-all: ## Docker remove all images installed - not including
+	docker rmi $(docker images -aq) -f
+
+##@ General
+
+.PHONY: help
+help: ## Display this help.
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_0-9-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
+
+.PHONY: set-gcp_project
+set-gcp_project: ## Get using gcloud config current project
+	GCP_PROJECT:=$(gcloud config get-value project)
 	echo $GCP_PROJECT
 	echo ${GCP_PROJECT}
 
-compile-manifests:
-	helm template consul hashicorp/consul -n consul -f ./k8s/base/helm/values/consul-values.yaml > ./k8s/base/helm/manifests/consul.yaml
-	helm template grafana bitnami/grafana -n grafana -f ./k8s/base/helm/values/grafana-values.yaml > ./k8s/base/helm/manifests/grafana.yaml
-	helm template redis bitnami/redis -n redis -f ./k8s/base/helm/values/redis-values.yaml > ./k8s/base/helm/manifests/redis.yaml
-	helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/values/vault-values.yaml > ./k8s/base/helm/manifests/vault.yaml
 	# failing
 # Build Failed: kubernetes apply: error mapping monitoring.coreos.com/Alertmanager: no matches for kind "Alertmanager" in version "monitoring.coreos.com/v1"
 	#helm template prometheus bitnami/kube-prometheus -n prometheus -f ./k8s/base/helm/values/prometheus-values.yaml > ./k8s/base/helm/manifests/grafana.yaml
@@ -24,23 +33,30 @@ up:
 	-kind create cluster --name test-env --image kindest/node:v1.21.1 --config local-cluster/cluster.yaml
 	-nvm install node
 	tilt up
+	make tilt
 down:
 	-tilt down
 	kind delete cluster --name test-env
 # local cluster end
 
 
-# helm start
-create-repo:
+##@ Helm
+.PHOXY: compile-manifests
+compile-manifests: ## Compile manifests from helm template to a single file
+	helm template consul hashicorp/consul -n consul -f ./k8s/base/helm/values/consul-values.yaml > ./k8s/base/helm/manifests/consul.yaml
+	helm template grafana bitnami/grafana -n grafana -f ./k8s/base/helm/values/grafana-values.yaml > ./k8s/base/helm/manifests/grafana.yaml
+	helm template redis bitnami/redis -n redis -f ./k8s/base/helm/values/redis-values.yaml > ./k8s/base/helm/manifests/redis.yaml
+	helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/values/vault-values.yaml > ./k8s/base/helm/manifests/vault.yaml
+create-repo: ## Create helm local repo
 	helm package charts/main-charts
 
-helm-install:
-	helm install --name main-charts myrepo/main-charts
+helm-install: ## Install helm local chart repo
+	helm install --name main-charts charts/main-charts
 
-helm-lint:
+helm-lint: ## Run linter for local chart
 	helm lint charts/main-charts
 
-helm-dry-run:
+helm-dry-run: ## Run install dry run
 	helm install --dry-run --debug charts/main-charts/ --generate-name --values services/my-nginx/values.yaml
 
 helm-install:
@@ -54,10 +70,20 @@ define get-secret
 $(shell gcloud secrets versions access latest --secret=MONGO_URI --project=mussia14)
 endef
 
-get-argocd-secret-yaml:
+##@ Tilt
+tilt-up: ## Tilt up in local cluster
+	tilt up
+
+tilt-down: ## Tilt down in local cluster
+	tilt down
+
+##@ Argo cd
+get-argocd-secret-yaml: ## Argo cd get get init admin password
 	kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 -d
 # create service account
-csa:
+##@ GCP
+
+csa: ## Secret stuff
 		SA="${NEW_SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
 		gcloud iam service-accounts create $NEW_SA_NAME --project $PROJECT_ID
 		# enable cloud API
@@ -71,17 +97,12 @@ csa:
 #    gcloud iam service-accounts keys create creds.json --project $PROJECT_ID --iam-account $SA
 #		kubectl create secret generic gcp-creds -n crossplane-system --from-file=creds=./creds.json
 
-minikube-gcp:
+minikube-gcp: ## Create GCP SA with sql admin role
 	SA="${NEW_SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
 	gcloud iam service-accounts create $NEW_SA_NAME --project $PROJECT_ID
 	ROLE="roles/cloudsql.admin"
 #  gcloud projects add-iam-policy-binding --role="$ROLE" $PROJECT_ID --member "serviceAccount:$SA"
 #  gcloud iam service-accounts keys create creds.json --project $PROJECT_ID --iam-account $SA
-
-minikube-up:
-	minikube start
-	minikube addons enable gcp-auth
-	minikube addons enable ingress
 
 #	kubectl create namespace crossplane-system
 #	helm repo add crossplane-stable https://charts.crossplane.io/stable
@@ -110,27 +131,7 @@ minikube-up:
 	#cat .docker/config.json | base64
 #	 update then the secrets file with dockerfonfig base64
 
-minikube-down:
-	kustomize build k8s/base | kubectl delete -f -
-	minikube stop
-
-minikube-delete:
-	minikube delete
-
-kind-up:
-	#minikube start
-	#kubectl create namespace argocd
-	kind create cluster
-	#k9s
-# k8s stop running workspace
-kind-down:
-	#minikube stop
-	kind delete cluster
-
-# k8s delete workspace
-kube-reset:
-	minikube delete
-	minikube start
-affected-graph:
-	npx nx affected:dep-graph
+##@ NX
+affected-graph: ## Run local nx affected dep graph
+	yarn nx affected:dep-graph
 # NX end
