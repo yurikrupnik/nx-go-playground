@@ -1,6 +1,6 @@
 
 # Done!
-FROM node:16-alpine AS nest-builder
+FROM node:18-alpine AS nest-builder
 WORKDIR /app
 
 ARG DIST_PATH
