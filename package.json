@@ -80,7 +80,7 @@
     "@nx-go/nx-go": "2.6.0",
     "@nx-tools/nx-docker": "2.3.0",
     "@nxext/solid": "13.1.1",
-    "@originjs/vite-plugin-federation": "1.1.6",
+    "@originjs/vite-plugin-federation": "1.1.7",
     "@swc/core": "1.2.211",
     "@swc/jest": "0.2.21",
     "@tailwindcss/aspect-ratio": "0.4.0",
