@@ -39,6 +39,12 @@ help: ## Display this help.
 
 ##@ Development
 
+.PHONY: clear-in
+clear-in:  ## Clear out working station
+
+.PHONY: clear-out
+clear-out:  ## Clear out working station
+
 .PHONY: manifests
 manifests: controller-gen ## Generate WebhookConfiguration, ClusterRole and CustomResourceDefinition objects.
 	$(CONTROLLER_GEN) rbac:roleName=manager-role crd webhook paths="./..." output:crd:artifacts:config=config/crd/bases

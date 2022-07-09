@@ -28,7 +28,7 @@ metadata:
     app.kubernetes.io/component: grafana
 type: Opaque
 data:
-  GF_SECURITY_ADMIN_PASSWORD: "SlJISXFTRGRubA=="
+  GF_SECURITY_ADMIN_PASSWORD: "dGZOTUxsVHNyMA=="
 ---
 # Source: grafana/templates/configmap.yaml
 apiVersion: v1
@@ -129,7 +129,7 @@ spec:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: grafana
       annotations:
-        checksum/secret: d558602d58257e39af379c51ee2df67c911f3d95083f12ad2635494f803b6fd0
+        checksum/secret: 8b05010f2fd9c0e8f05114a7710706bf6ff4d2cab2d6f2e13ef527582a80b6b7
         checksum/config: 4319e79187ec2748536ba7f0b4f27f1d763476456c97912c157406ea08754716
         checksum/dashboard-provider: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
     spec:

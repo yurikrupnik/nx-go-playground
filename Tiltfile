@@ -4,7 +4,7 @@
 
 local_resource(
   "make k-b-a",
-  #cmd="make k-b-a",
+  # cmd="make k-b-a",
   cmd="ls",
   allow_parallel = True,
   trigger_mode=TRIGGER_MODE_MANUAL,
@@ -15,9 +15,10 @@ local_resource(
 local_resource(
   "make k-b-d",
   cmd="ls",
-  #cmd="make k-b-d",
+  # cmd="make k-b-d",
   allow_parallel = True,
-  trigger_mode=TRIGGER_MODE_MANUAL,
+  # trigger_mode=TRIGGER_MODE_MANUAL,
+  # TRIGGER_MODE_AUTO
   # only=["/k8s/base/helm/values/"],
   deps=["/k8s/base/helm/values/"],
   labels=["makefile", "helm", "manual"],
@@ -25,11 +26,12 @@ local_resource(
 
 local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'], labels=['npm'])
 
-include('./k8s/base/helm/Tiltfile')
+# include('./k8s/base/helm/Tiltfile')
 
 include('./apps/users/api/Tiltfile')
 include('./apps/users/client/Tiltfile')
 include('./apps/infra/my-kube-controller/Tiltfile')
+# include('./apps/infra/commdands/Tiltfile')
 
 k8s_yaml(kustomize('k8s/base'))
 # k8s_yaml(kustomize('k8s/base/helm/manifests'))

@@ -41,7 +41,7 @@ func main() {
 	app.Use(cors.New())
 	apiGroup := app.Group("api")
 	apiGroup1 := app.Group("df")
-	apiGroup1.Get("/sss", func(ctx *fiber.Ctx) error {
+	apiGroup1.Get("/sssss", func(ctx *fiber.Ctx) error {
 		return ctx.SendString("yuri")
 	})
 	apiGroup1.Get("/dom", func(ctx *fiber.Ctx) error {

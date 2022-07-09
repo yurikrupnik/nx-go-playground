@@ -1,3 +1,4 @@
+GH_ORG=yurikrupnik
 GCP_PROJECT:=$(gcloud config get-value project)
 #NEW_SA_NAME=test-service-account-name
 # local cluster start
@@ -40,15 +41,28 @@ down:
 # local cluster end
 
 
+##@ Kubectl - shorthand k locally
+kubectl-set-context:
+	kubectl cluster-info --context kind-kind
+
 ##@ Helm
+.PHOXY: compile-manifests-consul
+compile-manifests-consul: ## Compile manifests from helm consul template to a single file.
+	helm template consul hashicorp/consul -n consul -f ./k8s/base/helm/values/consul-values.yaml > ./k8s/base/helm/manifests/consul.yaml
+
+.PHOXY: compile-manifests-grafana
+compile-manifests-grafana: ## Compile manifests from helm grafana template to a single file.
+	helm template grafana bitnami/grafana -n grafana -f ./k8s/base/helm/values/grafana-values.yaml > ./k8s/base/helm/manifests/grafana.yaml
+
 .PHOXY: compile-manifests
 compile-manifests: ## Compile manifests from helm template to a single file
-	helm template consul hashicorp/consul -n consul -f ./k8s/base/helm/values/consul-values.yaml > ./k8s/base/helm/manifests/consul.yaml
-	helm template grafana bitnami/grafana -n grafana -f ./k8s/base/helm/values/grafana-values.yaml > ./k8s/base/helm/manifests/grafana.yaml
-	helm template redis bitnami/redis -n redis -f ./k8s/base/helm/values/redis-values.yaml > ./k8s/base/helm/manifests/redis.yaml
+	#make compile-manifests-grafana
+	#helm template consul hashicorp/consul -n consul -f ./k8s/base/helm/values/consul-values.yaml > ./k8s/base/helm/manifests/consul.yaml
+	#helm template grafana bitnami/grafana -n grafana -f ./k8s/base/helm/values/grafana-values.yaml > ./k8s/base/helm/manifests/grafana.yaml
+	#helm template redis bitnami/redis -n redis -f ./k8s/base/helm/values/redis-values.yaml > ./k8s/base/helm/manifests/redis.yaml
 	helm template vault hashicorp/vault -n vault -f ./k8s/base/helm/values/vault-values.yaml > ./k8s/base/helm/manifests/vault.yaml
 create-repo: ## Create helm local repo
-	helm package charts/main-charts
+	#helm package charts/main-charts
 
 helm-install: ## Install helm local chart repo
 	helm install --name main-charts charts/main-charts

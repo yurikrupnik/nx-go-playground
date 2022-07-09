@@ -6,3 +6,4 @@ docker_build(
   # only=["dist/apps/users/api"]
 )
 
+k8s_yaml(kustomize('k8s/base'))
