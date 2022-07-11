@@ -29,7 +29,7 @@
     "@nestjs/platform-express": "8.4.7",
     "@nestjs/platform-socket.io": "8.4.7",
     "@nestjs/swagger": "5.2.1",
-    "@nestjs/terminus": "8.1.0",
+    "@nestjs/terminus": "9.0.0",
     "@nrwl/next": "13.10.6",
     "@suid/icons-material": "0.2.5",
     "@suid/material": "0.4.3",
