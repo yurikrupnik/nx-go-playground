@@ -78,7 +78,7 @@
     "@nrwl/workspace": "13.10.6",
     "@nx-extend/gcp-functions": "6.2.3",
     "@nx-go/nx-go": "2.6.0",
-    "@nx-tools/nx-docker": "2.3.0",
+    "@nx-tools/nx-docker": "3.0.1",
     "@nxext/solid": "13.1.1",
     "@originjs/vite-plugin-federation": "1.1.7",
     "@swc/core": "1.2.211",
