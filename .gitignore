@@ -57,3 +57,4 @@ Thumbs.db
 #!.yarn/versions
 
 dist/
+/target

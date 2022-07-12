@@ -3550,6 +3550,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nxrs/cargo@npm:^0.3.3":
+  version: 0.3.3
+  resolution: "@nxrs/cargo@npm:0.3.3"
+  dependencies:
+    chalk: ^4.1.2
+  peerDependencies:
+    "@nrwl/devkit": ">= 12.7.0"
+  checksum: 647b7fbe95622e6b4c0ffdcd753e76c9c7dc4c0ce6aae5f711936e11b42032816191717efeb77e3b6b1ed08da34bc310f17c857a500a94a98848de402d38880b
+  languageName: node
+  linkType: hard
+
 "@octokit/auth-token@npm:^2.4.4":
   version: 2.5.0
   resolution: "@octokit/auth-token@npm:2.5.0"
@@ -14480,6 +14491,7 @@ __metadata:
     "@nx-go/nx-go": 2.6.0
     "@nx-tools/nx-docker": 3.0.1
     "@nxext/solid": 13.1.1
+    "@nxrs/cargo": ^0.3.3
     "@originjs/vite-plugin-federation": 1.1.7
     "@suid/icons-material": 0.2.5
     "@suid/material": 0.4.3
