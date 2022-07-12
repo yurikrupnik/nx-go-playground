@@ -1,5 +1,7 @@
 #![allow(dead_code, unused_variables)]
 
+extern crate core;
+
 pub fn rust_lib() -> String {
     "rust_lib".into()
 }
@@ -8,14 +10,39 @@ struct Credentials {
     username: String,
     password: String,
 }
+
 enum Status {
     Connected,
     Interrupted,
 }
 
-fn connect_to_database() -> Status {
-    return Status::Connected;
+fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
+    let mut largest = &list[0];
+    for item in list {
+        if item > largest {
+            largest = item
+        };
+    }
+    largest
 }
+
+fn sum_loops(n: i32) -> i32 {
+    let mut sum = 0;
+    for i in 1..n {
+        sum += i;
+    }
+    sum
+    // sum
+}
+
+// fn add_one() -> Number {
+//   0.23
+// }
+
+fn connect_to_database() -> Status {
+    Status::Connected
+}
+
 fn authenticate(creds: Credentials) {
     if let Status::Connected = connect_to_database() {
         login(creds);
