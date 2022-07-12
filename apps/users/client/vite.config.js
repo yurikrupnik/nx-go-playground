@@ -16,13 +16,13 @@ import solidPlugin from 'vite-plugin-solid';
 //     plugins: [solidPlugin()],
 //   };
 // });
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 // import react from '@vitejs/plugin-react';
 // import federation from '@originjs/vite-plugin-federation';
-import { argv } from 'yargs';
+import {argv} from 'yargs';
 // import path from 'path';
 
-const { port, open } = argv;
+const {port, open} = argv;
 
 // https://vitejs.dev/config/
 export default defineConfig((c, o) => {
