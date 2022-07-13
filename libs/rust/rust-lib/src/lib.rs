@@ -35,9 +35,9 @@ fn sum_loops(n: i32) -> i32 {
     // sum
 }
 
-// fn add_one() -> Number {
-//   0.23
-// }
+fn add_one(n: i32) -> i32 {
+    1 + n
+}
 
 fn connect_to_database() -> Status {
     Status::Connected
