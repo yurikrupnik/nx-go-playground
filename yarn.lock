@@ -3550,7 +3550,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nxrs/cargo@npm:^0.3.3":
+"@nxrs/cargo@npm:0.3.3":
   version: 0.3.3
   resolution: "@nxrs/cargo@npm:0.3.3"
   dependencies:
@@ -14457,7 +14457,7 @@ __metadata:
     "@nx-go/nx-go": 2.6.0
     "@nx-tools/nx-docker": 3.0.1
     "@nxext/solid": 13.1.1
-    "@nxrs/cargo": ^0.3.3
+    "@nxrs/cargo": 0.3.3
     "@originjs/vite-plugin-federation": 1.1.7
     "@suid/icons-material": 0.2.5
     "@suid/material": 0.4.3
