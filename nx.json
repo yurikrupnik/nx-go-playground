@@ -61,5 +61,5 @@
     }
   },
   "defaultProject": "next-app",
-  "plugins": ["@nx-go/nx-go"]
+  "plugins": ["@nx-go/nx-go", "@nxrs/cargo"]
 }

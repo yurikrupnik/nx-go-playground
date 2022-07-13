@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-controller
+  #  namespace: users
+  labels:
+    app: main-controller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: main-controller
+      labels:
+        app: main-controller
+      annotations:
+        "consul.hashicorp.com/connect-inject": "true"
+        "consul.hashicorp.com/connect-service": "main-controller"
+        "consul.hashicorp.com/connect-service-protocol": "http"
+        "consul.hashicorp.com/service-meta-version": "v.1.1"
+        "prometheus.io/scrape": "true"
+        "prometheus.io/port": "9102"
+    spec:
+      containers:
+        - name: main-controller
+          image: yurikrupnik/main-controller:latest
+          imagePullPolicy: IfNotPresent
+
+
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: main-controller

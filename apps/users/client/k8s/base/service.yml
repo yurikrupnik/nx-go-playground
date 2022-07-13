@@ -4,6 +4,7 @@ metadata:
   name: users-client-service
   labels:
     run: users-client-service
+    custom: my-custom-label-service-value
 spec:
   type: ClusterIP
   ports:

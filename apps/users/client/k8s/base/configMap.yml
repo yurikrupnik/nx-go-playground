@@ -6,6 +6,13 @@ metadata:
   name: users
 ---
 apiVersion: v1
+kind: Namespace
+metadata:
+  #  labels:
+  #    kubernetes.io/metadata.name: aris
+  name: aris
+---
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-config
@@ -56,3 +63,14 @@ data:
         #    deny  all;
         #}
     }
+
+
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: haproxy-configdsdsds
+data:
+  haproxy.fng: |
+    global

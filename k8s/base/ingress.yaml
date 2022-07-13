@@ -19,27 +19,26 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-
     - http:
         paths:
-          - path: /profile
+          - path: /users
             pathType: Prefix
             #            pathType: Exact
             #            pathType: ImplementationSpecific
             backend:
               service:
-                name: profile-client-service
+                name: users-client-service
                 port:
                   number: 80
       host: acmo.io
     - http:
         paths:
-          - path: /api/profile
+          - path: /api/users
             #            pathType: ImplementationSpecific
             pathType: Exact
             backend:
               service:
-                name: profile-api-service
+                name: users-api-service
                 port:
                   number: 3333
       host: acmo.io
@@ -54,16 +53,16 @@ spec:
                 name: argocd-server
                 port:
                   number: 8080
-          - path: /api/test
-            pathType: Exact
-            #            pathType: Prefix
-            #            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: be-test-app-service
-                port:
-                  number: 3333
-      host: acmo.io
+    #          - path: /api/test
+    #            pathType: Exact
+    #            #            pathType: Prefix
+    #            #            pathType: ImplementationSpecific
+    #            backend:
+    #              service:
+    #                name: be-test-app-service
+    #                port:
+    #                  number: 3333
+    #      host: acmo.io
     - http:
         paths:
           - path: /
@@ -75,16 +74,16 @@ spec:
                 port:
                   number: 80
       host: acmo.io
-    - http:
-        paths:
-          - path: /api/users
-            #            pathType: ImplementationSpecific
-            pathType: Prefix
-            #            pathType: Exact
-            backend:
-              service:
-                name: users-api-service
-                port:
-                  number: 3333
-      host: acmo.io
+      #    - http:
+      #        paths:
+      #          - path: /api/users
+      #            #            pathType: ImplementationSpecific
+      #            pathType: Prefix
+      #            #            pathType: Exact
+      #            backend:
+      #              service:
+      #                name: users-api-service
+      #                port:
+      #                  number: 3333
+#      host: acmo.io
 #      host: dev.devops-toolkit.192.168.49.2.nip.io

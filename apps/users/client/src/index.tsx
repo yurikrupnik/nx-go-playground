@@ -5,6 +5,7 @@ import './index.css';
 
 render(() => (
   <Router>
+    <div>hello</div>
     <App />
   </Router>
 ), document.getElementById('root') as HTMLDivElement);

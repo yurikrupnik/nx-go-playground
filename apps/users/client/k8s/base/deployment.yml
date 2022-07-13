@@ -27,8 +27,10 @@ spec:
           #          image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-client:latest
           imagePullPolicy: IfNotPresent
           volumeMounts:
+            #            - mountPath: /etc/nginx/conf.d
+            #              name: nginx-config
             - mountPath: /etc/nginx/conf.d
-              name: nginx-config
+              name: nginx-configs
           env: # not working only front end
             - name: VITE_API_HOST
               valueFrom:
@@ -46,6 +48,12 @@ spec:
         - name: nginx-config
           configMap:
             name: nginx-config
+        - name: nginx-configs
+          configMap:
+            name: nginx-configs
+      #        - name: haproxy-config
+      #          configMap:
+      #            name: nginx-config
 
       restartPolicy: Always
   selector:

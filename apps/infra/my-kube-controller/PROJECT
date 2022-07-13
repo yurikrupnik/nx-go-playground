@@ -1,0 +1,16 @@
+domain: my.domain
+layout:
+- go.kubebuilder.io/v3
+projectName: my-kube-controller
+repo: nx-go-playground
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: my.domain
+  group: storage
+  kind: ContainerInjector
+  path: nx-go-playground/api/v1alpha1
+  version: v1alpha1
+version: "3"

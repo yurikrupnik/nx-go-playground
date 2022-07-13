@@ -1,0 +1,30 @@
+{
+  "root": "apps/infra/my-kube-controller",
+  "projectType": "application",
+  "sourceRoot": "apps/infra/my-kube-controller",
+  "targets": {
+    "serve": {
+      "executor": "@nx-go/nx-go:serve",
+      "options": {
+        "main": "apps/infra/my-kube-controller/main.go"
+      }
+    },
+    "lint": {
+      "executor": "@nx-go/nx-go:lint"
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "commands": [
+          "docker build . -t yurikrupnik/main-controller",
+          "docker push yurikrupnik/main-controller"
+        ],
+        "cwd": "apps/infra/my-kube-controller"
+      }
+    }
+  },
+  "tags": [
+    "kuberneter=true"
+  ]
+}

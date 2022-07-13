@@ -1,0 +1,27 @@
+{
+  "root": "apps/infra/commands",
+  "projectType": "application",
+  "sourceRoot": "apps/infra/commands",
+  "targets": {
+    "build": {
+      "executor": "@nx-go/nx-go:build",
+      "options": {
+        "outputPath": "dist/apps/infra/commands",
+        "main": "apps/infra/commands/main.go"
+      }
+    },
+    "serve": {
+      "executor": "@nx-go/nx-go:serve",
+      "options": {
+        "main": "apps/infra/commands/main.go"
+      }
+    },
+    "test": {
+      "executor": "@nx-go/nx-go:test"
+    },
+    "lint": {
+      "executor": "@nx-go/nx-go:lint"
+    }
+  },
+  "tags": ["ci"]
+}

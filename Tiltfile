@@ -1,26 +1,40 @@
-local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'])
+
+#k8s_yaml(local('helm template --set key1=val1,key2=val2 ./charts/main-chart'))
+#watch_file('/charts/main-chart')
+
+local_resource(
+  "make k-b-a",
+  # cmd="make k-b-a",
+  cmd="ls",
+  allow_parallel = True,
+  trigger_mode=TRIGGER_MODE_MANUAL,
+  # only=["/k8s/base/helm/values/"],
+  deps=["/k8s/base/helm/values/"],
+  labels=["makefile", "helm", "manual"],
+)
+local_resource(
+  "make k-b-d",
+  cmd="ls",
+  # cmd="make k-b-d",
+  allow_parallel = True,
+  # trigger_mode=TRIGGER_MODE_MANUAL,
+  # TRIGGER_MODE_AUTO
+  # only=["/k8s/base/helm/values/"],
+  deps=["/k8s/base/helm/values/"],
+  labels=["makefile", "helm", "manual"],
+)
+
+local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'], labels=['npm'])
+
+# include('./k8s/base/helm/Tiltfile')
 
 include('./apps/users/api/Tiltfile')
 include('./apps/users/client/Tiltfile')
-
-#local_resource(
- # 'build-users-api',
- # cmd='yarn nx run users-api:build',
- # deps=['./apps/users/api', './libs/go'],
- # resource_deps=["yarn"],
- # env={"GOOS":"linux","GOARCH":"amd64"},
- # ignore=["dist/apps/users/api", "node_modules"]
-#)
-
-# docker_build(
- # "yurikrupnik/users-api",
- # ".",
- # target="go-builder",
- # build_args={"DIST_PATH":"dist/apps/users/api"},
- # only=["dist/apps/users/api"]
-#)
+include('./apps/infra/my-kube-controller/Tiltfile')
+# include('./apps/infra/commdands/Tiltfile')
 
 k8s_yaml(kustomize('k8s/base'))
+# k8s_yaml(kustomize('k8s/base/helm/manifests'))
 
 # k8s_resource("users-api", port_forwards="5001:8080")
 # ports to container port that runs as container env var - both ways
