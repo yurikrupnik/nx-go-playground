@@ -80,7 +80,7 @@
     "@nx-go/nx-go": "2.6.0",
     "@nx-tools/nx-docker": "3.0.1",
     "@nxext/solid": "13.1.1",
-    "@nxrs/cargo": "^0.3.3",
+    "@nxrs/cargo": "0.3.3",
     "@originjs/vite-plugin-federation": "1.1.7",
     "@swc/core": "1.2.212",
     "@swc/jest": "0.2.21",
