@@ -22,9 +22,13 @@
         ],
         "cwd": "apps/infra/my-kube-controller"
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   },
-  "tags": [
-    "kuberneter=true"
-  ]
+  "tags": ["kuberneter=true"]
 }

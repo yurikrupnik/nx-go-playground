@@ -17,7 +17,8 @@
     "skaffold": "yarn nx run-many --target=skaffold --parallel --max-parallel=4 --all",
     "deploy": "yarn nx run-many --target=deploy --parallel --max-parallel=4 --all",
     "affected": "yarn nx affected --parallel=5",
-    "pack:build": "yarn nx run-many --target=pack --parallel --max-parallel=4 --all"
+    "pack:build": "yarn nx run-many --target=pack --parallel --max-parallel=4 --all",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -62,7 +63,10 @@
     "tslib": "2.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "@google-cloud/functions-framework": "3.1.2",
+    "@jscutlery/semver": "^2.25.2",
     "@nestjs/schematics": "9.0.1",
     "@nestjs/testing": "8.4.7",
     "@nrwl/cli": "13.10.6",
@@ -111,6 +115,7 @@
     "eslint-plugin-react": "7.30.1",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-solid": "0.7.1",
+    "husky": "^8.0.0",
     "jest": "27.5.1",
     "nx": "13.10.6",
     "postcss": "8.4.14",

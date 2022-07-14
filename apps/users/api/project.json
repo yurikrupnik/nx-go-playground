@@ -30,6 +30,12 @@
       "options": {
         "command": "docker buildx build --target go-builder --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/users/api . -t yurikrupnik/users-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api --push"
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   },
   "tags": []
