@@ -61,7 +61,7 @@
     "single-spa": "5.9.4",
     "single-spa-react": "4.6.1",
     "solid-app-router": "0.4.1",
-    "swagger-ui-express": "4.4.0",
+    "swagger-ui-express": "4.5.0",
     "tslib": "2.4.0"
   },
   "devDependencies": {
