@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.0.6](https://github.com/yurikrupnik/nx-go-playground/compare/my_rust_app-0.0.5...my_rust_app-0.0.6) (2022-07-14)
+
 ### [0.0.5](https://github.com/yurikrupnik/nx-go-playground/compare/my_rust_app-0.0.4...my_rust_app-0.0.5) (2022-07-14)
 
 ### [0.0.4](https://github.com/yurikrupnik/nx-go-playground/compare/my_rust_app-0.0.3...my_rust_app-0.0.4) (2022-07-14)
