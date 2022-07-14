@@ -5,16 +5,12 @@
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/profile/api",
         "main": "apps/profile/api/src/main.ts",
         "tsConfig": "apps/profile/api/tsconfig.app.json",
-        "assets": [
-          "apps/profile/api/src/assets"
-        ],
+        "assets": ["apps/profile/api/src/assets"],
         "generatePackageJson": true
       },
       "configurations": {
@@ -39,20 +35,14 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/profile/api/**/*.ts"
-        ]
+        "lintFilePatterns": ["apps/profile/api/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/profile/api"
-      ],
+      "outputs": ["coverage/apps/profile/api"],
       "options": {
         "jestConfig": "apps/profile/api/jest.config.js",
         "passWithNoTests": true
@@ -85,13 +75,14 @@
         "push": false,
         "target": "nest-builder",
         "context": "./",
-        "build-args": [
-          "DIST_PATH=dist/apps/profile/api"
-        ],
-        "tags": [
-          "yurikrupnik/profile-api:latest",
-          "yurikrupnik/profile-api:v1"
-        ]
+        "build-args": ["DIST_PATH=dist/apps/profile/api"],
+        "tags": ["yurikrupnik/profile-api:latest", "yurikrupnik/profile-api:v1"]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
       }
     }
   },
