@@ -1,4 +1,7 @@
 {
+  "semantic-release": {
+    "executor": "@theunderscorer/nx-semantic-release:semantic-release"
+  },
   "version": 2,
   "projects": {
     "api-helpers": "libs/api/helpers",

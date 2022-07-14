@@ -18,6 +18,7 @@
     "deploy": "yarn nx run-many --target=deploy --parallel --max-parallel=4 --all",
     "affected": "yarn nx affected --parallel=5",
     "pack:build": "yarn nx run-many --target=pack --parallel --max-parallel=4 --all",
+    "version": "yarn nx run-many --target=version --parallel --max-parallel=1 --all --releaseAs=patch",
     "prepare": "husky install",
     "commit": "cz"
   },
@@ -95,6 +96,7 @@
     "@tailwindcss/typography": "0.5.3",
     "@testing-library/react": "13.3.0",
     "@testing-library/react-hooks": "8.0.1",
+    "@theunderscorer/nx-semantic-release": "^1.13.0",
     "@types/jest": "27.5.2",
     "@types/lodash": "4.14.182",
     "@types/node": "17.0.25",
