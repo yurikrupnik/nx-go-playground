@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func Hello(name string) string {
-	result := "Hellso " + name
+	result := "Hello " + name
 	return result
 }
 
