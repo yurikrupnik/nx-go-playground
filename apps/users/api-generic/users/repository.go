@@ -40,7 +40,6 @@ func (ms mongoStore[T]) Get(id primitive.ObjectID) (*T, error) {
 
 func (ms mongoStore[T]) List(u *T) ([]*T, error) {
 	col := ms.Client.Database("users").Collection("users")
-	// todo generic filter!!!
 	log.Println("u", u)
 	filter := bson.M{}
 	log.Println("filter", filter)

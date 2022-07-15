@@ -3,13 +3,14 @@ package go_models_user
 import (
 	"context"
 	"fmt"
-	"github.com/gofiber/fiber/v2"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
 	"net/http"
 	go_mongodb "nx-go-playground/libs/go/mongodb"
 	"time"
+
+	"github.com/gofiber/fiber/v2"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type circle struct {
@@ -73,19 +74,19 @@ func updateOneMove(movieId string) {
 	fmt.Println("modified count:", result.ModifiedCount)
 }
 
-func CreateFakeGroup(api fiber.Router, name string) {
+func CreateFakeGroup[T interface{}](api fiber.Router, name string) {
 	router := api.Group(name)
-	router.Post("", CreateHandlerCreate[User]())
-	router.Get("", CreateHandlerList())
-	router.Get("/:id", CreateHandleGetById())
-	router.Delete("/:id", CreateHandleDeleteById())
-	router.Put("/:id", CreateHandleUpdate())
+	router.Post("", CreateHandlerCreate[T]())
+	router.Get("", CreateHandlerList[T]())
+	router.Get("/:id", CreateHandleGetById[T]())
+	router.Delete("/:id", CreateHandleDeleteById[T]())
+	router.Put("/:id", CreateHandleUpdate[T]())
 }
 
 func CreateHandlerCreate[T interface{}]() fiber.Handler {
 
 	return func(c *fiber.Ctx) error {
-		var user User
+		var user T
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
 		//validate the request body
@@ -99,12 +100,12 @@ func CreateHandlerCreate[T interface{}]() fiber.Handler {
 		//  return c.Status(http.StatusBadRequest).JSON(responses.UserResponse{Status: http.StatusBadRequest, Message: "error", Data: &fiber.Map{"data": validationErr.Error()}})
 		//}
 
-		newUser := User{
-			Name:  user.Name,
-			Email: user.Email,
-			Role:  user.Role,
-		}
-		result, err := go_mongodb.Mg.Db.Collection("users").InsertOne(ctx, newUser)
+		// newUser := User{
+		// 	Name:  user.Name,
+		// 	Email: user.Email,
+		// 	Role:  user.Role,
+		// }
+		result, err := go_mongodb.Mg.Db.Collection("users").InsertOne(ctx, user)
 		if err != nil {
 			//return c.Status(http.StatusInternalServerError).JSON(UserResponse{Status: http.StatusInternalServerError, Message: "error", Data: &fiber.Map{"data": err.Error()}})
 		}
@@ -116,45 +117,24 @@ func CreateHandlerCreate[T interface{}]() fiber.Handler {
 	}
 }
 
-func CreateHandlerList() fiber.Handler {
+func CreateHandlerList[T interface{}]() fiber.Handler {
 	return func(c *fiber.Ctx) error {
-		// get all records as a cursor
-		//query := bson.D{{}}
-		var usr User
-		//var myStrings SensorReading
+
+		//var usr T
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
 		//todo handle query
-		data := c.Request().URI().QueryString()
-		//args := c.Request().URI().QueryArgs()
-		//limitVal, _ := strconv.Atoi(c.Query("limit", "10"))
-		//DecodeJSON(data, &usr)
-		//if err != nil {
-		//	fmt.Println("error")
-		//}
-		//jsons, err := json.Marshal(data)
-		//err := json.Unmarshal([]byte(data), &usr)
-		//if err != nil {
-		//	fmt.Println("error parsing json")
-		//}
-		fmt.Println("aris")
-		fmt.Println("usr => ", usr)
-		//fmt.Println("das => ", das)
-		//fmt.Println("jsons => ", jsons)
-		fmt.Println("data => ", data)
-		fmt.Println("String => ", string(data))
-		//fmt.Println(map)
+		//data := c.Request().URI().QueryString()
 		query := bson.M{} // todo handle query
 		//query := bson.M{} // todo handle query
-		fmt.Println(c.Query("email"))
-		fmt.Println(c.Query("*"))
-		//query := bson.M{"email": "a@a.com"}
+		//fmt.Println(c.Query("email"))
+		//fmt.Println(c.Query("*"))
 		cursor, err := go_mongodb.Mg.Db.Collection("users").Find(ctx, query)
 		if err != nil {
 			return c.Status(http.StatusInternalServerError).SendString(err.Error())
 		}
 		//defer cursor.Close(ctx)
-		var users []User = make([]User, 0)
+		var response []T = make([]T, 0)
 
 		// iterate the cursor and decode each item into an Employee
 		//if err := cursor.All(c.Context(), &users); err != nil {
@@ -162,41 +142,38 @@ func CreateHandlerList() fiber.Handler {
 		//}
 
 		for cursor.Next(ctx) {
-			var user User
-			err := cursor.Decode(&user)
+			var item T
+			err := cursor.Decode(&item)
 			if err != nil {
 				fmt.Println(err)
-				//return err
-				//log.Fatal("fatal")
-				//log.Panic("panic")
 			}
-			users = append(users, user)
+			response = append(response, item)
 		}
 		// return employees list in JSON format
-		return c.Status(http.StatusOK).JSON(users)
+		return c.Status(http.StatusOK).JSON(response)
 	}
 }
 
-func CreateHandleGetById() fiber.Handler {
+func CreateHandleGetById[T interface{}]() fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		id := c.Params("id")
-		var user User
+		var response T
 		defer cancel()
 
 		objId, _ := primitive.ObjectIDFromHex(id)
 
-		err := go_mongodb.Mg.Db.Collection("users").FindOne(ctx, bson.M{"_id": objId}).Decode(&user)
+		err := go_mongodb.Mg.Db.Collection("users").FindOne(ctx, bson.M{"_id": objId}).Decode(&response)
 		if err != nil {
 			return c.Status(http.StatusInternalServerError).JSON(err.Error())
 		}
 
 		//return c.Status(http.StatusOK).JSON(UserResponse{Status: http.StatusOK, Message: "success", Data: &fiber.Map{"data": user}})
-		return c.Status(fiber.StatusOK).JSON(user)
+		return c.Status(fiber.StatusOK).JSON(response)
 	}
 }
 
-func CreateHandleDeleteById() fiber.Handler {
+func CreateHandleDeleteById[T interface{}]() fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		userId := c.Params("id")
@@ -223,11 +200,11 @@ func CreateHandleDeleteById() fiber.Handler {
 	}
 }
 
-func CreateHandleUpdate() fiber.Handler {
+func CreateHandleUpdate[T interface{}]() fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		id := c.Params("id")
-		var user User
+		var user T
 		defer cancel()
 
 		objId, _ := primitive.ObjectIDFromHex(id)
@@ -243,17 +220,17 @@ func CreateHandleUpdate() fiber.Handler {
 		//}
 
 		// map
-		update := bson.M{"name": user.Name, "email": user.Email, "role": user.Role}
+		//update := bson.M{"name": user.Name, "email": user.Email, "role": user.Role}
 
-		fmt.Println(update)
-		result, err := go_mongodb.Mg.Db.Collection("users").UpdateOne(ctx, bson.M{"_id": objId}, bson.M{"$set": update})
+		//fmt.Println(update)
+		result, err := go_mongodb.Mg.Db.Collection("users").UpdateOne(ctx, bson.M{"_id": objId}, bson.M{"$set": user})
 
 		if err != nil {
 			fmt.Println(err)
 			return c.Status(http.StatusInternalServerError).JSON(err.Error())
 		}
 		//get updated user details
-		var updatedUser User
+		var updatedUser T
 		//fmt.Println("result", result.)
 		if result.MatchedCount == 1 {
 			fmt.Println("dmmm")

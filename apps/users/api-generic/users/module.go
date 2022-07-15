@@ -10,8 +10,11 @@ func New(r fiber.Router, url string) {
 	if err != nil {
 		//return errors.Wrap(err, "unable to connect to db")
 	}
+	//s.
 	srv := NewUserSvc[User](s)
+	//srv.
 	log.Print("all good")
 	handlers := NewHandler[User](srv)
-	Routes(r, url, handlers)
+	//handlers.
+	Routes[User](r, url, handlers)
 }

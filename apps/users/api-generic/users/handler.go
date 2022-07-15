@@ -20,7 +20,6 @@ func NewHandler[T any](svc UserSvc[T]) *Handler[T] {
 func (h *Handler[T]) GetById(c *fiber.Ctx) error {
 	id := c.Params("id")
 	objId, _ := primitive.ObjectIDFromHex(id)
-	log.Println("-----> OBJECT ID", objId)
 	data, err := h.Svc.Get(objId)
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(err.Error())
