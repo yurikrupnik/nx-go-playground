@@ -14,7 +14,6 @@
     "infra-commands": "apps/infra/commands",
     "infra-my-kube-controller": "apps/infra/my-kube-controller",
     "my-lib": "libs/my-lib",
-    "my_rust_app": "apps/my-rust-app",
     "my_rust_bin": "apps/rust/my-rust-bin",
     "nest-modules": "libs/nest/modules",
     "next-app": "apps/next-app",
@@ -24,8 +23,8 @@
     "rust_lib": "libs/rust/rust-lib",
     "services-projects": "apps/services/projects",
     "simple-app": "apps/simple-app",
-    "test-be-test-app": "apps/test/be-test-app",
     "users-api": "apps/users/api",
+    "users-api-generic": "apps/users/api-generic",
     "users-client": "apps/users/client",
     "users-users-client-e2e": "apps/users/users-client-e2e"
   }
