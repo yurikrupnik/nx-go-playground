@@ -134,7 +134,7 @@
     "ts-jest": "27.1.5",
     "typescript": "4.7.4",
     "vite": "2.9.14",
-    "vite-plugin-solid": "2.2.6",
+    "vite-plugin-solid": "2.3.0",
     "webpack-config-single-spa-react": "4.0.3",
     "webpack-config-single-spa-react-ts": "4.0.3",
     "webpack-merge": "5.8.0"
