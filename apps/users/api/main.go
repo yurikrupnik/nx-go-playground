@@ -7,7 +7,9 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/monitor"
 	"github.com/gofiber/fiber/v2/middleware/recover"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
+	"nx-go-playground/apps/users/api-generic/users"
 	go_fiber_helpers "nx-go-playground/libs/go/fiber-helpers"
 	"nx-go-playground/libs/go/models/user"
 	go_mongodb "nx-go-playground/libs/go/mongodb"
@@ -19,6 +21,11 @@ type UserResponseM struct {
 	Status  int        `json:"status"`
 	Message string     `json:"message"`
 	Data    *fiber.Map `json:"data"`
+}
+
+type Project struct {
+	ID   primitive.ObjectID `json:"id" bson:"_id,omitempty"`
+	Name string             `json:"name" bson:"name,omitempty" validate:"required,min=3,max=36"`
 }
 
 // @securityDefinitions.basic  BasicAuth
@@ -47,7 +54,8 @@ func main() {
 	apiGroup1.Get("/dom", func(ctx *fiber.Ctx) error {
 		return ctx.SendString("dom-yuri")
 	})
-	go_models_user.CreateFakeGroup(apiGroup, "users")
+	go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
+	go_models_user.CreateFakeGroup[Project](apiGroup, "projects")
 
 	app.Get("/dashboard", monitor.New())
 	ds := os.Getenv("MONGO_URI")

@@ -28,7 +28,7 @@ fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
 
 fn sum_loops(n: i32) -> i32 {
     let mut sum = 0;
-    for i in 1..n {
+    for i in 1..n {w
         sum += i;
     }
     sum
@@ -36,7 +36,7 @@ fn sum_loops(n: i32) -> i32 {
 }
 
 fn add_one(n: i32) -> i32 {
-    1 + n
+    12 + n
 }
 
 fn connect_to_database() -> Status {

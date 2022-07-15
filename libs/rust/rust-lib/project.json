@@ -3,18 +3,6 @@
   "projectType": "library",
   "sourceRoot": "libs/rust/rust-lib/src",
   "targets": {
-    "test": {
-      "executor": "@nxrs/cargo:test",
-      "options": {}
-    },
-    "lint": {
-      "executor": "@nxrs/cargo:clippy",
-      "options": {
-        "fix": false,
-        "failOnWarnings": true,
-        "noDeps": true
-      }
-    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
