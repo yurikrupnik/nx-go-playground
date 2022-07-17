@@ -6,9 +6,11 @@ GCP_PROJECT:=$(gcloud config get-value project)
 all: build
 
 ##@ Docker
-docker-rmi-all: ## Docker remove all images installed - not including
-	docker rmi $(docker images -aq) -f
-
+docker-rmi-all: ## Docker remove all images installed - TODO Fix not including
+	images:=$(docker images -aq)
+	docker rmi $images -f
+docker-rm-all: ## Docker remove all images installed - TODO Fix not including
+	docker rm $(docker ps -aq) -f
 ##@ General
 
 .PHONY: help
@@ -31,10 +33,12 @@ k-b-d: compile-manifests
 	kustomize build ./k8s/base/helm/manifests | kubectl delete -f -
 # | kubectl apply -f -
 up:
-	-kind create cluster --name test-env --image kindest/node:v1.21.1 --config local-cluster/cluster.yaml
-	-nvm install node
-	tilt up
-	make tilt
+	ctlptl create registry ctlptl-registry --port=5005
+
+	-#kind create cluster --name test-env --image kindest/node:v1.21.1 --config local-cluster/cluster.yaml
+#	-nvm install node
+#	tilt up
+#	make tilt
 down:
 	-tilt down
 	kind delete cluster --name test-env
