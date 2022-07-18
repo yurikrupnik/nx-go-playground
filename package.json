@@ -13,11 +13,8 @@
     "ups": "yarn nx run-many --target=up --parallel --max-parallel=4 --all",
     "docker:affected": "yarn nx affected --target=docker --parallel --max-parallel=3",
     "docker": "yarn nx run-many --target=docker --parallel --max-parallel=4 --all",
-    "buildpack": "yarn nx run-many --target=pack --parallel --max-parallel=4 --all",
-    "skaffold": "yarn nx run-many --target=skaffold --parallel --max-parallel=4 --all",
     "deploy": "yarn nx run-many --target=deploy --parallel --max-parallel=4 --all",
     "affected": "yarn nx affected --parallel=5",
-    "pack:build": "yarn nx run-many --target=pack --parallel --max-parallel=4 --all",
     "version": "yarn nx run-many --target=version --parallel --max-parallel=1 --all --releaseAs=patch",
     "prepare": "husky install",
     "commit": "cz"

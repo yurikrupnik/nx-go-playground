@@ -1,0 +1,42 @@
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'command to run'
+        required: true
+        default: 'build'
+      tags:
+        description: 'Test scenario tags'
+        default: 'latest'
+        required: false
+        options:
+          - prerelease
+          - patch
+          - major
+          - minor
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    #    runs-on: self-hosted
+    #    strategy:
+    #      matrix:
+    #        node-version: [ 14.x, 16.x, 18.x ]
+    #        go-version: [ 1.6.x, 1.17.x, 1.18.x ]
+    # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout [main]
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18'
+      - run: go version
+      - run: GOOS=linux GOARCH=amd64 yarn build
+      - run: yarn ${{ github.event.inputs.command }}
