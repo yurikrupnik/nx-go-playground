@@ -36,7 +36,7 @@ dependencies:
     version: 10.7.7
     repository: https://charts.bitnami.com/bitnami
   - name: redis
-    version: 17.0.1
+    version: 17.0.2
     repository: https://charts.bitnami.com/bitnami
   - name: kube-prometheus
     version: 8.0.9
