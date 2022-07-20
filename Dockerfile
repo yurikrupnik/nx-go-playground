@@ -38,3 +38,37 @@ EXPOSE ${PORT}
 COPY $DIST_PATH ./app
 EXPOSE 8080
 ENTRYPOINT ["/app"]
+
+#FROM golang:1.18-buster AS go-build
+#WORKDIR /app
+#COPY workspace.json ./
+#COPY nx.json ./
+#COPY go.mod ./
+#COPY go.sum ./
+#RUN go mod download
+#ARG APP_PATH
+#RUN test -n "$APP_PATH" || (echo "DIST_PATH  not set" && false)
+#COPY ./$APP_PATH ./$APP_PATH
+#COPY ./libs/go ./libs/go
+##RUN #go build -a -o app $APP_PATH/main.go
+#RUN npx nx run users-api:build
+#RUN ls
+#RUN ls
+#
+###
+### Deploy
+###
+##34.7MB
+##FROM gcr.io/distroless/base-debian10
+##24.4MB
+#FROM alpine:latest AS go-alpine
+#WORKDIR /
+#
+#COPY --from=go-build /app /app
+##COPY ./fiber-mongo /fiber-mongo
+#
+#EXPOSE 8080
+#
+##USER nonroot:nonroot
+#
+#ENTRYPOINT ["/app"]
