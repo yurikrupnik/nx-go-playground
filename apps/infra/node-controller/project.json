@@ -1,0 +1,52 @@
+{
+  "root": "apps/infra/node-controller",
+  "sourceRoot": "apps/infra/node-controller/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/infra/node-controller",
+        "main": "apps/infra/node-controller/src/main.ts",
+        "tsConfig": "apps/infra/node-controller/tsconfig.app.json",
+        "assets": ["apps/infra/node-controller/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/infra/node-controller/src/environments/environment.ts",
+              "with": "apps/infra/node-controller/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "infra-node-controller:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/infra/node-controller/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/infra/node-controller"],
+      "options": {
+        "jestConfig": "apps/infra/node-controller/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
