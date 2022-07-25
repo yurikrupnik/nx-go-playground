@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.0.10](https://github.com/yurikrupnik/nx-go-playground/compare/infra-commands-0.0.9...infra-commands-0.0.10) (2022-07-25)
+
+
+### Features
+
+* **blog:** add comment section ([170ad33](https://github.com/yurikrupnik/nx-go-playground/commit/170ad3307f34fc401e78bbaec286d43a8bbd5be4))
+
 ### [0.0.9](https://github.com/yurikrupnik/nx-go-playground/compare/infra-commands-0.0.9-0...infra-commands-0.0.9) (2022-07-14)
 
 ### [0.0.9-0](https://github.com/yurikrupnik/nx-go-playground/compare/infra-commands-0.0.9-0...infra-commands-0.0.9-0) (2022-07-14)
