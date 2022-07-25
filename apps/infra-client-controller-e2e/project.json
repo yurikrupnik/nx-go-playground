@@ -1,0 +1,28 @@
+{
+  "root": "apps/infra-client-controller-e2e",
+  "sourceRoot": "apps/infra-client-controller-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/infra-client-controller-e2e/cypress.json",
+        "devServerTarget": "infra-client-controller:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "infra-client-controller:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/infra-client-controller-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["infra-client-controller"]
+}

@@ -9289,10 +9289,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:3.23.5":
-  version: 3.23.5
-  resolution: "core-js@npm:3.23.5"
-  checksum: 0277d46b151126c5d90411e8e6b0d338abe2aaa695a132c360203a3772c620f849622c4fab8bfd7a46eec6933d5fe90f32f7167779d419bda699ff7808605757
+"core-js@npm:3.24.0":
+  version: 3.24.0
+  resolution: "core-js@npm:3.24.0"
+  checksum: f1d1feef82bac7ecddd9e40e75b7126e7b5299a0d17aa046238bd8c78567d485b32c9c80b212704d9483ccc8b3f13b3ee35a5ec69fdca874377f654664068669
   languageName: node
   linkType: hard
 
@@ -17597,7 +17597,7 @@ __metadata:
     babel-jest: 27.5.1
     class-transformer: 0.5.1
     class-validator: 0.13.2
-    core-js: 3.23.5
+    core-js: 3.24.0
     cypress: 9.7.0
     cz-conventional-changelog: 3.3.0
     esbuild-loader: 2.19.0
@@ -17647,7 +17647,7 @@ __metadata:
     ts-jest: 27.1.5
     tslib: 2.4.0
     typescript: 4.7.4
-    vite: 3.0.2
+    vite: 3.0.3
     vite-plugin-solid: 2.3.0
     webpack-config-single-spa-react: 4.0.3
     webpack-config-single-spa-react-ts: 4.0.3
@@ -23189,9 +23189,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:3.0.2":
-  version: 3.0.2
-  resolution: "vite@npm:3.0.2"
+"vite@npm:3.0.3":
+  version: 3.0.3
+  resolution: "vite@npm:3.0.3"
   dependencies:
     esbuild: ^0.14.47
     fsevents: ~2.3.2
@@ -23217,7 +23217,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10aebec0df89bbdba9a0c72dc35ec3ec5be0b50216fc7a1e04b5da11de244033b1cbe83a95b1af67be176fc09e05698387d3cc9dcbee64e009dd43811f8717e9
+  checksum: 0b15d6bb062ab56dd8a0d47262344dcb48423d658c153c88a8a41f9301a70f32dd0fa2c037fa39a0a7888be1005cb763aad94235f82439441a13cef5103c29c4
   languageName: node
   linkType: hard
 
