@@ -15,7 +15,7 @@
     "docker": "yarn nx run-many --target=docker --parallel --max-parallel=4 --all",
     "deploy": "yarn nx run-many --target=deploy --parallel --max-parallel=4 --all",
     "affected": "yarn nx affected --parallel=5",
-    "version": "yarn nx run-many --target=version --parallel --max-parallel=1 --all --releaseAs=patch",
+    "version": "yarn nx run-many --target=version --parallel --max-parallel=1 --all -releaseAs=prerelease --preid=beta --push --dryRun --postTargets=github",
     "prepare": "husky install",
     "commit": "cz"
   },

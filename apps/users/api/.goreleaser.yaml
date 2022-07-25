@@ -1,0 +1,95 @@
+# This is an example .goreleaser.yml file with some sensible defaults.
+# Make sure to check the documentation at https://goreleaser.com
+env:
+  #  - FOO={{ .Env.FOOBAR }}
+  #  - IMAGE_COPY={{ .Env.IMAGE }}
+  - IMAGE=yurikrupnik/users-api
+project_name: users-api
+#monorepo:
+#  tag_prefix: users-api-tag/
+#  dir: apps/users/api
+before:
+  hooks:
+    - go mod tidy
+    - go test -v ./...
+#    - echo $IMAGE_COPY
+#    - echo ${IMAGE_COPY}
+#    - echo $IMAGE
+#    - go generate ./...
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    binary: users-api
+#    hooks:
+#      pre:
+#        - ls -a
+#        - second-script.sh
+#      post:
+#        - ls -a
+#        - codesign -project="{{ .ProjectName }}" "{{ .Path }}"
+#archives:
+#  -
+#    name_template: aris
+#    builds:
+#      - default
+#    meta: true
+#  - replacements:
+#      darwin: Darwin
+#      linux: Linux
+##      windows: Windows
+##      386: i386
+#      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+#  name_template: "{{ .ProjectName }}_{{ .Version }}" # {{ .Os }}_{{ .Arch }}
+
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+
+universal_binaries:
+  - replace: true
+
+release:
+  #  draft: true
+#  prerelease: auto
+  name_template: "yurikrupnik/{{ .ProjectName }}:{{ .Tag }}"
+  disable: false
+  mode: append
+  gitea:
+    owner: yurikrupnik
+    name: users-api
+  #  ids:
+  #    - foo
+  #    - bar
+
+  header: |
+    ## Some title ({{ .Date }})
+    docker hub: yurikrupnik/{{ .ProjectName }}:{{ .Tag }}
+    Docker Hub: [image](yurikrupnik/{{ .ProjectName }}:{{ .Tag }})
+    Welcome to this new release!
+    # Footer template for the release body.
+    # Defaults to empty.
+  footer: |
+    ## Thanks!
+    Those were the changes on {{ .Tag }}!
+dockers:
+  -
+    image_templates:
+      - "yurikrupnik/{{ .ProjectName }}:{{ .Tag }}"
+
+    use: buildx
+
+    dockerfile: Dockerfile
