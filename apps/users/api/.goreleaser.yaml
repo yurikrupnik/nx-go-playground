@@ -1,6 +1,7 @@
 # This is an example .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
 dist: apps/users/api/dist
+
 env:
   #  - FOO={{ .Env.FOOBAR }}
   #  - IMAGE_COPY={{ .Env.IMAGE }}
@@ -18,6 +19,7 @@ before:
 #    - echo $IMAGE
 #    - go generate ./...
 builds:
+  - main: ./apps/users/api
   - env:
       - CGO_ENABLED=0
     goos:
