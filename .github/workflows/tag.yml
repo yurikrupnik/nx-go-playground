@@ -45,7 +45,7 @@ jobs:
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
       - name: Get tag
-        run: echo '${{ v${github.ref_name##*-} }}'
+        run: echo 'v${{github.ref_name##*-}}'
       - run: echo '${{ toJSON(github.ref) }}'
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
