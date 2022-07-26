@@ -44,8 +44,12 @@ jobs:
       - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
+#      - name: Get tag
+#        run: echo 'v${{github.ref_name##*-}}'
       - name: Get tag
-        run: echo 'v${{github.ref_name##*-}}'
+        run: echo "::set-env name=TAG::$(echo ${github.ref_name##*-})"
+      - name: Print branch name
+        run: echo 'The branch name is' $TAG
       - run: echo '${{ toJSON(github.ref) }}'
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
