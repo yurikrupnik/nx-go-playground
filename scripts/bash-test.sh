@@ -1,14 +1,16 @@
 
 #! /bin/bash
-
 set -e
 
-MONGO_URI=$(gcloud secrets versions access latest --secret=MONGO_URI --project=mussia8)
-
-echo $MONGO_URI
-
-export MYSQL_PASSWORD=gcp:///MONGO_URI
-gcp-get-secret bash -c 'echo $MYSQL_PASSWORD'
+TAG=users-api-0.0.3
+echo v${TAG##*-}
+#echo $TAG
+#MONGO_URI=$(gcloud secrets versions access latest --secret=MONGO_URI --project=mussia8)
+#
+#echo $MONGO_URI
+#
+#export MYSQL_PASSWORD=gcp:///MONGO_URI
+#gcp-get-secret bash -c 'echo $MYSQL_PASSWORD'
 
 #echo Branch name: ${GITHUB_REF##*/}
 #echo HEAD_REF: $HEAD_REF
