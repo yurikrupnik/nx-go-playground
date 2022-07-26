@@ -94,7 +94,9 @@ dockers:
     image_templates:
       - "yurikrupnik/{{ .ProjectName }}:{{ .Tag }}"
     use: buildx
-    dockerfile: apps/users/api/Dockerfile
+#    dockerfile: apps/users/api/Dockerfile
+    dockerfile: Dockerfile
 
-#    build_flag_templates:
+    build_flag_templates:
+    - "--build-arg=DIST_PATH={{ .ProjectName }}"
 #      - "DIST_PATH=users-api"
