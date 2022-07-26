@@ -42,8 +42,7 @@
       "executor": "@jscutlery/semver:github",
       "options": {
         "tag": "${tag}",
-        "notes": "Aris is the kind node",
-        "notesFile": "apps/users/api/CHANGELOG.md"
+        "notes": "Aris is the kind node"
       }
     },
     "goreleaser": {
