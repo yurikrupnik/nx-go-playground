@@ -42,8 +42,14 @@
       "executor": "@jscutlery/semver:github",
       "options": {
         "tag": "${tag}",
-        "notes": "${notes}",
-        "notesFile": "apps/users/api/CHANGELOG.md"
+        "notes": "${notes}"
+      }
+    },
+    "goreleaser": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "goreleaser release --rm-dist -f ./apps/users/api/.goreleaser.yaml"
       }
     }
   },

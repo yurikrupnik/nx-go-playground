@@ -28,15 +28,15 @@ CMD ["nginx", "-g", "daemon off;"]
 #CMD ["haproxy", "start"]
 
 # Done
-FROM alpine:latest AS go-builder
+FROM scratch AS go-builder
 WORKDIR /
 ARG DIST_PATH
-RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
+#RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
 ARG ENTRY_NAME=app
 ENV PORT=8080
 EXPOSE ${PORT}
 COPY $DIST_PATH ./app
-EXPOSE 8080
+EXPOSE ${PORT}
 ENTRYPOINT ["/app"]
 
 #FROM golang:1.18-buster AS go-build

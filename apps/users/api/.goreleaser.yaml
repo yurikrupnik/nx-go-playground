@@ -6,6 +6,7 @@ env:
   #  - FOO={{ .Env.FOOBAR }}
   #  - IMAGE_COPY={{ .Env.IMAGE }}
   - IMAGE=yurikrupnik/users-api
+  - DIST_PATH=users-api
 project_name: users-api
 #monorepo:
 #  tag_prefix: users-api-tag/
@@ -20,7 +21,7 @@ before:
 #    - go generate ./...
 builds:
   - main: ./apps/users/api
-  - env:
+    env:
       - CGO_ENABLED=0
     goos:
       - linux
@@ -28,7 +29,7 @@ builds:
     goarch:
       - amd64
       - arm64
-    binary: users-api
+    binary: "{{ .ProjectName }}"
 #    hooks:
 #      pre:
 #        - ls -a
@@ -73,7 +74,7 @@ release:
   mode: append
   gitea:
     owner: yurikrupnik
-    name: users-api
+    name: "{{ .ProjectName }}"
   #  ids:
   #    - foo
   #    - bar
@@ -92,7 +93,10 @@ dockers:
   -
     image_templates:
       - "yurikrupnik/{{ .ProjectName }}:{{ .Tag }}"
-
     use: buildx
-
+#    dockerfile: apps/users/api/Dockerfile
     dockerfile: Dockerfile
+
+    build_flag_templates:
+    - "--build-arg=DIST_PATH={{ .ProjectName }}"
+#      - "DIST_PATH=users-api"

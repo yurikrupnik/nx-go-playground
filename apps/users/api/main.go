@@ -47,9 +47,9 @@ func main() {
 	//app.Use(csrf.New()) // todo check it - forbidden post events
 	app.Use(cors.New())
 	apiGroup := app.Group("api")
-	apiGroup1 := app.Group("sdf")
+	apiGroup1 := app.Group("ds")
 	apiGroup1.Get("/sssss", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("yuri")
+		return ctx.SendString("dsds")
 	})
 	apiGroup1.Get("/dom", func(ctx *fiber.Ctx) error {
 		return ctx.SendString("dom-yuri")
