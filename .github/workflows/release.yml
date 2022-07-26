@@ -29,6 +29,9 @@ jobs:
         uses: goreleaser/goreleaser-action@v3
         with:
           install-only: true
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: Run GoReleaser
