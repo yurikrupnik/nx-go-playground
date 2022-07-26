@@ -42,7 +42,8 @@
       "executor": "@jscutlery/semver:github",
       "options": {
         "tag": "${tag}",
-        "notes": "${notes}"
+        "notes": "${notes}",
+        "notesFile": "apps/users/api/CHANGELOG.md"
       }
     },
     "goreleaser": {
