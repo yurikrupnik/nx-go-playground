@@ -1,4 +1,4 @@
-name: Tags CI
+name: Release
 
 on:
 #  push:
