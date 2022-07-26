@@ -28,7 +28,7 @@ builds:
     goarch:
       - amd64
       - arm64
-    binary: users-api
+    binary: {{ .ProjectName }}
 #    hooks:
 #      pre:
 #        - ls -a
