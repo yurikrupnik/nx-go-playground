@@ -31,11 +31,12 @@ CMD ["nginx", "-g", "daemon off;"]
 FROM alpine:latest AS go-builder
 WORKDIR /
 ARG DIST_PATH
-RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
+RUN #test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
 ARG ENTRY_NAME=app
 ENV PORT=8080
 EXPOSE ${PORT}
-COPY $DIST_PATH ./app
+#COPY $DIST_PATH ./app
+COPY users-api ./app
 EXPOSE 8080
 ENTRYPOINT ["/app"]
 

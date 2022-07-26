@@ -45,6 +45,13 @@
         "notes": "${notes}",
         "notesFile": "apps/users/api/CHANGELOG.md"
       }
+    },
+    "goreleaser": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "goreleaser release --rm-dist -f ./apps/users/api/.goreleaser.yaml"
+      }
     }
   },
   "tags": []
