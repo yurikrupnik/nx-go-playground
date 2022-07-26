@@ -34,8 +34,11 @@ jobs:
           node-version: '16'
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-      - name: Run GoReleaser
-        run: npx nx run-many --all --parallel --target=goreleaser
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+#      - name: Run GoReleaser
+#        run: npx nx run-many --all --parallel --target=goreleaser
 #        uses: goreleaser/goreleaser-action@v3
 #        with:
 #          # either 'goreleaser' (default) or 'goreleaser-pro'
