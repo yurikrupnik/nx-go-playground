@@ -27,7 +27,16 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - run: go version
+      - name: Get Yarn cache directory
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
+      - name: Use Yarn cache
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
       - name: Install GoReleaser
         uses: goreleaser/goreleaser-action@v3
         with:
