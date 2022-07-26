@@ -49,10 +49,10 @@ func main() {
 	apiGroup := app.Group("api")
 	apiGroup1 := app.Group("ds")
 	apiGroup1.Get("/sssss", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("dsdds")
+		return ctx.SendString("dd")
 	})
 	apiGroup1.Get("/dom", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("dom-dyuri")
+		return ctx.SendString("dosm-s")
 	})
 	go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
 	go_models_user.CreateFakeGroup[Project](apiGroup, "projects")
