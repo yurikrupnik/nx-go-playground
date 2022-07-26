@@ -42,7 +42,7 @@
       "executor": "@jscutlery/semver:github",
       "options": {
         "tag": "${tag}",
-        "notes": "Aris is the kind node"
+        "notes": "${notes}"
       }
     },
     "goreleaser": {
