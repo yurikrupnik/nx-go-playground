@@ -1,17 +1,17 @@
 name: Release
 
-on:
+on: release
 #  push:
 #    tags:
 #      - '*'
-  release:
-    types:
-      - created
-      - edited
-      - prereleased
-      - published
-      - released
-      - deleted
+#  release
+#    types:
+#      - created
+#      - edited
+#      - prereleased
+#      - published
+#      - released
+#      - deleted
 env:
   DOCKER_BUILDKIT: 1
 jobs:
