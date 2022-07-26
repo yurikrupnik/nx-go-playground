@@ -46,10 +46,10 @@ jobs:
         run: echo '${{ toJSON(github) }}'
 #      - name: Get tag
 #        run: echo 'v${{github.ref_name##*-}}'
-      - name: Set the environment variable
-        run: echo TAG1=${github.ref_name##*-} >> $GITHUB_ENV
-      - name: Use the value
-        run: echo $TAG1 # This will output tag
+#      - name: Set the environment variable
+#        run: echo TAG1=${github.ref_name##*-} >> $GITHUB_ENV
+#      - name: Use the value
+#        run: echo $TAG1 # This will output tag
       - name: Get tag
         run: echo ::set-env name=TAG::$(echo ${github.ref_name##*-})
       - name: Print branch name
