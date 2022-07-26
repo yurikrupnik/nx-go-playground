@@ -52,7 +52,7 @@ func main() {
 		return ctx.SendString("dsdds")
 	})
 	apiGroup1.Get("/dom", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("dom-yuri")
+		return ctx.SendString("dom-dyuri")
 	})
 	go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
 	go_models_user.CreateFakeGroup[Project](apiGroup, "projects")
