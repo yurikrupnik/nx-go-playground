@@ -6,6 +6,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### [0.0.18](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.0.17...users-api-0.0.18) (2022-07-26)
 
+### [0.0.18](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.0.17...users-api-0.0.18) (2022-07-26)
+
 ### [0.0.17](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.0.16...users-api-0.0.17) (2022-07-26)
 
 ### [0.0.17](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.0.16...users-api-0.0.17) (2022-07-26)
