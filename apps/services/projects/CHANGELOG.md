@@ -4,6 +4,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### [0.0.9-alpha.2](https://github.com/yurikrupnik/nx-go-playground/compare/services-projects-0.0.9-alpha.1...services-projects-0.0.9-alpha.2) (2022-07-29)
 
+### [0.0.9-alpha.2](https://github.com/yurikrupnik/nx-go-playground/compare/services-projects-0.0.9-alpha.1...services-projects-0.0.9-alpha.2) (2022-07-29)
+
 ### [0.0.9-alpha.1](https://github.com/yurikrupnik/nx-go-playground/compare/services-projects-0.0.9-alpha.0...services-projects-0.0.9-alpha.1) (2022-07-29)
 
 ### [0.0.9-alpha.1](https://github.com/yurikrupnik/nx-go-playground/compare/services-projects-0.0.9-alpha.0...services-projects-0.0.9-alpha.1) (2022-07-29)
