@@ -4,6 +4,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### [0.0.7-alpha.3](https://github.com/yurikrupnik/nx-go-playground/compare/go-fiber-helpers-0.0.7-alpha.2...go-fiber-helpers-0.0.7-alpha.3) (2022-07-29)
 
+### [0.0.7-alpha.3](https://github.com/yurikrupnik/nx-go-playground/compare/go-fiber-helpers-0.0.7-alpha.2...go-fiber-helpers-0.0.7-alpha.3) (2022-07-29)
+
 ### [0.0.7-alpha.2](https://github.com/yurikrupnik/nx-go-playground/compare/go-fiber-helpers-0.0.7-alpha.1...go-fiber-helpers-0.0.7-alpha.2) (2022-07-29)
 
 ### [0.0.7-alpha.1](https://github.com/yurikrupnik/nx-go-playground/compare/go-fiber-helpers-0.0.7-alpha.0...go-fiber-helpers-0.0.7-alpha.1) (2022-07-29)
