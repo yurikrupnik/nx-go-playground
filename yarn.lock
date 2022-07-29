@@ -4064,7 +4064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/docker-metadata@npm:^3.0.0":
+"@nx-tools/docker-metadata@npm:^3.0.0, @nx-tools/docker-metadata@npm:^3.0.1":
   version: 3.0.1
   resolution: "@nx-tools/docker-metadata@npm:3.0.1"
   dependencies:
@@ -17560,6 +17560,7 @@ __metadata:
     "@nrwl/workspace": 13.10.6
     "@nx-extend/gcp-functions": 6.2.3
     "@nx-go/nx-go": 2.6.0
+    "@nx-tools/docker-metadata": ^3.0.1
     "@nx-tools/nx-docker": 3.0.2
     "@nxext/solid": 13.1.1
     "@nxrs/cargo": 0.3.3

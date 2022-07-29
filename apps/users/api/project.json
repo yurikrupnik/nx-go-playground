@@ -24,18 +24,37 @@
     "lint": {
       "executor": "@nx-go/nx-go:lint"
     },
-    "docker": {
+    "docker-self": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
         "command": "docker buildx build --target go-builder --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/users/api . -t yurikrupnik/users-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api --push"
       }
     },
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": true,
+        "metadata": {
+          "images": ["yurikrupnik/users-api", "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api"],
+          "tags": [
+            "type=schedule",
+            "type=ref,event=branch",
+            "type=ref,event=tag",
+            "type=ref,event=pr",
+            "type=semver,pattern={{version}}",
+            "type=semver,pattern={{major}}.{{minor}}",
+            "type=semver,pattern={{major}}",
+            "type=sha"
+          ]
+        }
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["users-api:github"]
+        "postTargets": ["users-api:github", "users-api:docker"]
       }
     },
     "github": {

@@ -12,7 +12,7 @@
     "lint": {
       "executor": "@nx-go/nx-go:lint"
     },
-    "docker": {
+    "docker-self": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
