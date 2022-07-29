@@ -53,9 +53,13 @@ jobs:
       - name: Get tag
         run: |
           TAG=v${github.ref_name##*-}
-          echo v${github.ref_name##*-}
-          echo $TAG
-          echo ${TAG}
+
+      - name: Get tag
+        run: |
+          TAG=v${{github.ref_name##*-}}
+#          echo v${github.ref_name##*-}
+#          echo $TAG
+#          echo ${TAG}
 #        run: echo ::set-env name=TAG::$(echo ${github.ref_name##*-})
       - name: Print branch name
         run: echo 'The branch name is' $TAG
