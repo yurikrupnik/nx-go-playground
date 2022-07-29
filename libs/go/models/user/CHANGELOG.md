@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.0.9-alpha.5](https://github.com/yurikrupnik/nx-go-playground/compare/go-models-user-0.0.9-alpha.4...go-models-user-0.0.9-alpha.5) (2022-07-29)
+
 ### [0.0.9-alpha.4](https://github.com/yurikrupnik/nx-go-playground/compare/go-models-user-0.0.9-alpha.3...go-models-user-0.0.9-alpha.4) (2022-07-29)
 
 ### [0.0.9-alpha.3](https://github.com/yurikrupnik/nx-go-playground/compare/go-models-user-0.0.9-alpha.2...go-models-user-0.0.9-alpha.3) (2022-07-29)
