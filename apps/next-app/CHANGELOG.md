@@ -4,6 +4,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.1.0](https://github.com/yurikrupnik/nx-go-playground/compare/next-app-0.0.3...next-app-0.1.0) (2022-07-29)
 
+## [0.1.0](https://github.com/yurikrupnik/nx-go-playground/compare/next-app-0.0.3...next-app-0.1.0) (2022-07-29)
+
 ### [0.0.3](https://github.com/yurikrupnik/nx-go-playground/compare/next-app-0.0.2...next-app-0.0.3) (2022-07-29)
 
 ### [0.0.2](https://github.com/yurikrupnik/nx-go-playground/compare/next-app-0.0.1...next-app-0.0.2) (2022-07-29)
