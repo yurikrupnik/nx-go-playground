@@ -4,6 +4,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### [0.0.7-alpha.0](https://github.com/yurikrupnik/nx-go-playground/compare/infra-my-kube-controller-0.0.6...infra-my-kube-controller-0.0.7-alpha.0) (2022-07-29)
 
+### [0.0.7-alpha.0](https://github.com/yurikrupnik/nx-go-playground/compare/infra-my-kube-controller-0.0.6...infra-my-kube-controller-0.0.7-alpha.0) (2022-07-29)
+
 ### [0.0.7](https://github.com/yurikrupnik/nx-go-playground/compare/infra-my-kube-controller-0.0.6...infra-my-kube-controller-0.0.7) (2022-07-29)
 
 ### [0.0.6](https://github.com/yurikrupnik/nx-go-playground/compare/infra-my-kube-controller-0.0.5...infra-my-kube-controller-0.0.6) (2022-07-25)
