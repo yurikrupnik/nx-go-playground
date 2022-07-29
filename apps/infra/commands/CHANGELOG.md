@@ -4,6 +4,8 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### [0.0.1](https://github.com/yurikrupnik/nx-go-playground/compare/infra-commands-0.0.1-alpha.0...infra-commands-0.0.1) (2022-07-29)
 
+### [0.0.1](https://github.com/yurikrupnik/nx-go-playground/compare/infra-commands-0.0.1-alpha.0...infra-commands-0.0.1) (2022-07-29)
+
 ### 0.0.1-alpha.0 (2022-07-29)
 
 
