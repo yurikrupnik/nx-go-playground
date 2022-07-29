@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### 0.0.1 (2022-07-29)
+
+
+### Features
+
+* **docker:** fixed client build ([e6ca3de](https://github.com/yurikrupnik/nx-go-playground/commit/e6ca3de7813e3d6a8ecd428fd83e53ae14ea391e))
+
 ### [0.0.11-alpha.4](https://github.com/yurikrupnik/nx-go-playground/compare/users-client-0.0.11-alpha.3...users-client-0.0.11-alpha.4) (2022-07-29)
 
 ### [0.0.11-alpha.6](https://github.com/yurikrupnik/nx-go-playground/compare/users-client-0.0.11-alpha.5...users-client-0.0.11-alpha.6) (2022-07-29)
