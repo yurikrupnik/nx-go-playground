@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.0.10-alpha.1](https://github.com/yurikrupnik/nx-go-playground/compare/profile-api-0.0.10-alpha.0...profile-api-0.0.10-alpha.1) (2022-07-29)
+
 ### [0.0.10-alpha.0](https://github.com/yurikrupnik/nx-go-playground/compare/profile-api-0.0.9...profile-api-0.0.10-alpha.0) (2022-07-29)
 
 ### [0.0.9](https://github.com/yurikrupnik/nx-go-playground/compare/profile-api-0.0.8...profile-api-0.0.9) (2022-07-29)
