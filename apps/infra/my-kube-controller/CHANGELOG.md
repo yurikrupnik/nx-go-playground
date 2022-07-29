@@ -9,6 +9,13 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * **blog:** go mongo generic api ([77413be](https://github.com/yurikrupnik/nx-go-playground/commit/77413be3dc5465ca2ea131409d5d05c530e14e53))
 
+### 0.0.1 (2022-07-29)
+
+
+### Bug Fixes
+
+* **blog:** go mongo generic api ([77413be](https://github.com/yurikrupnik/nx-go-playground/commit/77413be3dc5465ca2ea131409d5d05c530e14e53))
+
 ### 0.0.1-alpha.0 (2022-07-29)
 
 
