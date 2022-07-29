@@ -79,6 +79,7 @@ jobs:
         run: echo 'The branch name is' $TAG
 #      - run: echo '${{ toJSON(github.ref) }}'
       - run: git status
+      - run: cat scripts/bash-test.sh
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: Run GoReleaser
