@@ -48,10 +48,10 @@ async function bootstrap() {
     'General use cloud run api'
   );
 
-  const port = configService.get('PORT') || 3333;
-  console.log('port', port);
-  await app.listen(port);
-  logger.log(`Listenings at http://localhost:${port}/${globalPrefix}`);
+  // const port = configService.get("PORT") || 3333;
+  // console.log('port', port);
+  await app.listen(process.env.PORT as string || 3333);
+  // logger.log(`Listenings at http://localhost:${port}/${globalPrefix}`);
 }
 
 bootstrap();

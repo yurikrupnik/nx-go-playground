@@ -48,7 +48,7 @@
         "passWithNoTests": true
       }
     },
-    "docker-self": {
+    "docker-selfs": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {

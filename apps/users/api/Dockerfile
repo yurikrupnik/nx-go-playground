@@ -19,14 +19,13 @@
 # with goreleaser 18MB
 #FROM alpine:latest AS go-alpine
 #12.7MB
-FROM scratch
+FROM scratch AS go-builder
 WORKDIR /
-
-#COPY --from=build /app /app
-COPY ./users-api /app
-
-EXPOSE 8080
-
-#USER nonroot:nonroot
-
+ARG DIST_PATH
+RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
+ARG ENTRY_NAME=app
+ENV PORT=8080
+EXPOSE ${PORT}
+COPY $DIST_PATH ./app
+EXPOSE ${PORT}
 ENTRYPOINT ["/app"]
