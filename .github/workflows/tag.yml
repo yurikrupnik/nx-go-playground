@@ -51,10 +51,15 @@ jobs:
 #      - name: Use the value
 #        run: echo $TAG1 # This will output tag
       - name: Get tag
-        run: echo ::set-env name=TAG::$(echo ${github.ref_name##*-})
+        run: |
+          TAG=v${github.ref_name##*-}
+          echo v${github.ref_name##*-}
+          echo $TAG
+          echo ${TAG}
+#        run: echo ::set-env name=TAG::$(echo ${github.ref_name##*-})
       - name: Print branch name
         run: echo 'The branch name is' $TAG
-      - run: echo '${{ toJSON(github.ref) }}'
+#      - run: echo '${{ toJSON(github.ref) }}'
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: Run GoReleaser
