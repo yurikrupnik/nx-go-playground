@@ -49,7 +49,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "goreleaser release --rm-dist -f ./apps/users/api/.goreleaser.yaml --snapshot"
+        "command": "goreleaser release --rm-dist -f ./apps/users/api/.goreleaser.yaml"
       }
     }
   },
