@@ -50,14 +50,14 @@ jobs:
 #        run: echo TAG1=${github.ref_name##*-} >> $GITHUB_ENV
 #      - name: Use the value
 #        run: echo $TAG1 # This will output tag
-      - name: Get tag
-        id: tag
-        uses: dawidd6/action-get-tag@v1
-        with:
-          # Optionally strip `v` prefix
-          strip_v: false
-      - name: Use tag
-        run: echo ${{steps.tag.outputs.tag}}##*-
+#      - name: Get tag
+#        id: tag
+#        uses: dawidd6/action-get-tag@v1
+#        with:
+#          # Optionally strip `v` prefix
+#          strip_v: false
+#      - name: Use tag
+#        run: echo ${{steps.tag.outputs.tag}}##*-
       - name: Get tag
         shell: bash
         run: |
