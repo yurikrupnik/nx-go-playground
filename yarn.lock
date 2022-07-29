@@ -17628,7 +17628,7 @@ __metadata:
     rxjs: 7.5.6
     single-spa: 5.9.4
     single-spa-react: 4.6.1
-    solid-app-router: 0.4.1
+    solid-app-router: 0.4.2
     solid-jest: 0.2.0
     solid-js: 1.4.8
     solid-testing-library: 0.3.0
@@ -21260,12 +21260,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solid-app-router@npm:0.4.1":
-  version: 0.4.1
-  resolution: "solid-app-router@npm:0.4.1"
+"solid-app-router@npm:0.4.2":
+  version: 0.4.2
+  resolution: "solid-app-router@npm:0.4.2"
   peerDependencies:
     solid-js: ^1.3.5
-  checksum: ec29dc1affae39b1d23efb651ab84250abd7f5d5de7f7fd13776fe528f94d63aa6e6def0a325961b24336007b74442c3a022c78b8a3f08e4f44d524b7ad0b7f7
+  checksum: 4dfa8ad1c9f90c82d22a94cd5c8da3cbbf713812b7ba6a3fa7481968fd592203181373586eb24b042d183eb7dc54f737d6dd342bbc870e33ee8f8821a7b91dce
   languageName: node
   linkType: hard
 
