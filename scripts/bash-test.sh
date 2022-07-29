@@ -2,8 +2,9 @@
 #! /bin/bash
 set -e
 
-TAG=users-api-0.0.3
-echo v${TAG##*-}
+TAG_COPY=users-api-0.0.3
+TAG=v${TAG_COPY##*-}
+export TAG
 #echo $TAG
 #MONGO_URI=$(gcloud secrets versions access latest --secret=MONGO_URI --project=mussia8)
 #
