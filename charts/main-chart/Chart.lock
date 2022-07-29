@@ -13,6 +13,6 @@ dependencies:
   version: 17.0.6
 - name: kube-prometheus
   repository: https://charts.bitnami.com/bitnami
-  version: 8.0.10
-digest: sha256:4f1d98fa225e568ee11fff29650156b7f13e3907e154c203ec285389b1de5405
-generated: "2022-07-29T01:30:30.779620825Z"
+  version: 8.0.11
+digest: sha256:669f3f74c1b218a9908f7f87965f70ab7216f0983a4d33d58dca012e33c08186
+generated: "2022-07-29T01:44:47.357296625Z"
