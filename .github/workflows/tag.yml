@@ -51,6 +51,7 @@ jobs:
 #      - name: Use the value
 #        run: echo $TAG1 # This will output tag
       - name: Get tag
+        shell: bash
         run: |
           TAG=v${github.ref_name##*-}
 
