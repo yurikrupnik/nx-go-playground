@@ -54,9 +54,9 @@ jobs:
         run: |
           TAG=v${github.ref_name##*-}
 
-      - name: Get tag
-        run: |
-          TAG=v${{github.ref_name##*-}}
+#      - name: Get tag
+#        run: |
+#          TAG=v${{github.ref_name##*-}}
 #          echo v${github.ref_name##*-}
 #          echo $TAG
 #          echo ${TAG}
