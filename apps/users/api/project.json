@@ -54,7 +54,7 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["users-api:github", "users-api:docker"]
+        "postTargets": ["users-api:github", "users-api:goreleaser"]
       }
     },
     "github": {
