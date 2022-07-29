@@ -9,9 +9,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
-	"nx-go-playground/apps/users/api-generic/users"
 	go_fiber_helpers "nx-go-playground/libs/go/fiber-helpers"
-	"nx-go-playground/libs/go/models/user"
 	go_mongodb "nx-go-playground/libs/go/mongodb"
 	"nx-go-playground/libs/go/myutils"
 	"os"
@@ -46,7 +44,7 @@ func main() {
 	app.Use(logger.New())
 	//app.Use(csrf.New()) // todo check it - forbidden post events
 	app.Use(cors.New())
-	apiGroup := app.Group("api")
+	//apiGroup := app.Group("api")
 	apiGroup1 := app.Group("d")
 	apiGroup1.Get("/aris", func(ctx *fiber.Ctx) error {
 		return ctx.SendString("ssssks")
@@ -54,8 +52,8 @@ func main() {
 	apiGroup1.Get("/dom", func(ctx *fiber.Ctx) error {
 		return ctx.SendString("sds")
 	})
-	go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
-	go_models_user.CreateFakeGroup[Project](apiGroup, "projects")
+	//go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
+	//go_models_user.CreateFakeGroup[Project](apiGroup, "projects")
 
 	app.Get("/dashboard", monitor.New())
 	ds := os.Getenv("MONGO_URI")

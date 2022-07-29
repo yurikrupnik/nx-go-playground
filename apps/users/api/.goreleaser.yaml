@@ -14,7 +14,7 @@ project_name: users-api
 before:
   hooks:
     - go mod tidy
-    - go test -v ./...
+#    - go test -v ./...
 #    - echo $IMAGE_COPY
 #    - echo ${IMAGE_COPY}
 #    - echo $IMAGE
