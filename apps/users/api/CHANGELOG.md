@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.0.74](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.0.73...users-api-0.0.74) (2022-07-29)
+
 ### [0.0.73](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.0.72...users-api-0.0.73) (2022-07-29)
 
 ### [0.0.72](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.0.71...users-api-0.0.72) (2022-07-29)
