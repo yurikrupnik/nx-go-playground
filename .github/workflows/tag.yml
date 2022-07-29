@@ -53,7 +53,7 @@ jobs:
       - name: Get tag
         shell: bash
         run: |
-          ./scripts/bash-test.sh
+          ./scripts/bash-test.sh ${github.ref_name}
 #          TAG=v${github.ref_name##*-}
 
 #      - name: Get tag
