@@ -5,7 +5,8 @@ TT=$1
 echo $1
 #TAG_COPY=users-api-0.0.3
 TAG=v${TT##*-}
-echo export "$TAG"
+
+echo $TAG >> $GITHUB_ENV
 #echo export TAG
 #export $TAG
 #echo $TAG
