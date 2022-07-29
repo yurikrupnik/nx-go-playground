@@ -75,8 +75,7 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "preset": "conventional",
-        "postTargets": ["profile-api:github", "profile-api:docker"]
+        "preset": "conventional"
       }
     }
   },
