@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### 0.0.1-alpha.0 (2022-07-29)
+
+### 0.0.1 (2022-07-29)
+
 ### [0.0.10-alpha.4](https://github.com/yurikrupnik/nx-go-playground/compare/next-app-0.0.10-alpha.3...next-app-0.0.10-alpha.4) (2022-07-29)
 
 ### [0.0.10-alpha.6](https://github.com/yurikrupnik/nx-go-playground/compare/next-app-0.0.10-alpha.5...next-app-0.0.10-alpha.6) (2022-07-29)
