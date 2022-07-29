@@ -84,7 +84,6 @@ func CreateFakeGroup[T interface{}](api fiber.Router, name string) {
 }
 
 func CreateHandlerCreate[T interface{}]() fiber.Handler {
-
 	return func(c *fiber.Ctx) error {
 		var user T
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)

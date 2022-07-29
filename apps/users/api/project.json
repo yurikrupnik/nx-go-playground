@@ -54,7 +54,8 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["users-api:github", "users-api:docker"]
+        "changelogHeader": "##My custom header   Example text for release!",
+        "postTargets": ["users-api:build", "users-api:github", "users-api:docker"]
       }
     },
     "github": {
