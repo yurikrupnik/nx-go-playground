@@ -5,8 +5,8 @@ TT=$1
 echo $1
 #TAG_COPY=users-api-0.0.3
 TAG=v${TT##*-}
-echo export $TAG
-echo export TAG
+echo export "$TAG"
+#echo export TAG
 #export $TAG
 #echo $TAG
 #MONGO_URI=$(gcloud secrets versions access latest --secret=MONGO_URI --project=mussia8)
