@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### 0.0.1-alpha.0 (2022-07-29)
+
+
+### Features
+
+* **blog:** add comment section ([170ad33](https://github.com/yurikrupnik/nx-go-playground/commit/170ad3307f34fc401e78bbaec286d43a8bbd5be4))
+* **blog:** add comment section ([21e407d](https://github.com/yurikrupnik/nx-go-playground/commit/21e407d6b8af74f00ce219d0b44dfdb24b596590))
+
 ### 0.0.1 (2022-07-29)
 
 
