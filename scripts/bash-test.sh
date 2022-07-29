@@ -6,7 +6,7 @@ echo $1
 #TAG_COPY=users-api-0.0.3
 TAG=v${TT##*-}
 
-echo "TAG=v${TT##*-}" >> $GITHUB_ENV
+echo "GORELEASER_CURRENT_TAG=v${TT##*-}" >> $GITHUB_ENV
 #echo export TAG
 #export $TAG
 #echo $TAG
