@@ -81,7 +81,7 @@ jobs:
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: Run GoReleaser
-        run: npx nx run-many --all --parallel --target=goreleaser --snapshot
+        run: npx nx run-many --all --parallel --target=goreleaser
 #        with:
 #          # either 'goreleaser' (default) or 'goreleaser-pro'
 #          distribution: goreleaser
