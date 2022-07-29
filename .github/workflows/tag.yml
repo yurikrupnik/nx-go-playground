@@ -55,6 +55,8 @@ jobs:
         run: |
           chmod +x ./scripts/bash-test.sh
           ./scripts/bash-test.sh users-api-0.5.5
+          echo $TAG
+          echo ${TAG}
 #          TAG=v${github.ref_name##*-}
 
 #      - name: Get tag
