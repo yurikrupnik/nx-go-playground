@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.0.9-alpha.6](https://github.com/yurikrupnik/nx-go-playground/compare/go-mongodb-0.0.9-alpha.5...go-mongodb-0.0.9-alpha.6) (2022-07-29)
+
 ### [0.0.9-alpha.5](https://github.com/yurikrupnik/nx-go-playground/compare/go-mongodb-0.0.9-alpha.4...go-mongodb-0.0.9-alpha.5) (2022-07-29)
 
 ### [0.0.9-alpha.4](https://github.com/yurikrupnik/nx-go-playground/compare/go-mongodb-0.0.9-alpha.3...go-mongodb-0.0.9-alpha.4) (2022-07-29)
