@@ -53,7 +53,6 @@ jobs:
       - name: Get tag
         shell: bash
         run: |
-          chmod +x ./scripts/bash-test.sh
           ./scripts/bash-test.sh
 #          TAG=v${github.ref_name##*-}
 
