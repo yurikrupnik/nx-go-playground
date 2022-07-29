@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.0.12-alpha.3](https://github.com/yurikrupnik/nx-go-playground/compare/infra-commands-0.0.12-alpha.2...infra-commands-0.0.12-alpha.3) (2022-07-29)
+
 ### [0.0.12-alpha.2](https://github.com/yurikrupnik/nx-go-playground/compare/infra-commands-0.0.12-alpha.1...infra-commands-0.0.12-alpha.2) (2022-07-29)
 
 ### [0.0.12-alpha.1](https://github.com/yurikrupnik/nx-go-playground/compare/infra-commands-0.0.12-alpha.0...infra-commands-0.0.12-alpha.1) (2022-07-29)
