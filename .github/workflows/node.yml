@@ -141,17 +141,19 @@ jobs:
           name: build-artifacts
           path: dist
       - run: ls dist
-#      - name: Get Yarn cache directory
-#        id: yarn-cache-dir-path
-#        run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
-#      - name: Use Yarn cache
-#        uses: actions/cache@v2
-#        id: yarn-cache
-#        with:
-#          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-#          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
-#      - name: Set up Docker Buildx
-#        uses: docker/setup-buildx-action@v1
+      - name: Get Yarn cache directory
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
+      - name: Use Yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ hashFiles('**/yarn.lock') }}
+      - name: Install npm packages
+        run: yarn
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 #      - run: yarn install
 #      - run: docker buildx -h
 #      - name: build artifacts

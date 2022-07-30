@@ -66,7 +66,7 @@ jobs:
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
       - uses: actions/setup-go@v3
         with:
@@ -79,7 +79,7 @@ jobs:
       - run: yarn nx affected --target=test --parallel --max-parallel=3
       - run: yarn nx affected --target=lint --parallel --max-parallel=3
       - run: yarn nx affected --target=e2e --parallel --max-parallel=3
-      - run: yarn nx affected --target=docker --parallel --max-parallel=3
+      - run: yarn nx affected --target=docker --parallel --max-parallel=1
       #      - run: docker buildx create --use
       #      - run: yarn nx affected --target=docker --parallel --max-parallel=3
       - run: yarn nx-cloud stop-all-agents
@@ -105,7 +105,7 @@ jobs:
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ hashFiles('**/yarn.lock') }}
 #          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
       - name: Set up Docker Buildx
