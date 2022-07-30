@@ -161,7 +161,7 @@ jobs:
         with:
           name: build-artifacts
           path: dist
-      - run: ls dist
+      - run: ls dist/*
       - name: Get Yarn cache directory
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
@@ -170,7 +170,7 @@ jobs:
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - name: Install npm packages
         run: yarn
       - name: Set up QEMU
