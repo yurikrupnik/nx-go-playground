@@ -46,7 +46,7 @@
       "options": {
         "preset": "conventional",
         "changelogHeader": "##My custom header   Example text for release!",
-        "postTargets": ["users-api:build"]
+        "postTargets": ["users-api:github"]
       }
     },
     "github": {
