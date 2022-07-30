@@ -161,7 +161,7 @@ jobs:
         with:
           name: build-artifacts
           path: dist
-      - run: ls dist/*
+      - run: ls dist/**/
       - name: Get Yarn cache directory
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
@@ -192,6 +192,7 @@ jobs:
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - run: |-
           gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
+      - run: docker buildx create --use
       - run: docker run --privileged --rm tonistiigi/binfmt --install all
 #      - run: yarn nx affected --target=docker --parallel --max-parallel=1 --all
       - run: yarn nx run-many --target=docker --parallel --max-parallel=4 --all
