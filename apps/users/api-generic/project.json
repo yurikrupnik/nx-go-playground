@@ -22,6 +22,18 @@
     "lint": {
       "executor": "@nx-go/nx-go:lint"
     },
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": true,
+        "file": "./Dockerfile",
+        "target": "go-builder",
+        "build-args": ["DIST_PATH=dist/apps/users/api-generic"],
+        "metadata": {
+          "images": ["yurikrupnik/users-api-generic", "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api-generic"]
+        }
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
