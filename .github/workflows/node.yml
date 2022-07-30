@@ -199,7 +199,7 @@ jobs:
       - run: docker run --privileged --rm tonistiigi/binfmt --install all
       - run: docker buildx create --use
 #      - run: yarn nx affected --target=docker --parallel --max-parallel=1 --all
-      - run: yarn nx run-many --target=docker --parallel --max-parallel=4 --all
+      - run: yarn nx run-many --target=docker-self --parallel --max-parallel=4 --all
 #      - run: echo finished docker build
 #      - run: yarn docker
 
