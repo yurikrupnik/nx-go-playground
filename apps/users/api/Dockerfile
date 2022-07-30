@@ -19,10 +19,10 @@
 # with goreleaser 18MB
 #FROM alpine:latest AS go-alpine
 #12.7MB
-FROM scratch AS go-builder
+FROM scratch AS go-builderss
 WORKDIR /
 ARG DIST_PATH
-RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
+#RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
 ARG ENTRY_NAME=app
 ENV PORT=8080
 EXPOSE ${PORT}
