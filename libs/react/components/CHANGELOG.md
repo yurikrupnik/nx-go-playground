@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.1](https://github.com/yurikrupnik/nx-go-playground/compare/react-components-0.1.0...react-components-0.1.1) (2022-07-30)
+
 ## [0.2.0](https://github.com/yurikrupnik/nx-go-playground/compare/react-components-0.1.0...react-components-0.2.0) (2022-07-29)
 
 ## [0.1.0](https://github.com/yurikrupnik/nx-go-playground/compare/react-components-0.0.4...react-components-0.1.0) (2022-07-29)
