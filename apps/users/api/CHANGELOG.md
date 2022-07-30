@@ -1,4 +1,6 @@
 ##My custom header   Example text for release!
+### [0.1.2](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.1.1...users-api-0.1.2) (2022-07-30)
+
 ### [0.1.1](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.1.0...users-api-0.1.1) (2022-07-30)
 
 ## [0.2.0](https://github.com/yurikrupnik/nx-go-playground/compare/users-api-0.1.0...users-api-0.2.0) (2022-07-29)
