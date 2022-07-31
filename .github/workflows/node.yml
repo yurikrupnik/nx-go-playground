@@ -199,7 +199,7 @@ jobs:
       - run: docker run --privileged --rm tonistiigi/binfmt --install all
       - run: docker buildx create --use
       - run: echo all docker fails here
-      - run: yarn nx affected --target=docker --parallel --max-parallel=2 --all
+      - run: yarn nx affected --target=docker-self --parallel --max-parallel=2 --all
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - run: yarn nx run-many --target=docker-self --parallel --max-parallel=1 --all
