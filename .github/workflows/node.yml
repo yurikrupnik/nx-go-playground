@@ -174,8 +174,8 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - name: Install npm packages
         run: yarn
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+#      - name: Set up QEMU
+#        uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Inspect builder
@@ -203,10 +203,10 @@ jobs:
 #        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - run: |-
           gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
-      - run: docker run --privileged --rm tonistiigi/binfmt --install all
-      - run: docker buildx create --use
-      - run: echo all docker fails here
-      - run: yarn nx affected --target=build --parallel --max-parallel=2 --all
+#      - run: docker run --privileged --rm tonistiigi/binfmt --install all
+#      - run: docker buildx create --use
+#      - run: echo all docker fails here
+#      - run: yarn nx affected --target=build --parallel --max-parallel=2 --all
       - run: yarn nx affected --target=docker --parallel --max-parallel=2 --all
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
