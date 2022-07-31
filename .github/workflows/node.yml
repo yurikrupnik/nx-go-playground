@@ -200,6 +200,8 @@ jobs:
       - run: docker buildx create --use
       - run: echo all docker fails here
       - run: yarn nx affected --target=docker --parallel --max-parallel=2 --all
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - run: yarn nx run-many --target=docker-self --parallel --max-parallel=1 --all
 #      - run: echo finished docker build
 #      - run: yarn docker
