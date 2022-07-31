@@ -32,7 +32,7 @@ type Project struct {
 func main() {
 	// Connect to the database
 	if err := go_mongodb.Connect(); err != nil {
-		log.Println("faisled to connect")
+		log.Println("failed to connect")
 		log.Fatal(err)
 	}
 	//if err := go_mongodb.NewDB(); err != nil {
