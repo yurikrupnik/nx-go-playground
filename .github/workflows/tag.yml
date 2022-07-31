@@ -61,7 +61,7 @@ jobs:
       - name: Get tag
         shell: bash
         run: |
-#          chmod +x ./scripts/bash-test.sh
+          chmod +x ./scripts/bash-test.sh
           ./scripts/bash-test.sh ${{github.ref_name}}
 #          echo ${{ env.TAG }}
 #          echo in github $TAG
