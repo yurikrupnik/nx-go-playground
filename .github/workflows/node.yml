@@ -207,7 +207,7 @@ jobs:
       - run: |-
           gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
 #      - run: docker run --privileged --rm tonistiigi/binfmt --install all
-#      - run: docker buildx create --use
+      - run: docker buildx create --use
 #      - run: echo all docker fails here
 #      - run: yarn nx affected --target=build --parallel --max-parallel=2 --all
       - run: yarn nx affected --target=docker --parallel --max-parallel=2 --all
