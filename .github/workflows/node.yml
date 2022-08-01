@@ -181,6 +181,8 @@ jobs:
         id: buildx
         with:
           driver: kubernetes
+      - name: Docker Buildx builders
+        run: docker buildx ls
 #        with:
 #          install: true
 #        with:
