@@ -209,18 +209,18 @@ jobs:
         id: metadata
         with:
           images: ghcr.io/${{ github.repository }}
-      - name: Kaniko build
-        uses: aevea/action-kaniko@master
-        with:
-          image: yurikrupnik/users-api
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          cache: true
-          cache_registry: aevea/cache
-          target: go-builder
-          build-args: DIST_PATH=dist/apps/users/api
-          push: true
-          file: Dockerfile
+#      - name: Kaniko build
+#        uses: aevea/action-kaniko@master
+#        with:
+#          image: yurikrupnik/users-api
+#          username: ${{ secrets.DOCKERHUB_USERNAME }}
+#          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#          cache: true
+#          cache_registry: aevea/cache
+#          target: go-builder
+#          build-args: DIST_PATH=dist/apps/users/api
+#          push: true
+#          file: Dockerfile
       - run: yarn nx run-many --target=docker-self --parallel --max-parallel=1 --all
       - run: yarn nx affected --target=docker-self  --parallel --max-parallel=1 --all
         env:

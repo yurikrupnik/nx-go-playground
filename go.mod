@@ -1,4 +1,4 @@
-module nx-go-playground
+module github.com/yurikrupnik/nx-go-playground
 
 go 1.18
 
