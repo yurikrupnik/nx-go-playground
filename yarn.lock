@@ -4924,14 +4924,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@suid/icons-material@npm:0.2.5":
-  version: 0.2.5
-  resolution: "@suid/icons-material@npm:0.2.5"
+"@suid/icons-material@npm:0.2.6":
+  version: 0.2.6
+  resolution: "@suid/icons-material@npm:0.2.6"
   dependencies:
-    "@suid/material": 0.4.3
+    "@suid/material": 0.5.0
   peerDependencies:
     solid-js: ^1.3.0
-  checksum: 8e70cc91fa8ba3289858b59a8d95c536eb616ad0b8f1593e70b57eec6d4d77dd77f547770a8acfe72a4e3a6e86fa2a107413707150ebfa6573f0f940794a16f1
+  checksum: 9eaa82fd0b9c9b5ba3373df65a0ca1309c123a2d7764e5ae68afdb048086033c87def948774811e663e5d4fb13ea40c9426cbf575630d06922e22f2a1f1bc0d1
   languageName: node
   linkType: hard
 
@@ -4948,6 +4948,22 @@ __metadata:
   peerDependencies:
     solid-js: ^1.3.0
   checksum: bd4fbf5c559215f3ac40eb89ef6deef3dab83650f280f3afadbe02e814fd81e3e4106233b488021a66b36973b3190df3d79c11066b2a21f119f52586755f4319
+  languageName: node
+  linkType: hard
+
+"@suid/material@npm:0.5.0":
+  version: 0.5.0
+  resolution: "@suid/material@npm:0.5.0"
+  dependencies:
+    "@suid/base": 0.2.5
+    "@suid/css": 0.1.4
+    "@suid/system": 0.4.2
+    "@suid/types": 0.1.2
+    "@suid/utils": 0.3.0
+    clsx: ^1.1.1
+  peerDependencies:
+    solid-js: ^1.3.0
+  checksum: ec9a7622dc1672e9e39505347b726a022e871e0786da9f251f906fb67ea8c1491ba3140494a7c27664644465a05664bc96ed0a161f5bf46ff7d4a1f280181268
   languageName: node
   linkType: hard
 
@@ -17662,7 +17678,7 @@ __metadata:
     "@nxext/solid": 13.1.1
     "@nxrs/cargo": 0.3.3
     "@originjs/vite-plugin-federation": 1.1.7
-    "@suid/icons-material": 0.2.5
+    "@suid/icons-material": 0.2.6
     "@suid/material": 0.4.3
     "@swc/core": 1.2.220
     "@swc/jest": 0.2.22
