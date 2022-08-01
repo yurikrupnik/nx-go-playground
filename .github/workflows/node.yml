@@ -205,10 +205,26 @@ jobs:
       - run: docker run --privileged --rm tonistiigi/binfmt --install all
       - run: docker buildx create --use
       - run: yarn nx affected --target=build --parallel --max-parallel=2 --all
+      - uses: docker/metadata-action@v3
+        id: metadata
+        with:
+          images: ghcr.io/${{ github.repository }}
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: yurikrupnik/users-api
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          cache: true
+          cache_registry: aevea/cache
+          target: go-builder
+          build-args: DIST_PATH=dist/apps/users/api
+          push: true
+          file: Dockerfile
+      - run: yarn nx run-many --target=docker-self --parallel --max-parallel=1 --all
       - run: yarn nx affected --target=docker-self  --parallel --max-parallel=1 --all
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      - run: yarn nx run-many --target=docker-self --parallel --max-parallel=1 --all
 #      - run: echo finished docker build
 #      - run: yarn docker
 
