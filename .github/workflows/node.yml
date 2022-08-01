@@ -162,7 +162,7 @@ jobs:
 #        with:
 #          name: build-artifacts
 #          path: dist
-      - run: ls dist/**/
+#      - run: ls dist/**/
       - name: Get Yarn cache directory
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
@@ -201,7 +201,7 @@ jobs:
           gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
       - run: docker run --privileged --rm tonistiigi/binfmt --install all
 #      - run: docker buildx create --use
-#      - run: echo all docker fails here
+      - run: docker buildx ls
       - run: yarn nx affected --target=build --parallel --max-parallel=2 --all
       - run: yarn nx affected --target=docker --parallel --max-parallel=2 --all
         env:
