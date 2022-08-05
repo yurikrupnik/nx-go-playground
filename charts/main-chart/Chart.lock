@@ -1,7 +1,7 @@
 dependencies:
 - name: cert-manager
   repository: https://charts.bitnami.com/bitnami
-  version: 0.7.6
+  version: 0.7.7
 - name: external-secrets
   repository: https://charts.external-secrets.io
   version: 0.5.8
@@ -14,5 +14,5 @@ dependencies:
 - name: kube-prometheus
   repository: https://charts.bitnami.com/bitnami
   version: 8.0.14
-digest: sha256:b215781e0c6536b571c7adfe71c036cce6c0b0adadb3b712d70587c29542cda1
-generated: "2022-08-05T01:40:11.82626487Z"
+digest: sha256:734a5a6a32e5e16426ebdec3022d1bb736e2f322a321862858641782b74f7ef5
+generated: "2022-08-05T18:45:46.285723313Z"
