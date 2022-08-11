@@ -7,12 +7,12 @@ dependencies:
   version: 0.5.9
 - name: consul
   repository: https://charts.bitnami.com/bitnami
-  version: 10.7.11
+  version: 10.7.14
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: 17.0.6
 - name: kube-prometheus
   repository: https://charts.bitnami.com/bitnami
   version: 8.0.14
-digest: sha256:e68c2403b8ba77486fc087ca6a97b95605f3b70173def0df405aa68103644c18
-generated: "2022-08-10T17:36:15.252345252Z"
+digest: sha256:3c174f28dc3557e6ffb576a0546560a5b9884f258c61a0eaf89f76113feeb462
+generated: "2022-08-11T13:36:05.873572391Z"

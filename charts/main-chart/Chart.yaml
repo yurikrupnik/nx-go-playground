@@ -33,7 +33,7 @@ dependencies:
   #    version: 0.20.1
   #    repository: https://statcan.github.io/charts
   - name: consul
-    version: 10.7.11
+    version: 10.7.14
     repository: https://charts.bitnami.com/bitnami
   - name: redis
     version: 17.0.6
