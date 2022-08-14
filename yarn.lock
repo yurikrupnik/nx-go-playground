@@ -4110,9 +4110,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/nx-docker@npm:3.0.2":
-  version: 3.0.2
-  resolution: "@nx-tools/nx-docker@npm:3.0.2"
+"@nx-tools/nx-docker@npm:3.0.3":
+  version: 3.0.3
+  resolution: "@nx-tools/nx-docker@npm:3.0.3"
   dependencies:
     "@nx-tools/core": ^3.0.1
     "@nx-tools/docker-metadata": ^3.0.0
@@ -4126,7 +4126,7 @@ __metadata:
   dependenciesMeta:
     "@nx-tools/docker-metadata":
       optional: true
-  checksum: 59738aa0dcbe8a5c8fe623a7c8b305b9c7f59b2fb73e32f01375e860c954d3d694504d1af012757e1403662de26093d32d984a536e44aea1bf8cd3ab923c5a2d
+  checksum: 2e56f7f71dc26e36e5135592eeb43447d8c9021447d3d30aa7872ef060f3a09c0b90d54e8be14fabe79405487ec7e2ecf74d2aead350fd97b1359d4b1f6e0a6b
   languageName: node
   linkType: hard
 
@@ -17700,7 +17700,7 @@ __metadata:
     "@nx-extend/gcp-functions": 6.2.3
     "@nx-go/nx-go": 2.6.0
     "@nx-tools/docker-metadata": ^3.0.1
-    "@nx-tools/nx-docker": 3.0.2
+    "@nx-tools/nx-docker": 3.0.3
     "@nxext/solid": 13.1.1
     "@nxrs/cargo": 0.3.3
     "@originjs/vite-plugin-federation": 1.1.8
