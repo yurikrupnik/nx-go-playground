@@ -1898,7 +1898,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^17.0.0":
+"@commitlint/cli@npm:17.0.3":
   version: 17.0.3
   resolution: "@commitlint/cli@npm:17.0.3"
   dependencies:
@@ -1918,7 +1918,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^17.0.0":
+"@commitlint/config-conventional@npm:17.0.3":
   version: 17.0.3
   resolution: "@commitlint/config-conventional@npm:17.0.3"
   dependencies:
@@ -2300,7 +2300,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dot-i/k8s-operator@npm:^1.3.2":
+"@dot-i/k8s-operator@npm:1.3.2":
   version: 1.3.2
   resolution: "@dot-i/k8s-operator@npm:1.3.2"
   dependencies:
@@ -2947,7 +2947,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jscutlery/semver@npm:^2.25.2":
+"@jscutlery/semver@npm:2.25.2":
   version: 2.25.2
   resolution: "@jscutlery/semver@npm:2.25.2"
   dependencies:
@@ -2960,7 +2960,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kubernetes/client-node@npm:^0.17.0":
+"@kubernetes/client-node@npm:0.17.0, @kubernetes/client-node@npm:^0.17.0":
   version: 0.17.0
   resolution: "@kubernetes/client-node@npm:0.17.0"
   dependencies:
@@ -4091,7 +4091,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/docker-metadata@npm:^3.0.0, @nx-tools/docker-metadata@npm:^3.0.1":
+"@nx-tools/docker-metadata@npm:3.0.1, @nx-tools/docker-metadata@npm:^3.0.0":
   version: 3.0.1
   resolution: "@nx-tools/docker-metadata@npm:3.0.1"
   dependencies:
@@ -13767,7 +13767,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^8.0.0":
+"husky@npm:8.0.1":
   version: 8.0.1
   resolution: "husky@npm:8.0.1"
   bin:
@@ -17668,12 +17668,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nx-go-playground@workspace:."
   dependencies:
-    "@commitlint/cli": ^17.0.0
-    "@commitlint/config-conventional": ^17.0.0
-    "@dot-i/k8s-operator": ^1.3.2
+    "@commitlint/cli": 17.0.3
+    "@commitlint/config-conventional": 17.0.3
+    "@dot-i/k8s-operator": 1.3.2
     "@google-cloud/functions-framework": 3.1.2
-    "@jscutlery/semver": ^2.25.2
-    "@kubernetes/client-node": ^0.17.0
+    "@jscutlery/semver": 2.25.2
+    "@kubernetes/client-node": 0.17.0
     "@nestjs/common": 9.0.7
     "@nestjs/config": 2.2.0
     "@nestjs/core": 9.0.7
@@ -17699,7 +17699,7 @@ __metadata:
     "@nrwl/workspace": 13.10.6
     "@nx-extend/gcp-functions": 6.2.3
     "@nx-go/nx-go": 2.6.0
-    "@nx-tools/docker-metadata": ^3.0.1
+    "@nx-tools/docker-metadata": 3.0.1
     "@nx-tools/nx-docker": 3.0.3
     "@nxext/solid": 13.1.1
     "@nxrs/cargo": 0.3.3
@@ -17745,7 +17745,7 @@ __metadata:
     faker: 6.6.6
     firebase-admin: 11.0.1
     helmet: 5.1.1
-    husky: ^8.0.0
+    husky: 8.0.1
     jest: 27.5.1
     lodash: 4.17.21
     mongoose: 6.5.0
