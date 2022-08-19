@@ -89,7 +89,7 @@
     "@nxext/solid": "13.1.1",
     "@nxrs/cargo": "0.3.3",
     "@originjs/vite-plugin-federation": "1.1.8",
-    "@swc/core": "1.2.233",
+    "@swc/core": "1.2.241",
     "@swc/jest": "0.2.22",
     "@tailwindcss/aspect-ratio": "0.4.0",
     "@tailwindcss/forms": "0.5.2",
