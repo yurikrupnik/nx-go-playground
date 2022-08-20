@@ -10,9 +10,9 @@ dependencies:
   version: 10.7.16
 - name: redis
   repository: https://charts.bitnami.com/bitnami
-  version: 17.0.10
+  version: 17.0.11
 - name: kube-prometheus
   repository: https://charts.bitnami.com/bitnami
   version: 8.0.16
-digest: sha256:fea608da2e84ea3357e9e998aee3dea0eaeeda1a085def896d2f23b79af87105
-generated: "2022-08-16T18:17:57.055797459Z"
+digest: sha256:c957d43fe53fbeb151aeaa1912709d1d0e872d357bb7e88c22b78c30b882213a
+generated: "2022-08-20T18:10:17.191240517Z"
