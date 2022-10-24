@@ -4117,7 +4117,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/docker-metadata@npm:3.0.1, @nx-tools/docker-metadata@npm:^3.0.0":
+"@nx-tools/core@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@nx-tools/core@npm:3.0.2"
+  dependencies:
+    "@actions/exec": ^1.1.1
+    "@swc/helpers": ^0.4.3
+    colorette: ^2.0.19
+  peerDependencies:
+    "@nrwl/devkit": ^12.0.0 || ^13.0.0 || ^14.0.0
+  checksum: 76c3f374d1de70b9995f6e5f47a4f54589899a9ac74d70f04d89023b1f7d4d47eb04d743e8c7adbb5011b4174fa512423514d7a61941da27e70dc508737580c5
+  languageName: node
+  linkType: hard
+
+"@nx-tools/docker-metadata@npm:3.0.1":
   version: 3.0.1
   resolution: "@nx-tools/docker-metadata@npm:3.0.1"
   dependencies:
@@ -4136,12 +4149,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/nx-docker@npm:3.0.3":
-  version: 3.0.3
-  resolution: "@nx-tools/nx-docker@npm:3.0.3"
+"@nx-tools/docker-metadata@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@nx-tools/docker-metadata@npm:3.0.2"
   dependencies:
-    "@nx-tools/core": ^3.0.1
-    "@nx-tools/docker-metadata": ^3.0.0
+    "@nx-tools/ci-context": ^3.0.1
+    "@nx-tools/core": ^3.0.2
+    "@renovate/pep440": ^1.0.0
+    "@swc/helpers": ^0.4.3
+    csv-parse: ^4.16.3
+    handlebars: ^4.7.7
+    moment: ^2.29.4
+    semver: ^7.3.7
+  peerDependencies:
+    "@nrwl/devkit": ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
+    tslib: ^2.1.0
+  checksum: 439968f39d4ef56b720e0ed734e82dcb6930a16bacd11110a32cea6fa075cf8f4590f0bab94916987093f05ad56a02f8878b18d690b38a9026f9c18bfe31f7e8
+  languageName: node
+  linkType: hard
+
+"@nx-tools/nx-docker@npm:3.0.5":
+  version: 3.0.5
+  resolution: "@nx-tools/nx-docker@npm:3.0.5"
+  dependencies:
+    "@nx-tools/core": ^3.0.2
+    "@nx-tools/docker-metadata": ^3.0.2
     "@swc/helpers": ^0.4.3
     csv-parse: ^4.16.3
     semver: ^7.3.7
@@ -4152,7 +4184,7 @@ __metadata:
   dependenciesMeta:
     "@nx-tools/docker-metadata":
       optional: true
-  checksum: 2e56f7f71dc26e36e5135592eeb43447d8c9021447d3d30aa7872ef060f3a09c0b90d54e8be14fabe79405487ec7e2ecf74d2aead350fd97b1359d4b1f6e0a6b
+  checksum: 0a35c8a3676240ad1b3957b9c5f906ad1e70bd0f6319d56d8f3c1e98aad2192cadde32372525bb0fa9100e6b8e98c8eb00d24bf6fe3a56e341f974b3401d9f66
   languageName: node
   linkType: hard
 
@@ -17779,7 +17811,7 @@ __metadata:
     "@nx-extend/gcp-functions": 6.2.3
     "@nx-go/nx-go": 2.6.0
     "@nx-tools/docker-metadata": 3.0.1
-    "@nx-tools/nx-docker": 3.0.3
+    "@nx-tools/nx-docker": 3.0.5
     "@nxext/solid": 13.1.1
     "@nxrs/cargo": 0.3.3
     "@originjs/vite-plugin-federation": 1.1.8
