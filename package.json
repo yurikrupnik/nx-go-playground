@@ -86,7 +86,7 @@
     "@nx-extend/gcp-functions": "6.2.3",
     "@nx-go/nx-go": "2.6.0",
     "@nx-tools/nx-docker": "3.0.5",
-    "@nxext/solid": "13.1.1",
+    "@nxext/solid": "14.0.2",
     "@nxrs/cargo": "0.3.3",
     "@originjs/vite-plugin-federation": "1.1.8",
     "@swc/core": "1.2.241",
