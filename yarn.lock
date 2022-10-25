@@ -4471,13 +4471,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@originjs/vite-plugin-federation@npm:1.1.8":
-  version: 1.1.8
-  resolution: "@originjs/vite-plugin-federation@npm:1.1.8"
+"@originjs/vite-plugin-federation@npm:1.1.11":
+  version: 1.1.11
+  resolution: "@originjs/vite-plugin-federation@npm:1.1.11"
   dependencies:
     estree-walker: ^1.0.1
     magic-string: ^0.25.7
-  checksum: faa27a7ac056e44991276d0e53831d166da5f5e503dbc25549e84c80876c2e85cff68fe753092df72b249b1aa500f529046b756fd745c475528970c6062337e8
+  checksum: e4c49cae49f3d4cee1047399820c10bbaa5f19108b32d96d7002711166f51e862c58ffe43e69f014d092076101aaaf98cd8d3398a53dee18eb0cff0d8344d47f
   languageName: node
   linkType: hard
 
@@ -17814,7 +17814,7 @@ __metadata:
     "@nx-tools/nx-docker": 3.0.5
     "@nxext/solid": 13.1.1
     "@nxrs/cargo": 0.3.3
-    "@originjs/vite-plugin-federation": 1.1.8
+    "@originjs/vite-plugin-federation": 1.1.11
     "@suid/icons-material": 0.2.6
     "@suid/material": 0.4.3
     "@swc/core": 1.2.241
