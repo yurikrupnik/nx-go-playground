@@ -4104,6 +4104,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nx-tools/ci-context@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "@nx-tools/ci-context@npm:3.0.8"
+  dependencies:
+    "@actions/github": ^5.0.3
+    "@nx-tools/core": ^3.0.8
+    "@swc/helpers": ^0.4.3
+    ci-info: ^3.3.2
+  peerDependencies:
+    tslib: ^2.1.0
+  checksum: 20e1e36dbbdadedab67be891f5e8f7c9e8546fc65fbd8bac6031bfe612c6ed9501c68e64cb87b68e13eaa32e3bbc2feb9b734599300c2171bac518c5ff829444
+  languageName: node
+  linkType: hard
+
 "@nx-tools/core@npm:^3.0.1":
   version: 3.0.1
   resolution: "@nx-tools/core@npm:3.0.1"
@@ -4130,12 +4144,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/docker-metadata@npm:3.0.1":
-  version: 3.0.1
-  resolution: "@nx-tools/docker-metadata@npm:3.0.1"
+"@nx-tools/core@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "@nx-tools/core@npm:3.0.8"
   dependencies:
-    "@nx-tools/ci-context": ^3.0.1
-    "@nx-tools/core": ^3.0.1
+    "@actions/exec": ^1.1.1
+    "@swc/helpers": ^0.4.3
+    colorette: ^2.0.19
+  peerDependencies:
+    "@nrwl/devkit": ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
+  checksum: d796e33b097ce52c58637358fdc906ec07c65a4f51a21e897676e6c34dd7f1296abd2813977565eeb9cadf340ea871b5bc2db43f95e28293eae8c9f52c72bb1e
+  languageName: node
+  linkType: hard
+
+"@nx-tools/docker-metadata@npm:3.0.8":
+  version: 3.0.8
+  resolution: "@nx-tools/docker-metadata@npm:3.0.8"
+  dependencies:
+    "@nx-tools/ci-context": ^3.0.8
+    "@nx-tools/core": ^3.0.8
     "@renovate/pep440": ^1.0.0
     "@swc/helpers": ^0.4.3
     csv-parse: ^4.16.3
@@ -4143,9 +4170,9 @@ __metadata:
     moment: ^2.29.4
     semver: ^7.3.7
   peerDependencies:
-    "@nrwl/devkit": ^12.0.0 || ^13.0.0 || ^14.0.0
+    "@nrwl/devkit": ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
     tslib: ^2.1.0
-  checksum: d8f4d3a9a947ec3000f79d5e67a90bb789334245e56fe3ffe42350b8fb639975bbd92d7226296bab46273c750fc26c98322545de42dac486bdf548d8edae6cce
+  checksum: df97c164ef0a850371b7c39c0af54a892ba64536a5ea99ce8681523e060be3d5eaa773f4b0a64eac2121582c0196e7d5b5d17990527ca8c1f7c4cf4e8df6c75b
   languageName: node
   linkType: hard
 
@@ -17818,7 +17845,7 @@ __metadata:
     "@nrwl/workspace": 13.10.6
     "@nx-extend/gcp-functions": 6.2.3
     "@nx-go/nx-go": 2.6.0
-    "@nx-tools/docker-metadata": 3.0.1
+    "@nx-tools/docker-metadata": 3.0.8
     "@nx-tools/nx-docker": 3.0.5
     "@nxext/solid": 13.1.1
     "@nxrs/cargo": 0.3.3
