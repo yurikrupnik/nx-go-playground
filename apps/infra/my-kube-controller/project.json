@@ -3,6 +3,21 @@
   "projectType": "application",
   "sourceRoot": "apps/infra/my-kube-controller",
   "targets": {
+    "build1": {
+      "executor": "@nx-go/nx-go:build",
+      "options": {
+        "outputPath": "dist/infra/my-kube-controller",
+        "main": "apps/infra/my-kube-controller/main.go"
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "make build",
+        "cwd": "apps/infra/my-kube-controller"
+      }
+    },
     "serve": {
       "executor": "@nx-go/nx-go:serve",
       "options": {
@@ -12,15 +27,42 @@
     "lint": {
       "executor": "@nx-go/nx-go:lint"
     },
-    "docker-self": {
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "make test",
+        "cwd": "apps/infra/my-kube-controller"
+      }
+    },
+    "docker-self-local": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
         "commands": [
-          "docker build . -t yurikrupnik/main-controller",
-          "docker push yurikrupnik/main-controller"
+          "docker build . -t yurikrupnik/my-kube-controller",
+          "docker push yurikrupnik/my-kube-controller"
         ],
         "cwd": "apps/infra/my-kube-controller"
+      }
+    },
+    "docker-selfs": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --target go-builder --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/users/api . -t yurikrupnik/my-kube-controller -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/my-kube-controller --push"
+      }
+    },
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": true,
+        "file": "./Dockerfile",
+        "target": "go-builder",
+        "build-args": ["DIST_PATH=apps/infra/my-kube-controller/bin/dist"],
+        "metadata": {
+          "images": ["yurikrupnik/my-kube-controller", "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/my-kube-controller"]
+        }
       }
     },
     "version": {

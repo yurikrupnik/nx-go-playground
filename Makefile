@@ -5,6 +5,9 @@ GCP_PROJECT:=$(gcloud config get-value project)
 .PHONY: all
 all: build
 
+jfrog-config:
+	jfrog config add artifactory-server --artifactory-url="$ARTIFACTORY_URL" --user="$ARTIFACTORY_USER" --password="$ARTIFACTORY_PASSWORD" --interactive=false
+
 ##@ Docker
 docker-rmi-all: ## Docker remove all images installed - TODO Fix not including
 	images:=$(docker images -aq)
