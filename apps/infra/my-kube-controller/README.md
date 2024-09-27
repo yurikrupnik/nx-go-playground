@@ -17,6 +17,7 @@ kubectl apply -f config/samples/
 
 2. Build and push your image to the location specified by `IMG`:
 	
+
 ```sh
 make docker-build docker-push IMG=<some-registry>/my-kube-controller:tag
 ```
