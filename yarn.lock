@@ -2917,6 +2917,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jridgewell/sourcemap-codec@npm:^1.4.13":
+  version: 1.6.0
+  resolution: "@jridgewell/sourcemap-codec@npm:1.6.0"
+  checksum: d49b0547385f352ae1955d47cc4c7bb3595000df69469b7382da05bda3277cb0b80ccf776b402306ffcd16424c194e117ca24a3d6ac7d3e796a2361c9a264608
+  languageName: node
+  linkType: hard
+
 "@jridgewell/trace-mapping@npm:0.3.9":
   version: 0.3.9
   resolution: "@jridgewell/trace-mapping@npm:0.3.9"
@@ -4471,13 +4478,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@originjs/vite-plugin-federation@npm:1.1.11":
-  version: 1.1.11
-  resolution: "@originjs/vite-plugin-federation@npm:1.1.11"
+"@originjs/vite-plugin-federation@npm:1.4.1":
+  version: 1.4.1
+  resolution: "@originjs/vite-plugin-federation@npm:1.4.1"
   dependencies:
-    estree-walker: ^1.0.1
-    magic-string: ^0.25.7
-  checksum: e4c49cae49f3d4cee1047399820c10bbaa5f19108b32d96d7002711166f51e862c58ffe43e69f014d092076101aaaf98cd8d3398a53dee18eb0cff0d8344d47f
+    estree-walker: ^3.0.2
+    magic-string: ^0.27.0
+  checksum: d0c4eacd95930c56f17d7bc475dc37c2ac0b2ad5ed04a002676a604fb4a71e76365e735a97ccd925c95a023aee0e24e883dd1b48fffd3316ad9bd509ccd7ba8b
   languageName: node
   linkType: hard
 
@@ -5912,6 +5919,13 @@ __metadata:
   version: 0.0.39
   resolution: "@types/estree@npm:0.0.39"
   checksum: 412fb5b9868f2c418126451821833414189b75cc6bf84361156feed733e3d92ec220b9d74a89e52722e03d5e241b2932732711b7497374a404fad49087adc248
+  languageName: node
+  linkType: hard
+
+"@types/estree@npm:^1.0.0":
+  version: 1.0.9
+  resolution: "@types/estree@npm:1.0.9"
+  checksum: 752c0afee3ec82b8e24484bf6a27dfa093bbf3de4ef1c20ed0364fb6ad2c0c7971e7504ed9a7aaff103a47e2d945ce7a17f74951743dd944782a0735f53170de
   languageName: node
   linkType: hard
 
@@ -11925,6 +11939,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"estree-walker@npm:^3.0.2":
+  version: 3.0.3
+  resolution: "estree-walker@npm:3.0.3"
+  dependencies:
+    "@types/estree": ^1.0.0
+  checksum: a65728d5727b71de172c5df323385755a16c0fdab8234dc756c3854cfee343261ddfbb72a809a5660fac8c75d960bb3e21aa898c2d7e9b19bb298482ca58a3af
+  languageName: node
+  linkType: hard
+
 "esutils@npm:^2.0.2":
   version: 2.0.3
   resolution: "esutils@npm:2.0.3"
@@ -16497,6 +16520,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"magic-string@npm:^0.27.0":
+  version: 0.27.0
+  resolution: "magic-string@npm:0.27.0"
+  dependencies:
+    "@jridgewell/sourcemap-codec": ^1.4.13
+  checksum: 273faaa50baadb7a2df6e442eac34ad611304fc08fe16e24fe2e472fd944bfcb73ffb50d2dc972dc04e92784222002af46868cb9698b1be181c81830fd95a13e
+  languageName: node
+  linkType: hard
+
 "make-dir@npm:^2.1.0":
   version: 2.1.0
   resolution: "make-dir@npm:2.1.0"
@@ -17889,7 +17921,7 @@ __metadata:
     "@nx-tools/nx-docker": 3.0.5
     "@nxext/solid": 13.1.1
     "@nxrs/cargo": 0.3.3
-    "@originjs/vite-plugin-federation": 1.1.11
+    "@originjs/vite-plugin-federation": 1.4.1
     "@suid/icons-material": 0.2.6
     "@suid/material": 0.4.3
     "@swc/core": 1.2.241
